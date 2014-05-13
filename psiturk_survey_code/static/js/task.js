@@ -9,8 +9,8 @@ var psiTurk = PsiTurk();
 
 // All pages to be loaded
 var pages = [
-    //"consent.html"
-    "instruct.html",
+    "consent.html"
+    "instructions/instruct-1.html",
     "test.html",
     "postquestionnaire.html"
 ];
@@ -548,7 +548,7 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
      labels: ['0', '50', '100'] 
     },
     {
-     id: 'OPG2-',
+     id: 'OPG2-',//?
      question: "If I'm running late or I mess something up, it's usually due to forces beyond my control.",   //more locus of control     
      labels: ['Disagree', 'Neutral', 'Agree']  // 
     },
@@ -585,6 +585,11 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
      labels: ['Disagree', 'Neutral', 'Agree']  // 
     },
     {
+     id: 'OPG8.5-',
+     question: "I don't handle feedback and or criticism well.",        
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
+    {
      id: 'OPG9+',
      question: "I am _____ talking about my flaws with my friends.",        
      labels: ['Uncomfortable', 'Neutral', 'Comfortable']  // 
@@ -592,7 +597,7 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
     {
      id: 'OPG10+',
-     question: "I am ______ trying to work on an aspect of my character.",        
+     question: "I am ______ trying to intentionally work on an aspect of my character.",        
      labels: ['Never', 'Sometimes', 'Always']  // 
 
     },
