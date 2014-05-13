@@ -9,6 +9,7 @@ var psiTurk = PsiTurk();
 
 // All pages to be loaded
 var pages = [
+    //"consent.html"
     "instruct.html",
     "test.html",
     "postquestionnaire.html"
