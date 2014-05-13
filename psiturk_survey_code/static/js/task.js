@@ -18,6 +18,7 @@ var pages = [
 psiTurk.preloadPages(pages);
 
 var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?/////////////////
+    
     {
      id: 'BF-F1+',
      question: "I lose my temper...",
@@ -31,6 +32,7 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     {
      id: 'BF-F3+',
      question: "My mood changes...",
+     // should this be once a week?
      labels: ['A few times a month', 'A few times a week', 'A few times a day']
     },
     {
@@ -101,17 +103,17 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
     {
      id: 'BF-F16+', 
-     question: "I feel 'blue'... ",
+     question: "I generally feel 'blue'... ",
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
      id: 'BF-F17-', 
-     question: "I feel''alive' and full of life... ",
+     question: "I generally feel alive and full of life... ",
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
-     id: 'BF-F18-?', 
-     question: "I feel comfortable with myself...",
+     id: 'BF-F18+', 
+     question: "I feel uncomfortable with myself...",
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -196,12 +198,12 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
     {
      id: 'BF-F35-', 
-     question: "I probably insult people...", //#######
+     question: "I insult people...", //#######
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
      id: 'BF-F36-', 
-     question: "I think/believe that I am better than certain, other people...", //
+     question: "It occurs to me that I am better than certain, other people...", //
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -211,12 +213,12 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
     {
      id: 'BF-F38-', 
-     question: "I  seek conflict...", //
+     question: "I seek conflict...", //
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
      id: 'BF-F39-', 
-     question: " I love having a good fight...", //
+     question: "I love having a good fight...", //
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -266,7 +268,7 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
     {
      id: 'BF-F49-', 
-     question: "I postpone  making decisions...", //
+     question: "I postpone making decisions...", //
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -281,17 +283,17 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
      {
      id: 'BF-F52-', 
-     question: "I keep things tidy...", //
+     question: "I tidy things up...", //
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
      id: 'BF-F53+', 
-     question: "I follow a regular schedule...", //
+     question: "I generally follow a regular schedule...", //?????????
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
      id: 'BF-F54+', 
-     question: "I want everything to be 'just right'...", //
+     question: "I find that I want everything to be 'just right'...", //
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -358,13 +360,13 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
     {
      id: 'BF-F67-', 
-     question: "I keep others at a distance...", // 
+     question: "I keep others at a distance...", // if you can do this "rarely" or "frequently", why can't you be more specific?
       labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
      id: 'BF-F68-', 
-     question: "In social settings, I keep to myself...", // talking to strangers on the bus???
-      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
+     question: "I generally keep to myself...", 
+     labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
      id: 'BF-F69-', 
@@ -373,17 +375,17 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
     {
      id: 'BF-F70-', 
-     question: "I am generally unenthusiastic about what I am doing or where I am...", // 
+     question: "I find I am unenthusiastic about what I am doing...", // 
       labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {///////////////////////////////////////////////////////////////////////////////////////////
      id: 'BF-F71+', 
-     question: "I take charge of siturations...", // 
+     question: "I take charge of situations...", // 
       labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
      {
      id: 'BF-F72+', 
-     question: "I feel like I have a strong personality...", // 
+     question: "I generally feel like I have a strong personality...", // 
       labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -443,7 +445,7 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
     {
      id: 'BF-F84+', 
-     question: "I use large or uncommon words...", 
+     question: "I use large or uncommon words...", //should this be changed to be slightly morefrequent?
       labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -479,11 +481,11 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
      {
      id: 'BF-F91-', 
      question: "It takes me a while to learn something new...", 
-      labels: ['Hardly ever', 'Every so often', 'Constantly']
+      labels: ['Hardly ever', 'Every so often', 'Constantly']//?????
     },
      {///////////////////////////////////////aesthetic sense///////////////////////////////////////////////////////////////////////
      id: 'BF-F92-', 
-     question: "I enjoy/notice the beauty of nature...", 
+     question: "I notice the beauty of nature...", 
        labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -508,7 +510,7 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
     },
      {
      id: 'BF-F97+', 
-     question: "I need a creative outlet...", 
+     question: "I find that I need a creative outlet...", 
       labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -517,9 +519,9 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
       labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
-     id: 'BF-F99+', 
-     question: "I see plays...", 
-      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
+     id: 'BF-F99+', ////////////////////////////////////////////////////this needs work////
+     question: "I go to the theater...", /// 
+      labels: ['Once every 3 months', 'About once a month', 'Once a week or more']
     },
     {
      id: 'BF-F100+', 
@@ -541,14 +543,14 @@ var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?//////////
         
 ]);
 
- var QUESTIONSmindset = _.shuffle([ //anyway to shuffle the two large blocks?/////////////////
+ var QUESTIONSmindset = _.shuffle([ 
     {
      id: 'OPG1+',
      question: "Please estimate the following: On the whole, I am _____ percent responsible for who I am.",
      labels: ['0', '50', '100'] 
     },
     {
-     id: 'OPG2-',//?
+     id: 'OPG2-',
      question: "If I'm running late or I mess something up, it's usually due to forces beyond my control.",   //more locus of control     
      labels: ['Disagree', 'Neutral', 'Agree']  // 
     },
