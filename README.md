@@ -11,7 +11,9 @@ See https://osf.io/u8nwr/ for more details regarding the research.
 Specifically, click above to read the registration of intention for this project. 
 
 Licsening note: 
-All personality items containted herein are the express property of their respective authors. The Big Five Frequency items are for academic use only, please contact me for persmission regarding usage in commercial settings.
+<<<<<<< HEAD
+All personality items containted herein are the express property of their author. The personality items are not to for commercial use without my permission. They can, however, be used for academic and research purposes. If you do use these items for research, I'd be very curious to hear from you. 
+>>>>>>> 709f5f101d3c190655b26915d2ab7f2f0ddf8c84
 
 If you are using these items for research, I'd be happy to hear from you.
 
