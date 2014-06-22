@@ -1,8 +1,32 @@
-<div id="container-exp">
-	<div id="trial">
-		<h1>Respond Quickly!</h1>
-		<p>What color is this word?</p>
-		<div id="stim"></div>
-		<div id="query"></div>
+<div class="container phased-questions">
+	<div class="alert alert-warning hidden">
+		<strong>Uh-oh!</strong> It looks like you forgot to answer some questions. If this was your intention, simply click "Continue" again.
 	</div>
+	<form role="form">
+		<ol></ol>
+		<div class="instructionsnav">
+			<div class="row">
+				<footer class="col-xs-offset-3 col-xs-6">
+					Page #<span class="page-num">1</span>
+				</footer>
+				<nav class="col-xs-3">
+					<button class="btn btn-primary btn-lg continue">
+						<span class="label">Contine</span> <span class="glyphicon glyphicon-arrow-right"></span>
+					</button>
+				</nav>
+			</div>
+		</div>
+	</form>
 </div>
+
+<script type="text/html" id="question-template">
+	<li class="form-group question">
+		<h4 class="help-block"><%- question %></h4>
+		<input name="<%- id %>" type="range" min="0" max="100" value="50" class="form-control slider">
+		<div class="row labels">
+			<span class="left col-xs-4"><%- labels[2] %></span>
+			<span class="center col-xs-4"><%- labels[1] %></span>
+			<span class="right col-xs-4"><%- labels[0] %></span>
+		</div>
+	</li>
+</script>

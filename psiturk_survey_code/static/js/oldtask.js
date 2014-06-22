@@ -1,4 +1,4 @@
-/*
+*
  * Requires:
  *     psiturk.js
  *     utils.js

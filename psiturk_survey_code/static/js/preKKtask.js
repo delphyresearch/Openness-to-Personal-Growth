@@ -1,37 +1,25 @@
 /*
  * Requires:
- *     psiturk.js
- *     utils.js
+ *  psiturk.js
+ *  utils.js
  */
 
 // Initalize psiturk object
-var psiTurk = PsiTurk(uniqueId, adServerLoc);
-
-var mycondition = condition;  // these two variables are passed by the psiturk server process
-var mycounterbalance = counterbalance;  // they tell you which condition you have been assigned to
+var psiTurk = PsiTurk();
 
 // All pages to be loaded
 var pages = [
-	"stage.html",
-	"postquestionnaire.html"
+    "consent.html"
+    "instructions/instruct-1.html",
+    "test.html",
+    "postquestionnaire.html"
 ];
 
-// add as a list as many pages as you like
-var instructionPages = [
-	"instructions/instruct-1.html",
-	"instructions/instruct-2.html",
-	"instructions/instruct-3.html",
-	"instructions/instruct-ready.html"
-];
+psiTurk.preloadPages(pages);
 
-psiTurk.preloadPages(pages.concat(instructionPages));
-
-
-// Each key should represent a set of questions
-var QUESTIONS = {};
-
-QUESTIONS.p = _.shuffle([
-	 {
+var QUESTIONSp = _.shuffle([ //anyway to shuffle the two large blocks?/////////////////
+    
+    {
      id: 'BF-F1+',
      question: "I lose my temper...",
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more'] 
@@ -105,7 +93,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F14+', 
-     question: "I feel overwhelmed...", 
+     question: "I get overwhelmed...", 
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -160,7 +148,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F25+', 
-     question: "I do things for others...",
+     question: "I like to do things for others...",
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -190,9 +178,9 @@ QUESTIONS.p = _.shuffle([
     },
     {////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      id: 'BF-F31+', 
-     question: "I respect the will of those with more authority than I...", ////???
+     question: "I respect the will of authority...", 
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
-    },//As often as possible, most of the time, not so much...
+    },
     {
      id: 'BF-F32+',
      question: "I try to avoid seeming pushy...", //#######
@@ -200,7 +188,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F33+', 
-     question: "I actively avoid imposing my will on others...", //#######
+     question: "I avoid imposing my will on others...", //#######
      labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
     },
     {
@@ -552,101 +540,116 @@ QUESTIONS.p = _.shuffle([
     }
 
  
+        
 ]);
 
-QUESTIONS.mindset = _.shuffle([
-	{
-		id: 'OPG1plus',
-		question: "Please estimate the following by selecting a number between 0 and 100: On the whole, I am _____ percent responsible for who I am.",
-		labels: ['0', '50', '100']
-	},
-	{
-		id: 'OPG2minus',
-		question: "If I'm running late, or I mess something up, it's usually due to unforseeable circumstances.",   //more locus of control
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG3plus',
-		question: "In general, I take responsibility for _______ that happens to me, regardless of external factors.",
-		labels: ['Few of the things', 'Some of things', 'Everything']  //
-	},
-	{
-		id: 'OPG4plus',
-		question: "No matter what happens or how I feel, it is ultimately on me to see something that I want done all of the way through. ",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG4plus',
-		question: "How well I do in life is _______ under my control.",
-		labels: ['Somewhat', 'Mostly', 'Entierly']  //
-	},
-	{
-		id: 'OPG5plus',
-		question: "The purpose of life is to learn life's lessons.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG6plus',
-		question: "There is something I can learn from every experience, regardless of how good, bad, boring or interesting it is.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG7minus',
-		question: "Negative emotions should be avoided as much as possible.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG8plus',
-		question: "In general, I keep myself 'open' to criticism and feedback about my behaviour.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG9plus',
-		question: "I am _____ talking about my flaws with my friends.",
-		labels: ['Uncomfortable', 'Neutral', 'Comfortable']  //
-	},
-	{
-		id: 'OPG10plus',
-		question: "I am ______ trying to work on an aspect of my character.",
-		labels: ['Never', 'Sometimes', 'Always']  //
-	},
-	{
-		id: 'OPG11plus',
-		question:  "There is something that I can learn from ______ the people that I know.",
-		labels: ['A few of', 'Some of', 'All of']  //
-	},
-	{
-		id: 'OPG12plus',
-		question: "All people are of equal worth.",
-		labels: ['Disagree','Neutral','Agree']
-	},
-	{
-		id: 'OPG12.5plus',
-		question: "All people that I pass by, run into or interact with day-to-day are of equal worth.",
-		labels: ['Disagree','Neutral','Agree']
-	},
-	{
-		id: 'OPG13minus',//??????????
-		question: "If I had to, I could rank where in the social status hierarchy my friends would be.",
-		labels: ['Disagree', 'Neutral', 'Agree']
-	},
-	{
-		id: 'OPG14minus',
-		question: "Certain people don't deserve my empathy or attention.",
-		labels: ['Disagree', 'Neutral', 'Agree']
-	}
-]);
+ var QUESTIONSmindset = _.shuffle([ 
+    {
+     id: 'OPG1+',
+     question: "Please estimate the following: On the whole, I am _____ percent responsible for who I am.",
+     labels: ['0', '50', '100'] 
+    },
+    {
+     id: 'OPG2-',
+     question: "If I'm running late or I mess something up, it's usually due to forces beyond my control.",   //more locus of control     
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
+    {
+     id: 'OPG3+',
+     question: "I try to be responsible for everything that happens to me, regardless of external circumstances." ,    
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
 
-// DIY indexBy support, since psiTurk uses an older version of Underscore.js
-_.mixin({
-	indexBy: function(indexArray, by) {
-		return _.chain(indexArray)
-			.groupBy(by)
-			.map(function(arr, key) { return [key, _.first(arr)]; })
-			.object()
-			.value();
-	}
-});
+    {
+     id: 'OPG4+',
+     question: "No matter what happens or how I feel, it is ultimately on me to see something that I want done all of the way through. " ,     
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
+
+    {
+     id: 'OPG5+',
+     question: "The purpose of life is to learn life's lessons."  ,      
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
+    {
+     id: 'OPG6+',
+     question: "There is something I can learn from every experience, regardless of how good, bad, boring or interesting it is." ,       
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
+    {
+     id: 'OPG7-',
+     question: "Negative emotions should be avoided as much as possible." ,      
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
+    {id: 'OPG8+',
+    question: "I reflect on what I have learned about myself...  "
+    lables: ['Once a week or less', 'A few times a week', 'Every Day']
+    }
+    {
+     id: 'OPG9+',
+     question: "In general, I keep myself 'open' to criticism and feedback about my behaviour.",        
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
+    {
+     id: 'OPG10-',
+     question: "I don't handle feedback and or criticism well.",        
+     labels: ['Disagree', 'Neutral', 'Agree']  // 
+    },
+    {
+     id: 'OPG11+',
+     question: "I am _____ talking about my flaws and shortcomings with my friends.",        
+     labels: ['Uncomfortable', 'Neutral', 'Comfortable']  // 
+    },
+    {
+     id: 'OPG12+',
+     question: "Expressing my vulnerability makes me look ",        
+     labels: ['Weak', 'Neutral', 'Strong']  // 
+    },
+    {
+     id: 'OPG13+',
+     question: "I am ______ trying to intentionally work on an aspect of my character.",        
+     labels: ['Never', 'Sometimes', 'Always']  // 
+    },
+    
+    {
+     id: 'OPG14+',
+     question:  "There is something that I can learn from ______ the people that I know.",       
+     labels: ['A few of', 'Some of', 'All of']  // 
+    },
+ 
+    {
+     id: 'OPG15+',
+     question: "All people are of equal worth.", 
+     labels: ['Disagree','Neutral','Agree']  
+    },
+    {
+     id: 'OPG16+',
+     question: "All people that I pass by, run into or interact with day-to-day are no better or worse than I.", 
+     labels: ['Disagree','Neutral','Agree']  
+    },
+    {
+     id: 'OPG17-',//??????????
+     question: "If I had to, I could rank where in the social status hierarchy my friends would be." ,   
+     labels: ['Disagree', 'Neutral', 'Agree']   
+    }, 
+    {
+     id: 'OPG18-',
+     question: "Certain people don't deserve my empathy or attention." ,   
+     labels: ['Disagree', 'Neutral', 'Agree']   
+    },     
+      {
+     id: 'BF-F19-', //this is an equal worth question.
+     question: "It occurs to me that I am better than certain, other people...", //
+     labels: ['Less than once a month', 'A few times a month', 'Twice a week or more']
+    },
+
+    ]);   
+
+
+//QUESTION KEY IS: NOT CURRENT
+// Task object to keep track of the current phase
+var currentview;
+
 
 /********************
 * HTML manipulation
@@ -658,173 +661,135 @@ _.mixin({
 *
 ********************/
 
-var PhasedQuestions = function() {
-	var self = this;
 
-	// NOTE: the following variables can be safely modified
+/*************************
+* INSTRUCTIONS
+*************************/
 
-	// Each set of questions, in the order they should appear
-	self.phases = [QUESTIONS.p, QUESTIONS.mindset];
+var Instructions = function(pages) {
+    var currentscreen = 0,
+       timestamp;
+       instruction_pages = pages;
 
-	// The maximum number of questions per page
-	self.PER_PAGE = 25;
+    var next = function() {
+     psiTurk.showPage(instruction_pages[currentscreen]);
+     $('.continue').click(function() {
+       buttonPress();
+     });
 
-	// WARNING: the following variables are intended for internal use
+     currentscreen = currentscreen + 1;
 
-	if (!self.phases) throw new Error('No phases were set.');
+     // Record the time that an instructions page is presented
+     timestamp = new Date().getTime();
+    };
 
-	// HTML classes
-	self.classes = {
-		error: 'has-warning',
-		hidden: 'hidden'
-	};
+    var buttonPress = function() {
 
-	// Which page we're on
-	self.PAGE_INDEX = 0;
+     // Record the response time
+     var rt = (new Date().getTime()) - timestamp;
+     psiTurk.recordTrialData(["INSTRUCTIONS", currentscreen, rt]);
 
-	// The default value for input[type=range]
-	self.defaultValue = '50';
+     if (currentscreen == instruction_pages.length) {
+       finish();
+     } else {
+       next();
+     }
 
-	// The current set of questions
-	self.currentPhase = null;
+    };
 
-	// Have the validations been run at least once
-	self.hasValidated = false;
+    var finish = function() {
+     // Record that the user has finished the instructions and
+     // moved on to the experiment. This changes their status code
+     // in the database.
+     //psiTurk.finishInstructions();
 
-	// Load the correct HTML
-	psiTurk.showPage('stage.html');
+     // Move on to the experiment
+     currentview = new TestPhase();
+    };
 
-	// Ready the template function
-	self.template = _.template($('#question-template').html());
-
-	// Questions keyed by ID
-	self.questionsById = _.extend.apply(_, [{}].concat(
-		_.map(self.phases, function(phase) { return _.indexBy(phase, 'id'); })
-	));
-
-	// Functions
-
-	self.nextPhase = function() {
-		if (self.phases.length) {
-			// Set the next phase as the current one
-			self.currentPhase = self.phases.shift();
-
-			// Reset to page #1
-			self.PAGE_INDEX = 0;
-
-			// And show it
-			self.renderPage();
-		} else {
-			// No more questions!
-			self.finish();
-		}
-	};
-
-	self.validate = function() {
-		// We've already warned the user about unanswered questions
-		if (self.hasValidated) return true;
-
-		// Any unanswered questions?
-		var numDefaultValues = 0;
-
-		// Check each question for non-answers
-		$('.phased-questions .slider').each(function(i, el) {
-			var $el = $(el);
-			if ($el.val() === self.defaultValue) {
-				numDefaultValues++;
-				$el.closest('.form-group').addClass(self.classes.error);
-			}
-		});
-
-		// No unanswered questions!
-		if (!numDefaultValues) return true;
-
-		// Unanswered questions :(
-		self.hasValidated = true;
-		return false;
-	};
-
-	self.nextPage = function() {
-		// Last page of questions; proceed to next set
-		if (self.isOnLastPage()) {
-			return self.nextPhase();
-		}
-
-		// Render the next page of questions
-		self.PAGE_INDEX++;
-		self.renderPage();
-	};
-
-	// Helpers
-	self.getQuestionById = function(id) { return self.questionsById[id]; };
-	self.isOnFirstPage = function() { return self.PAGE_INDEX === 0; };
-	self.isOnLastPage = function() { return Math.floor(self.currentPhase.length / self.PER_PAGE) === self.PAGE_INDEX; };
-	self.showWarning = function() { $('.phased-questions .alert-warning').removeClass(self.classes.hidden); };
-	self.hideWarning = function() { $('.phased-questions .alert-warning').addClass(self.classes.hidden); };
-
-	self.renderPage = function() {
-		// Reset some state
-		self.hasValidated = false;
-		self.hideWarning();
-
-		var startIndex = self.PER_PAGE * self.PAGE_INDEX;
-
-		// Run this chunk of questions through the template function
-		var questions = _.map(self.currentPhase.slice(startIndex, startIndex + self.PER_PAGE), self.template);
-
-		// Set the page number
-		$('.phased-questions .page-num').text(self.PAGE_INDEX + 1);
-
-		// Set the question # offset
-		// and render the questions
-		$('.phased-questions form ol')
-			.attr('start', startIndex + 1)
-			.html(questions.join("\n"));
-	};
-
-	// Move on to the next psiTurk situation
-	self.finish = function() { currentview = new Questionnaire(); };
-
-	// Bind the UI elements
-
-	// When "Continue" is clicked
-	$(document).on('submit', '.phased-questions form', function(e) {
-		e.preventDefault();
-
-		if (self.validate()) {
-			// All questions were answered; record them and proceed!
-			var answers = _.indexBy($(e.currentTarget).serializeArray(), 'name');
-			_.each(answers, function(answer, id) {
-				var question = self.getQuestionById(id);
-				question.answer = answer.value;
-				psiTurk.recordTrialData(question);
-			});
-			self.nextPage();
-		} else {
-			// Scroll to the top and show the warning
-			$('html, body').animate({ scrollTop: 0 }, 1000, self.showWarning);
-		}
-	});
-
-	// When a slider is clicked/moved
-	$(document).on('change', '.phased-questions .slider', function(e) {
-		var $el = $(e.currentTarget);
-
-		// The answer to the question didn't change
-		if ($el.val() === self.defaultValue) return;
-
-		// Remove the warning color from this question
-		$el.closest('.form-group').removeClass(self.classes.error);
-
-		// No more questions have default values
-		if (!$('.form-group.' + self.classes.error).length) {
-			self.hideWarning();
-		}
-	});
-
-	// Start 'er up!
-	self.nextPhase();
+    next();
 };
+
+/********************
+* DERRPY TEST     *
+********************/
+
+var TestPhase = function() {
+
+    var PER_PAGE = 2;
+    var PAGE_INDEX = 0;
+
+    // Load the test.html snippet into the body of the page
+    psiTurk.showPage('test.html');
+    var template = _.template($('#question-template').html());
+
+    // template works like this:
+    /*
+    template({
+     question: 'This is a question',
+     labels: ['right', 'center', 'left']
+    });
+    */
+
+    /*
+    var next = function() {
+     if (stims.length === 0) {
+       finish();
+     } else {
+       stim = stims.shift();
+       show_word( stim[0], stim[1] );
+       wordon = new Date().getTime();
+       listening = true;
+       $('#query').html(resp_prompt).show();
+     }
+    };
+    */
+
+    $(document).on('click', 'nav a', function(e) {
+     e.preventDefault();
+     var nav = $(e.currentTarget);
+     if (nav.hasClass('disabled')) return;
+
+     if (nav.hasClass('prev')) {
+       PAGE_INDEX--;
+       render();
+     } else if (nav.hasClass('next')) {
+       PAGE_INDEX++;
+       render();
+     }
+    });
+
+    $(document).on('click', '.finish.button', function() {
+     e.preventDefault();
+     // finish()...
+    });
+
+    var isFirstPage = function() { return PAGE_INDEX === 0; };
+    var isLastPage = function() { return Math.floor(QUESTIONSp.length / PER_PAGE) === PAGE_INDEX; };
+
+    var render = function() {
+     // $('input[type=range]').fancyjQueryRangePlugin({
+     //   options: true
+     // });
+
+     $('.test .page-num').text(PAGE_INDEX + 1);
+     $('.test a.prev').toggleClass('disabled', isFirstPage());
+     $('.test a.next').toggleClass('disabled', isLastPage());
+
+     var startIndex = PER_PAGE * PAGE_INDEX;
+     var questions = _.map(QUESTIONSp.slice(startIndex, startIndex + PER_PAGE), template);
+     $('.test .questions').html(questions.join("\n"));
+    };
+
+    var finish = function() {
+     // psiTurk.recordTrialData(["TEST", stim[0], stim[1], stim[2], response, hit, rt]);
+     currentview = new Questionnaire();
+    };
+
+    // Start the test
+    render();
+};
+
 
 /****************
 * Questionnaire *
@@ -832,68 +797,65 @@ var PhasedQuestions = function() {
 
 var Questionnaire = function() {
 
-	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
+    var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
 
-	record_responses = function() {
-		psiTurk.recordTrialData({ phase: 'postquestionnaire', status: 'submit' });
+    record_responses = function() {
 
-		$('textarea').each(function(i, val) {
-			psiTurk.recordUnstructuredData(this.id, this.value);
-		});
-		$('select').each(function(i, val) {
-			psiTurk.recordUnstructuredData(this.id, this.value);
-		});
-	};
+     psiTurk.recordTrialData(['postquestionnaire', 'submit']);
 
-	prompt_resubmit = function() {
-		replaceBody(error_message);
-		$("#resubmit").click(resubmit);
-	};
+     $('textarea').each( function(i, val) {
+       psiTurk.recordUnstructuredData(this.id, this.value);
+     });
+     $('select').each( function(i, val) {
+       psiTurk.recordUnstructuredData(this.id, this.value);
+     });
 
-	resubmit = function() {
-		replaceBody("<h1>Trying to resubmit...</h1>");
-		reprompt = setTimeout(prompt_resubmit, 10000);
+    };
 
-		psiTurk.saveData({
-			success: function() {
-				clearInterval(reprompt);
-				psiTurk.computeBonus('compute_bonus', finish);
-			},
-			error: prompt_resubmit
-		});
-	};
+    finish = function() {
+     debriefing();
+    };
 
-	// Load the questionnaire snippet
-	psiTurk.showPage('postquestionnaire.html');
-	psiTurk.recordTrialData({ phase: 'postquestionnaire', status: 'begin' });
+    prompt_resubmit = function() {
+     replaceBody(error_message);
+     $("#resubmit").click(resubmit);
+    };
 
-	$("#next").click(function() {
-		record_responses();
-		psiTurk.saveData({
-			success: function(){
-				psiTurk.computeBonus('compute_bonus', function() {
-					psiTurk.completeHIT(); // when finished saving compute bonus, the quit
-				});
-			},
-			error: prompt_resubmit
-		});
-	});
+    resubmit = function() {
+     replaceBody("<h1>Trying to resubmit...</h1>");
+     reprompt = setTimeout(prompt_resubmit, 10000);
 
+     psiTurk.saveData({
+       success: function() {
+         clearInterval(reprompt);
+         finish();
+       },
+       error: prompt_resubmit}
+     );
+    };
+
+    // Load the questionnaire snippet
+    psiTurk.showPage('postquestionnaire.html');
+    psiTurk.recordTrialData(['postquestionnaire', 'begin']);
+
+    $("#continue").click(function () {
+     record_responses();
+     psiTurk.teardownTask();
+       psiTurk.saveData({success: finish, error: prompt_resubmit});
+    });
 
 };
 
-// Task object to keep track of the current phase
-var currentview;
+var debriefing = function() { window.location="/debrief?uniqueId=" + psiTurk.taskdata.id; };
 
 /*******************
  * Run Task
  ******************/
-$(window).load(function() {
-	psiTurk.doInstructions(
-		instructionPages, // a list of pages you want to display in sequence
-		function() {
-			// what you want to do when you are done with instructions
-			currentview = new PhasedQuestions();
-		}
-	);
+$(window).load(function(){
+     currentview = new Instructions([
+     "instruct.html"
+    ]);
 });
+
+// vi: noexpandtab tabstop=4 shiftwidth=4
+
