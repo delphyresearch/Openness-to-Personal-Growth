@@ -555,33 +555,38 @@ QUESTIONS.p = _.shuffle([
 
 QUESTIONS.mindset = _.shuffle([
 	{
-		id: 'OPG1plus',
+		id: 'PBR_1_+',
 		question: "Please estimate the following by selecting a number between 0 and 100: On the whole, I am _____ percent responsible for who I am.",
 		labels: ['0', '50', '100']
 	},
 	{
-		id: 'OPG2minus',
+		id: 'PBR_2_-',
 		question: "If I'm running late, or I mess something up, it's usually due to unforseeable circumstances.",   //more locus of control
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
-		id: 'OPG3plus',
-		question: "In general, I take responsibility for _______ that happens to me, regardless of external factors.",
-		labels: ['Few of the things', 'Some of things', 'Everything']  //
+		id: 'PBR_3_+',
+		question: "In general, I take responsibility for _______ that happens to me, regardless of external factors."
+        labels: ['Few of the things', 'Some of things', 'Everything']  //
 	},
+    {
+        id: 'PBR_4_-',
+        question: "Over the past week, I attributed cause to something else but me...."
+            //BREAKKKKK COME BACK TO THIS
+    }
 	{
-		id: 'OPG4plus',
+		id: 'PBR_4_+',
 		question: "No matter what happens or how I feel, it is ultimately on me to see something that I want done all of the way through. ",
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
-		id: 'OPG4plus',
+		id: 'PBR_5_+',
 		question: "How well I do in life is _______ under my control.",
 		labels: ['Somewhat', 'Mostly', 'Entierly']  //
 	},
 	{
-		id: 'OPG5plus',
-		question: "The purpose of life is to learn life's lessons.",
+		id: 'OPG_1_+',
+		question: "The purpose of life is to learn life's lessons.",//Familiarty with this phrase?
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
@@ -604,6 +609,14 @@ QUESTIONS.mindset = _.shuffle([
 		question: "I am _____ talking about my flaws with my friends.",
 		labels: ['Uncomfortable', 'Neutral', 'Comfortable']  //
 	},
+    {
+        id:'OPG10NEUTRAL'
+        question: "On the whole, I feel that I am _______ the majority of the people I meet.",
+        labels: ['Beneath', 'Equal to','Above']
+    },
+    {
+        id:''
+    }
 	{
 		id: 'OPG10plus',
 		question: "I am ______ trying to work on an aspect of my character.",
