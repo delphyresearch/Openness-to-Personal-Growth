@@ -562,18 +562,13 @@ QUESTIONS.mindset = _.shuffle([
 	{
 		id: 'PBR_2_-',
 		question: "If I'm running late, or I mess something up, it's usually due to unforseeable circumstances.",   //more locus of control
-		labels: ['Disagree', 'Neutral', 'Agree']  //
+		labels: ['Disagree', 'Neutral', 'Agree']  
 	},
 	{
 		id: 'PBR_3_+',
 		question: "In general, I take responsibility for _______ that happens to me, regardless of external factors."
-        labels: ['Few of the things', 'Some of things', 'Everything']  //
+        labels: ['Few of the things', 'Some of the things', 'Everything'] 
 	},
-    {
-        id: 'PBR_4_-',
-        question: "Over the past week, I attributed cause to something else but me...."
-            //BREAKKKKK COME BACK TO THIS
-    }
 	{
 		id: 'PBR_4_+',
 		question: "No matter what happens or how I feel, it is ultimately on me to see something that I want done all of the way through. ",
@@ -582,71 +577,75 @@ QUESTIONS.mindset = _.shuffle([
 	{
 		id: 'PBR_5_+',
 		question: "How well I do in life is _______ under my control.",
-		labels: ['Somewhat', 'Mostly', 'Entierly']  //
+		labels: ['Somewhat', 'Mostly', 'Entirely']  //
 	},
+    {
+        id: 'PBR_6+',
+        question: "I can change my personality."
+        labels: ['Agree','Neutral','Disagree']
+    }
 	{
 		id: 'OPG_1_+',
-		question: "The purpose of life is to learn life's lessons.",//Familiarty with this phrase?
-		labels: ['Disagree', 'Neutral', 'Agree']  //
+		question: "How familiar are you with the following statement: 'The purpose of life is to learn life's lessons.",
+        labels: ['Unfamiliar', 'Neutral', 'Familiar']  //
 	},
 	{
-		id: 'OPG6plus',
+		id: 'OPG_2_+',
 		question: "There is something I can learn from every experience, regardless of how good, bad, boring or interesting it is.",
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
-		id: 'OPG7minus',
-		question: "Negative emotions should be avoided as much as possible.",
+		id: 'OPG_3_-',
+		question: "Negative emotions should be avoided entirely.",
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
-		id: 'OPG8plus',
-		question: "In general, I keep myself 'open' to criticism and feedback about my behaviour.",
+		id: 'OPG_4_+',
+		question: "In general, I keep myself 'open' to criticism and feedback about my behavior.",
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
-		id: 'OPG9plus',
+		id: 'OPG_5_+',
 		question: "I am _____ talking about my flaws with my friends.",
 		labels: ['Uncomfortable', 'Neutral', 'Comfortable']  //
 	},
-    {
-        id:'OPG10NEUTRAL'
-        question: "On the whole, I feel that I am _______ the majority of the people I meet.",
-        labels: ['Beneath', 'Equal to','Above']
-    },
-    {
-        id:''
-    }
 	{
-		id: 'OPG10plus',
+		id: 'OPG_6_+',
 		question: "I am ______ trying to work on an aspect of my character.",
 		labels: ['Never', 'Sometimes', 'Always']  //
 	},
 	{
-		id: 'OPG11plus',
+		id: 'OPG_7_+',
 		question:  "There is something that I can learn from ______ the people that I know.",
 		labels: ['A few of', 'Some of', 'All of']  //
 	},
 	{
-		id: 'OPG12plus',
+		id: 'IE_1_+',
 		question: "All people are of equal worth.",
 		labels: ['Disagree','Neutral','Agree']
 	},
 	{
-		id: 'OPG12.5plus',
-		question: "All people that I pass by, run into or interact with day-to-day are of equal worth.",
+		id: 'IE_2_+',
+		question: "All people that I pass by, run into or interact with day-to-day are of equal status as I.",
 		labels: ['Disagree','Neutral','Agree']
 	},
+    {
+        id:'IE_3_NEUTRAL'
+        question: "In general, I feel that I am _______ the people that I meet.",
+        labels: ['Beneath', 'Equal to','Above']
+    },
+    //'ranking' people in a social hierarchy?
 	{
-		id: 'OPG13minus',//??????????
-		question: "If I had to, I could rank where in the social status hierarchy my friends would be.",
-		labels: ['Disagree', 'Neutral', 'Agree']
-	},
-	{
-		id: 'OPG14minus',
+		id: 'IE4_-',
 		question: "Certain people don't deserve my empathy or attention.",
 		labels: ['Disagree', 'Neutral', 'Agree']
 	}
+    {
+        id: 'IE5_-',
+        question: "Hitler was less than human.",
+        labels: ['Disagree', 'Neutral', 'Agree']
+    }
+
 ]);
 
 // DIY indexBy support, since psiTurk uses an older version of Underscore.js
@@ -819,11 +818,13 @@ var PhasedQuestions = function() {
 	});
 
 	// When a slider is clicked/moved
+    //
 	$(document).on('change', '.phased-questions .slider', function(e) {
 		var $el = $(e.currentTarget);
 
 		// The answer to the question didn't change
 		if ($el.val() === self.defaultValue) return;
+        //if thing has been clicked??
 
 		// Remove the warning color from this question
 		$el.closest('.form-group').removeClass(self.classes.error);

@@ -1,0 +1,35 @@
+[HIT Configuration]
+title = Behavioral Personality Study
+description = Take a research personality survey! Help develop a new personality assessment.
+amt_keywords = Personality, Psychology, Myers-Briggs,Behavior,Survey,Big Five
+lifetime = 48
+us_only = true
+approve_requirement = 95
+contact_email_on_error = evanw@evanwarfel.com
+ad_group = Personality Assessment: OPG-H
+psiturk_keywords = Humility, Big Five, Personality
+organization_name = Warfel's Wonderus Wresearch 
+browser_exclude_rule = MSIE, mobile, tablet, bot
+
+[Database Parameters]
+database_url = sqlite:///participants.db
+table_name = sample_table
+
+[Server Parameters]
+host = localhost
+port = 22362
+cutoff_time = 30
+logfile = server.log
+loglevel = 2
+debug = true
+login_username = examplename
+login_pw = examplepassword
+threads = auto
+
+[Task Parameters]
+experiment_code_version = 1.1
+num_conds = 1
+num_counters = 1
+
+[Shell Parameters]
+launch_in_sandbox_mode = true
