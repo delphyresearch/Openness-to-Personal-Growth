@@ -1,3 +1,5 @@
+####QUESTIONS CURRENT 8/26/2014
+
 var QUESTIONS = {};
 
 QUESTIONS.p = _.shuffle([
@@ -526,18 +528,21 @@ QUESTIONS.p = _.shuffle([
 QUESTIONS.mindset = _.shuffle([
 	{
 		id: 'PBR_1_+',
-		question: "Please estimate the following by selecting a number between 0 and 100: On the whole, I am _____ percent responsible for who I am.",
+		question: "Please estimate the following by selecting a number between 0 and 100:
+		 I am _____ percent responsible for who I am.",
 		labels: ['0', '50', '100']
 	},
 	{
 		id: 'PBR_2_-',
-		question: "If I'm running late, or I mess something up, it's usually due to unforseeable circumstances.",   //more locus of control
+		question: "If I'm running late, or I mess something up,
+		 it's usually due to unforseeable circumstances.",   //more locus of control
 		labels: ['Disagree', 'Neutral', 'Agree']  
 	},
 	{
 		id: 'PBR_3_+',
-		question: "In general, I take responsibility for _______ that happens to me, regardless of external factors."
-        labels: ['Few of the things', 'Some of the things', 'Everything'] 
+		question: "In general, I take responsibility for what will happend to me,
+		 regardless of external factors."
+        labels: ['Disagree', 'Neither Agree nor Disagree', 'Agree'] 
 	},
 	{
 		id: 'PBR_4_+',
@@ -551,17 +556,24 @@ QUESTIONS.mindset = _.shuffle([
 	},
     {
         id: 'PBR_6+',
-        question: "I can change my personality."
+        question: "It is impossible for me to conciously change my personality",
         labels: ['Agree','Neutral','Disagree']
-    }
+    },
+    {
+        id: 'PBR_7-',
+        question: "Ou Personal flaws are deeply ingrained into who we are.",
+        labels: ['Agree','Neutral','Disagree']
+    },
 	{
 		id: 'OPG_1_+',
-		question: "How familiar are you with the following statement: 'The purpose of life is to learn life's lessons.",
+		question: "How familiar are you with the following statement: 
+		'The purpose of life is to learn life's lessons.",
         labels: ['Unfamiliar', 'Neutral', 'Familiar']  //
 	},
 	{
 		id: 'OPG_2_+',
-		question: "There is something I can learn from every experience, regardless of how good, bad, boring or interesting it is.",
+		question: "There is something I can learn from every experience, 
+		regardless of how good, bad, boring or interesting it is.",
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{

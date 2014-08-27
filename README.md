@@ -12,7 +12,7 @@ Specifically, click above to read the registration of intention for this project
 
 Licsening note: 
 
-All personality items containted herein are the express property of their author. The personality items are not for commercial use without my permission. They can, however, be used for academic research purposes. 
+All novel personality items containted herein are copyrighted as well as the expressproperty of their author. The personality items are not to be used for commercial use without my explicit permission. They can, however, be used for academic research purposes. 
 
 
 If you are using these items for research, I'd be happy to hear from you.
