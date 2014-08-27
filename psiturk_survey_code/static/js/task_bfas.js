@@ -445,7 +445,7 @@ var QUESTIONS_BFAS = _.shuffle([ //anyway to shuffle the two large blocks?//////
     {
      id: 'BF-F85+', 
      question: "I find that people over-explain things...", 
-      labels: ['Disagree', 'Neutral', 'Agree]
+      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
      id: 'BF-F86+', 
@@ -470,7 +470,12 @@ var QUESTIONS_BFAS = _.shuffle([ //anyway to shuffle the two large blocks?//////
     {
      id: 'BF-F90-', 
      question: "I read light, fun books...", 
-      labels: ['Hardly ever', 'About once a month', 'Disagree or Neutral {
+      labels: ['Hardly ever', 'About once a month', 'Disagree or Neutral'
+
+      %%%%%%%%%%%%%%WHAT IS QUESTION 91?
+
+
+       {
   gree, 
      question: "It takes me a while to learn something new...", 
       labels: ['Hardly ever', 'Every so often', 'Constantly']

@@ -540,13 +540,14 @@ QUESTIONS.mindset = _.shuffle([
 	},
 	{
 		id: 'PBR_3_+',
-		question: "In general, I take responsibility for what will happend to me,
-		 regardless of external factors."
-        labels: ['Disagree', 'Neither Agree nor Disagree', 'Agree'] 
+		question: "If I were asked about the next 3 months, I'd take _____% responsibility for what will happen
+         to me.", //need to find the non judgemental version of this
+        labels: ['0', '50', '100'] 
 	},
 	{
 		id: 'PBR_4_+',
-		question: "No matter what happens or how I feel, it is ultimately on me to see something that I want done all of the way through. ",
+		question: "No matter what happens or how I feel,
+         it is ultimately on me to see something that I want done all of the way through. ",
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
@@ -554,53 +555,77 @@ QUESTIONS.mindset = _.shuffle([
 		question: "How well I do in life is _______ under my control.",
 		labels: ['Somewhat', 'Mostly', 'Entirely']  //
 	},
+
     {
-        id: 'PBR_6+',
-        question: "It is impossible for me to conciously change my personality",
-        labels: ['Agree','Neutral','Disagree']
+        id: 'PBR_6-',
+        question: "It is impossible for people to change their personality.",
+        labels: ['Disagree', 'Neutral', 'Agree'] 
     },
     {
         id: 'PBR_7-',
-        question: "Ou Personal flaws are deeply ingrained into who we are.",
-        labels: ['Agree','Neutral','Disagree']
+        question: "In general, personal flaws are deeply ingrained into who a person is.",
+        labels: ['Disagree', 'Neutral', 'Agree'] 
     },
 	{
 		id: 'OPG_1_+',
-		question: "How familiar are you with the following statement: 
-		'The purpose of life is to learn life's lessons.",
+		question: "Please indicate how familiar are you with the following statement: 
+		'The purpose of life is to learn life's lessons.' ",
         labels: ['Unfamiliar', 'Neutral', 'Familiar']  //
 	},
+    {
+        id: 'OPG_2_+',
+        question: "Please indicate how much you believe the following statement: 
+        The purpose of life is to learn life's lessons. ",
+        labels: ['Do not believe', 'Not Sure', 'Strongly Believe']  //
+    },
 	{
-		id: 'OPG_2_+',
+		id: 'OPG_3_+',
 		question: "There is something I can learn from every experience, 
 		regardless of how good, bad, boring or interesting it is.",
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
-		id: 'OPG_3_-',
-		question: "Negative emotions should be avoided entirely.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG_4_+',
-		question: "In general, I keep myself 'open' to criticism and feedback about my behavior.",
+		id: 'OPG_4_-',
+		question: "Negative emotions should be avoided.",
 		labels: ['Disagree', 'Neutral', 'Agree']  //
 	},
 	{
 		id: 'OPG_5_+',
+		question: "In general, I keep myself 'open' to criticism and feedback about my behavior.",
+		labels: ['Disagree', 'Neutral', 'Agree']  //
+	},
+	{
+		id: 'OPG_6_+',
 		question: "I am _____ talking about my flaws with my friends.",
 		labels: ['Uncomfortable', 'Neutral', 'Comfortable']  //
 	},
 	{
-		id: 'OPG_6_+',
+		id: 'OPG_7_+',
 		question: "I am ______ trying to work on an aspect of my character.",
 		labels: ['Never', 'Sometimes', 'Always']  //
 	},
 	{
-		id: 'OPG_7_+',
-		question:  "There is something that I can learn from ______ the people that I know.",
+		id: 'OPG_8_+',
+		question:  "There is something valuable that I can learn from _______ the people that I know.",
 		labels: ['A few of', 'Some of', 'All of']  //
 	},
+    {
+        id: 'OPG_9_+|-',
+        question:  "In comparison to other people, I have more _______ than average",
+        labels: ['Flaws', 'Neither', 'Virtures']  // will this work in slider form?
+        //if need be, break this into two
+    },
+    {
+        id: 'OPG_10_+',
+        question:  "Negative criticism is detrimental.",
+        labels: ['Disagree', 'Neutral', 'Agree']  
+    },
+    {
+        id: 'OPG_11_-',
+        question:  "I criticise myself when I mess up or do something wrong.",
+        labels: ['Disagree', 'Neutral', 'Agree']  // will this work in slider form?
+        //if need be, break this into two
+    },
 	{
 		id: 'IE_1_+',
 		question: "All people are of equal worth.",
@@ -608,23 +633,38 @@ QUESTIONS.mindset = _.shuffle([
 	},
 	{
 		id: 'IE_2_+',
-		question: "All people that I pass by, run into or interact with day-to-day are of equal status as I.",
+		question: "All people that I pass by, run into or interact with day-to-day are of the same status as me.",
 		labels: ['Disagree','Neutral','Agree']
 	},
     {
-        id:'IE_3_NEUTRAL'
-        question: "In general, I feel that I am _______ the people that I meet.",
+        id:'IE_3_+|-'
+        question: "In general, I feel that I am _______ most of the people that I meet.",
         labels: ['Beneath', 'Equal to','Above']
     },
     //'ranking' people in a social hierarchy?
 	{
 		id: 'IE4_-',
-		question: "Certain people don't deserve my empathy or attention.",
+		question: "Some people don't deserve my empathy or attention.",
 		labels: ['Disagree', 'Neutral', 'Agree']
-	}
+	},
     {
         id: 'IE5_-',
         question: "Hitler was less than human.",
+        labels: ['Disagree', 'Neutral', 'Agree']
+    },
+    {
+        id: 'IE6_+',
+        question: "I make eye contact with homeless people.",
+        labels: ['Disagree', 'Neutral', 'Agree']
+    },
+    {
+        id: 'IE7_-',
+        question: "I get intimitated by people who are pretty or smart or both.",
+        labels: ['Disagree', 'Neutral', 'Agree']
+    },
+     {
+        id: 'IE8_-',
+        question: "I like to use a '1-10' scale when determining who to date.",
         labels: ['Disagree', 'Neutral', 'Agree']
     }
 
