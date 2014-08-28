@@ -566,6 +566,12 @@ QUESTIONS.mindset = _.shuffle([
         question: "In general, personal flaws are deeply ingrained into who a person is.",
         labels: ['Disagree', 'Neutral', 'Agree'] 
     },
+    {
+        id: 'PBR_8-',
+        question: "Fate has a lot to do with who a person becomes.",
+        labels: ['Disagree', 'Neutral', 'Agree'] 
+
+    },
 	{
 		id: 'OPG_1_+',
 		question: "Please indicate how familiar are you with the following statement: 
@@ -633,12 +639,13 @@ QUESTIONS.mindset = _.shuffle([
 	},
 	{
 		id: 'IE_2_+',
-		question: "All people that I pass by, run into or interact with day-to-day are of the same status as me.",
+		question: "All people that I pass by, or 
+         run into are of the same status as me.",
 		labels: ['Disagree','Neutral','Agree']
 	},
     {
         id:'IE_3_+|-'
-        question: "In general, I feel that I am _______ most of the people that I meet.",
+        question: "In general, I feel that I am _______ most of the people that interact with.",
         labels: ['Beneath', 'Equal to','Above']
     },
     //'ranking' people in a social hierarchy?
@@ -659,12 +666,12 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'IE7_-',
-        question: "I get intimitated by people who are pretty or smart or both.",
+        question: "I get intimitated by people who are pretty, or smart, or both.",
         labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
         id: 'IE8_-',
-        question: "I like to use a '1-10' scale when determining who to date.",
+        question: "I often use a '1-10' scale when determining who to date.",
         labels: ['Disagree', 'Neutral', 'Agree']
     }
 
