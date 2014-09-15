@@ -17,4 +17,4 @@ All novel personality items containted herein are copyrighted as well as the exp
 
 If you are using these items for research, I'd be happy to hear from you.
 
-I can be reached at evanw [at] evanwarfel [dot]com
+I can be reached at e [dot] warfel [at] gmail [dot] com
