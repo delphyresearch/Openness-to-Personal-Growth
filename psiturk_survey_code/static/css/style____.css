@@ -94,10 +94,6 @@ strong {
 
 .phased-questions { margin-top: 24px; margin-bottom: 24px; }
 
-.phased-questions .slider { margin-bottom: 12px; }
-.phased-questions .slider .noUi-handle { cursor: pointer; }
-.phased-questions .has-success .slider .noUi-handle { background-color: #3c763d; box-shadow: inset 0 0 1px #fff, inset 0 1px 7px rgba(255,255,255,0.3), 0 3px 6px -3px rgba(255,255,225,0.5); }
-
 .phased-questions .labels .left { text-align: left; }
 .phased-questions .labels .center { text-align: center; }
 .phased-questions .labels .right { text-align: right; }
