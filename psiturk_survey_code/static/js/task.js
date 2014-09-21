@@ -31,44 +31,44 @@ psiTurk.preloadPages(pages.concat(instructionPages));
 var QUESTIONS = {};
 
 QUESTIONS.p = _.shuffle([
+    //Question Id's point in the direction of the label. (1-10 = + on withdrawal)
 	 {
      id: 'BF-F1+',
      question: "I lose my temper...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more'] 
+     labels: ['Once every two weeks or less', 'Around once a week', 'Three times a week or more'] 
     },
     {
      id: 'BF-F2+',
      question: "I get upset...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every two weeks or less', 'Around once a week', 'Three times a week or more']
     },
     {
      id: 'BF-F3+',
      question: "In general, my mood changes...",
-     // should this be once a week?
-     labels: ['A few times a week', 'A few times a day', 'Multiple times a day']
+     labels: ['Once a week or less', '3-4 times a week', 'Once per day or more']
     },
     //{id: 'BF-F3.5+',
-    // question: "Compared to other people of my gender, my mood changes...",//'''''''''/'/'/'/=/===/==/=/===/========================='
+    // question: "Compared to other people of my gender, my mood changes..."
     // labels: ['Once a month or lessut as frequently other people's moods", 'More frequently ']},
     {
      id: 'BF-F4+',
      question: "I get agitated...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every two weeks or less', 'Around once a week', 'Three times a week or more']
     },
     {
      id: 'BF-F5+',
      question: "I get stirred up...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['TOnce every two weeks or less', 'Around once a week', 'Three times a week or more']
     },
     {
      id: 'BF-F6-',
      question: "I find myself calm and relaxed...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every few weeks or less', 'Around once a week', 'Three times a week or more']
     },
     {
      id: 'BF-F7-',
      question: "I keep my emotions under control...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every few weeks or less', 'Around once a week', 'Three times a week or more']
     },
     {
      id: 'BF-F8-',
