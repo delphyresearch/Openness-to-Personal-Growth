@@ -30,17 +30,21 @@ psiTurk.preloadPages(pages.concat(instructionPages));
 // Each key should represent a set of questions
 var QUESTIONS = {};
 
+
 QUESTIONS.p = _.shuffle([
-    //Question Id's point in the direction of the label. (1-10 = + on withdrawal)
-	 {
+//Question Id's point in the direction of the label. (1-10 = + on withdrawal)
+
+//paste this whole thing back into lines 31 – 634
+//need instructions that the endpoints should be thought of as containing the words “or less”, or, “or more”
+     {
      id: 'BF-F1+',
      question: "I lose my temper...",
-     labels: ['Once every two weeks or less', 'Around once a week', 'Three times a week or more'] 
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F2+',
      question: "I get upset...",
-     labels: ['Once every two weeks or less', 'Around once a week', 'Three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F3+',
@@ -49,76 +53,75 @@ QUESTIONS.p = _.shuffle([
     },
     //{id: 'BF-F3.5+',
     // question: "Compared to other people of my gender, my mood changes..."
-    // labels: ['Once a month or lessut as frequently other people's moods", 'More frequently ']},
     {
      id: 'BF-F4+',
      question: "I get agitated...",
-     labels: ['Once every two weeks or less', 'Around once a week', 'Three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F5+',
      question: "I get stirred up...",
-     labels: ['TOnce every two weeks or less', 'Around once a week', 'Three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F6-',
      question: "I find myself calm and relaxed...",
-     labels: ['Once every few weeks or less', 'Around once a week', 'Three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F7-',
      question: "I keep my emotions under control...",
-     labels: ['Once every few weeks or less', 'Around once a week', 'Three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F8-',
      question: "I lose my composure...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F9+',
      question: "In general, I get annoyed...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F10+',
      question: "I am filled with doubts about things...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F11-',
      question: "On average, I feel threatened...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F12+',
      question: "I worry about my future...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F13+',
      question: "I get discouraged about what I am doing...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F14+', 
      question: "I feel overwhelmed...", 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']\
     },
     {
      id: 'BF-F15+', 
-     question: "I find myself fearful or afraid...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I find myself fearful and /or afraid...",
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F16+', 
      question: "I generally feel blue... ",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+    labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F17-', 
-     question: "In general, I feel alive and full of life... ",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: " I feel alive and full of life... ",
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F18+', 
@@ -128,335 +131,328 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F19-', 
      question: "I try to live in the moment...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F20+',
      question: "I get embarrassed...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
+
     },
-    {///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    { // Empathy/Agreeableness 
      id: 'BF-F21+', 
-     question: "I feel the emotions of other people...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "In general, I feel the emotions of other people...",
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F22+', 
      question: "I sincerely inquire about other people's well-being...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-     //labels: [ 'A few times a month or Once a month or lesseek', '5 days a week or more']
+    labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F23+',
      question: "I sympathize with other people's feelings...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F24+', 
      question: "I take an interest in other people's lives...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F25+', 
      question: "I do things for others...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F26+', 
      question: "I take an interest in other people's problems...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F27-', 
      question: "I don't have time for other people's needs...", 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F28-',
-     question: "I find myself indifferent to and/or unconcerned with the feelings of others...", //#####
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I am generally indifferent to the feelings of others...",
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F29-',
-     question: "I find I have no time for others...", 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "In general, I have no time for others...", 
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F30+', 
      question: "I express my 'soft and caring' side...", 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
-    {////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    {
      id: 'BF-F31+', 
      question: "I respect the will of those with more authority than I...", 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },//As often as possible, most of the time, not so much...
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
+    },
     {
      id: 'BF-F32+',
-     question: "I try to avoid seeming pushy...", //#######
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I try to avoid seeming pushy...",
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F33+', 
-     question: "I avoid imposing my will on others...", //#######
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I avoid imposing my will on others...", 
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F34-', 
-     question: "I put people under pressure...", //#######
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I put people under pressure...", 
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F35-', 
-     question: "I insult people...", //#######
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I insult people...",  
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
- //   {
- //    id: 'BF-F36-', //this is an equal worth question.
-//     question: "It occurs to me that I am better than certain, other people...", //
-//     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-//    },
     {
      id: 'BF-F36-', 
-     question: "I take advantage of others...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I take advantage of others...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F37-', 
-     question: "I seek conflict...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I seek conflict...",
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    },
     {
      id: 'BF-F39-', 
-     question: "I have a good fight and/or argument...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I have an argument and/or good fight..."
+     labels labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F40', 
-     question: "I consider how a situation will benefit my own personal gain...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
-    {////industriousness
+     question: "I consider how a situation will benefit my own personal gain...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']  
+  },
+    {
      id: 'BF-F41+', 
-     question: "I carry out the plans I make...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I carry out the plans I make...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
+   },
     {
      id: 'BF-F42+', 
-     question: "I finish the tasks that I start...", // What does this mean here?
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I finish the tasks that I start...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F43+', 
-     question: "I get small tasks done quickly...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I get small tasks done quickly...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F44+', 
-     question: "I feel that know what I am doing...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I feel that know what I am doing...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    },
     {
      id: 'BF-F45-', 
-     question: "I waste time...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I waste time...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F46-', 
-     question: "I find it difficult to start working...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I find it difficult to start working...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']  
+  },
     {
      id: 'BF-F47-', 
-     question: "I mess things up...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I mess things up...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F48-', 
-     question: "I don't put my mind to the task at hand...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I don't put my mind to the task at hand...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F49-', 
-     question: "I postpone making decisions...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I postpone making decisions...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F50-', 
-     question: "I get distracted...", //
-     labels: ['A few times a month', 'A few times a week', 'Once a day or more']
+     question: "I get distracted...",
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
-    {//////////////////////////////////////////////////////////////////////
-     id: 'BF-F51', 
-     question: "I make to-do lists...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+    {
+     id: 'BF-F51+', 
+     question: "I make to-do lists...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
      {
      id: 'BF-F52-', 
-     question: "I tidy things up...", ////\\//\\//\/\/\/\/\/\\\//\\//\/\\/\\/\\/\/\||\\||//||\\
-     labels: ['less than once a week','A few times a month ', 'Three times a week or more']
+     question: "I tidy things up...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F53+', 
-     question: "I follow a regular schedule...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I follow a regular schedule...", 
+    labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F54+', 
-     question: "I find that I want everything to be 'just right'...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I find that I want everything to be 'just right'...",
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']   
+ },
     {
      id: 'BF-F55+', 
-     question: "I see to it that rules are observed...", //
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I see to it that rules are observed...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F56+', 
-     question: "I am methodical in my work...", // 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I am methodical in my work...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F57-', 
-     question: "I leave my belongings lying around...", // 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I leave my belongings lying around...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F58-', 
-     question: "I misplace things...", // '''''''''''''''''''''''''''''''''''''''''''
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I misplace things...", 
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F59-', 
-     question: "I clean my room...", // 
-     labels: ['less than once a week' 'once a week' 'Three times a week or more']
+     question: "I straighten up my room...", 
+     labels:['Once a week or less', 'Around 3 times a week,  Every day or more']
     },
     {
      id: 'BF-F60-', 
-     question: "I forget things when I travel...", // ***************************************************
+     question: "I forget things when I travel...", 
      labels: ['Once a month or less trips', 'Every 2-3 trips', 'Every trip']
     },
 
-    {///////////////////////////////////////////////////////////////////////Extroversion-Assertiveness
-     id: 'BF-F61+', //=/+?+?+?-/-?-?-?-/-/-/-/-'-/-'-/----'/'/'/'''//'-'-/-/''/'/-'/-/'
-     question: "I try to be friendly...", // connecting / making new friends has as much to do with empathy
+    {//Extroversion
+     id: 'BF-F61+',
+     question: "I try to be friendly towards others...",
       labels: ['A few times a month', 'Twice a week', 'Every day']
     },
     {
      id: 'BF-F62+', 
-     question: "I quickly warm up to to others...", // 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I quickly warm up to others...", 
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
+},
     {
      id: 'BF-F63+', 
-     question: "I show my feelings when I'm happy...", // 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I show my feelings when I'm happy...",  
+      labels:['Rarely', 'Sometimes', 'Every time'] 
+//might have something to do with intensity of happiness… ‘everytime I’m even remotely happy’…
     },
      {
      id: 'BF-F64+', 
-     question: "I enjoy what I happen to be doing...", // 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I go out of my way to include people  in conversations...", 
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
      {
      id: 'BF-F65+', 
-     question: "I laugh heartily...", // 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I laugh heartily...", 
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
-
     {
      id: 'BF-F66+', 
-     question: "I open up to my friends...", // 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I open up to my friends...", 
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']      
+  },
     {
      id: 'BF-F67-', 
-     question: "I keep others at a distance...", // if this question doesn't load, it doesn't load
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I keep others at a distance...", 
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']  
+        },
     {
      id: 'BF-F68-', 
      question: "I generally keep to myself...", 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']      
     },
     {
-     id: 'BF-F69-', 
-     question: "I get caught up in the excitement of what is going on...", // 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     id: 'BF-F69+', 
+     question: "I get caught up in the excitement of what is going on...", 
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']      
     },
     {
      id: 'BF-F70-', 
-     question: "I find I am unenthusiastic...", // 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: " I am generally unenthusiastic...", 
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']      
     },
-    {///////////////////////////////////////////////////////////////////////////////////////////
+    {
      id: 'BF-F71+', 
-     question: "I take charge of situations...", // 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I take charge of situations...", 
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
      {
      id: 'BF-F72+', 
-     question: "I feel like I have a strong personality...", // 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I feel like I have a strong personality...", 
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F73+', 
      question: "I captivate people...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
+},
     {
      id: 'BF-F74+', 
      question: "I interrupt people and conversations to make a point...", 
-      labels: ['A few times a month', 'Twice a week', 'Every day']//if the item touches on social interaction...
+      labels: ['Once every 2 weeks or less', '3 times a week or more', 'Every day']
     },
      {
      id: 'BF-F75+', 
-     question: " I talk others into doing things my way...", //!!!!!!!!
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: " I talk others into doing things my way...", 
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
     {
      id: 'BF-F76+', 
      question: "In a group, I am the first to act or decide what to do...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
      {
      id: 'BF-F77-', 
-     question: "I do act passively...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I act in a passive manner...", 
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
     {
      id: 'BF-F78-', 
-     question: "In a group setting, I follow what the will of the group...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "When I’m with multiple people, I follow what the will of the group...", 
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
      {
      id: 'BF-F79-', 
      question: "I wait for others to lead the way...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
      {
      id: 'BF-F80-', 
      question: "I hold back my opinions...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
-     {/////////////////////////////////////////////////////OPENNESSS//////////////////////////////////
+     {///////////OPENNESS
      id: 'BF-F81+', 
      question: "I understand new things quickly...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
      {
      id: 'BF-F82-', 
-     question: "I get overwhelmed by information...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I get overwhelmed by too much information...", 
+     labels :['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
+   },
      {
      id: 'BF-F83+', 
      question: "I try to solve complex problems...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
+ },
     {
      id: 'BF-F84+', 
      question: "I use large or uncommon words...", 
-      labels: ['A few times a month' 'once a week' 'Every day']
+      labels: ['Once every 2 weeks or less', 'Around 3 times a week', 'Every day']
 
     },
     {
@@ -467,168 +463,233 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F86+', 
      question: "I formulate abstract ideas clearly...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F87+', 
-     question: "I try to learn about new things on my own time...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I learn about new things on my own time...", 
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F88+', 
      question: "I think about abstract, cerebral ideas...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F89+', 
-     question: "I have philosophical discussions...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
+     question: "I have a philosophical discussion...", 
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
+   },
     {
      id: 'BF-F90-', 
-     question: "I read light, fun books...", 
-      labels: ['Hardly ever', 'About once a month', 'A few times a month or more']
+    question: "Regarding my books,  the words 'easy', 'light' and/or 'fun' describe..."
+      labels: ['Almost none of the books I read', 'Some of the books I read', 'Nearly every book I read']
     },
      {
      id: 'BF-F91-', 
-     question: "It takes me a while to learn something new...", 
-      labels: ['Hardly ever', 'Every so often', 'Constantly']//?????
+     question: "When I learn something new, it takes me a while to understand it...", 
+      labels: ['Hardly ever', 'Every so often', 'Every time']
     },
-     {///////////////////////////////////////aesthetic sense///////////////////////////////////////////////////////////////////////
+    {
+    id:'BF-F92+',
+    question:"I read longform journalism articles..."
+    labels:['Less than once a month','A few times a month','once a week or more'
+    },
+
+     {     ///////////////////////////////////////aesthetic 
      id: 'BF-F92-', 
      question: "I notice the beauty of nature...", 
-       labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F93-', 
      question: "I make time to enjoy art, photography or sculpture...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F94+', 
-     question: "I reflect on things...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I reflect on things and/or introspect...", 
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F95+', 
-     question: "I get deeply immersed in music...", 
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I get deeply immersed or lost in music...", 
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
      {
      id: 'BF-F96+', 
      question: "I see beauty in things that others might not notice...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
      {
      id: 'BF-F97+', 
      question: "I find that I need a creative outlet...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
      id: 'BF-F98+', 
-     question: "I read poems and literature...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     question: "I read poems or literature or plays...", 
+     labels: ['Once every 2 weeks or less', 'A few times a month', 'Around once a week'] 
     },
+  
     {
-     id: 'BF-F99+', ////////////////////////////////////////////////////this needs work////
-     question: "I go to the theater...", /// 
-      labels: ['Once every 3 months', 'About once a month', 'Once a week or more']
-    },
+     id: 'BF-F99+', 
+     question: "I get lost in thought...", 
+      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
+   },
     {
      id: 'BF-F100+', 
-     question: "I get lost in thought...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
-    },
-    {
-     id: 'BF-F101+', 
      question: "I daydream...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
      {
-     id: 'BF-F102+', 
+     id: 'BF-F101+', 
      question: "I notice emotional aspects of paintings and photographs ...", 
-      labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     }
-
- 
 ]);
 
 QUESTIONS.mindset = _.shuffle([
-	{
-		id: 'OPG1plus',
-		question: "Please estimate the following: On the whole, I am _____ percent responsible for who I am.",
-		labels: ['0', '50', '100']
-	},
-	{
-		id: 'OPG2minus',
-		question: "If I'm running late or I mess something up, it's usually due to forces beyond my control.",   //more locus of control
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG3plus',
-		question: "I am entirely responsible for everything that happens to me, regardOnce a month or lessmstances.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG4plus',
-		question: "No matter what happens or how I feel, it is ultimately on me to see something that I want done all of the way through. ",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG5plus',
-		question: "The purpose of life is to learn life's lessons",
-		labels: 'Disagree','Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG6plus',
-		question: "There is something I can learn from every experience, regardOnce a month or less boring or interesting it is.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG7minus',
-		question: "Negative emotions should be avoided as much as possible.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG8plus',
-		question: "In general, I keep myself 'open' to criticism and feedback about my behaviour.",
-		labels: ['Disagree', 'Neutral', 'Agree']  //
-	},
-	{
-		id: 'OPG9plus',
-		question: "I am _____ talking about my flaws with my friends.",
-		labels: ['Uncomfortable', 'Neutral', 'Comfortable']  //
-	},
-	{
-		id: 'OPG10plus',
-		question: "I am ______ trying to work on an aspect of my character.",
-		labels: ['Never', 'Sometimes', 'Always']  //
-	},
-	{
-		id: 'OPG11plus',
-		question:  "There is something that I can learn from ______ the people that I know.",
-		labels: ['A few of', 'Some of', 'All of']  //
-	},
-	{
-		id: 'OPG12plus',
-		question: "All people are of equal worth.",
-		labels: ['Disagree','Neutral','Agree']
-	},
-	{
-		id: 'OPG12.5plus',
-		question: "All people that I pass by, run into or interact with day-to-day are of equal worth.",
-		labels: ['Disagree','Neutral','Agree']
-	},
-	{
-		id: 'OPG13minus',//??????????
-		question: "If I had to, I could rank where in the social status hierarchy my friends would be.",
-		labels: ['Disagree', 'Neutral', 'Agree']
-	},
-	{
-		id: 'OPG14minus',
-		question: "Certain people don't deserve my empathy or attention.",
-		labels: ['Disagree', 'Neutral', 'Agree']
-	}
+    { //naming scheme : ‘construct_humilityitemnumber_direction’
+        id: 'PBR_1+',
+        question: "I am ______ % responsible for who I am.",
+        labels: ['0', '50', '100']
+    },
+
+
+    {
+        id: 'PBR_2-',
+        question: " If I’m running late, or I mess something up, it’s usually due to unforeseeable circumstances. ",   
+        labels: ['Disagree', 'Neutral', 'Agree']  
+    },
+    {
+        id: 'PBR_3+',
+        question: " I take ______ % responsibility for what will happen to me during the next few months. ",
+        labels: ['0', '50', '100']  
+    },
+    {
+        id: 'PBR_4+',
+        question: " It is ultimately my fault if I don’t end up seeing a project all the way through.",
+        labels: ['Disagree', 'Neutral', 'Agree']  
+    },
+    {
+        id: 'PBR_5+',
+        question: "How well I do in life is _____ under my control." ,
+        labels: 'Not really', 'Somewhat', 'Entirely']  
+    },
+    {
+        id: 'PBR_6-',
+        question: "In general, people’s personalities stop changing after a certain age.",
+        labels:  ['Disagree', 'Neutral', 'Agree']
+        
+    },
+    {
+        id: 'PBR_7-',
+        question: "On the whole, personal shortcomings are impossible to overcome.",
+        labels: ['Disagree', 'Neutral', 'Agree']  
+    },
+    {
+        id: 'PBR8_',
+        question: "Fate has a lot to do with who a person becomes.",
+        labels: ['Disagree', 'Neutral', 'Agree'] 
+    },
+    {
+        id: 'OPG9+',
+        question: "How familiar are you with the following phrase: 'The purpose of life is to learn life’s lessons'. ",
+        labels: ['Unfamiliar', 'Neutral', 'Familiar']  
+    },
+    {
+        id: 'OPG_10+',
+        question: "I How much do you believe the following phrase: 'The purpose of life is to learn life’s lessons'. ",
+        labels: ['Disagree', 'Neutral', 'Agree']  
+    },
+    {
+        id: 'OPG_11+',
+        question:  "There is something I can learn from every experience I have, regardless of how it makes me feel. ",
+        labels: ['Disagree', 'Neutral', 'Agree']  
+    },
+    {
+        id: 'OPG_12-',
+        question: "Negative emotions and feelings should be avoided.",
+        labels: ['Disagree', 'Neutral', 'Agree']
+    },
+    {
+        id: 'OPG_13+',
+        question: "In general, I keep myself ‘open’ to criticism and feedback about my behavior.",
+        labels: ['Disagree', 'Neutral', 'Agree']
+    },
+    {
+        id: 'OPG_14+',
+        question: " I am ____ talking about my flaws with my friends.",
+        labels: ['Uncomfortable', 'Neutral', 'Comfortable']
+    },
+    {
+        id: 'OPG_15+',
+        question: "I am ____trying to work on an aspect of my character.",
+        labels: ['Rarely', 'Neutral', 'Frequently']
+    },
+    {
+        id: 'OPG_16+',
+        question: "There is something valuable I can learn from _______ of the people I know.",
+        labels: ['Few', 'Some', 'All']
+    },
+    {
+        id: 'OPG_17+',
+        question: "In comparison to other people, I have more _______ than average.",
+        labels: ['Flaws', ' ', 'Virtues'] // scored as 2x distance away from 50.
+    },
+{
+        id: 'OPG_18-',
+        question: "Negative criticism is detrimental.",
+        labels: ['Disagree', 'Neutral ', 'Agree'] 
+    },
+{
+        id: 'OPG_18-',
+        question: "I mentally criticize myself when I make a mistake.",
+        labels: ['Disagree', 'Neutral ', 'Agree'] 
+    },
+{
+        id: 'IE_19+',
+        question: "All people are of equal worth."
+        labels: ['Disagree', 'Neutral ', 'Agree'] 
+    },
+{
+    id:'IE_20+',
+    question:"The people I pass by, or run into day to day are of the same status as I.",
+    labels: ['Disagree', 'Neutral ', 'Agree']
+},
+{
+    id:'IE_21+',
+    question:"In general, I feel ______ than the people I interact with.",
+    labels: ['Less Important', 'About the same ', 'More Important'] //2x distance from 50
+},
+{
+    id:'IE_22-’',
+    question:'Some people don’t deserve my empathy or attention.',
+labels: ['Disagree', 'Neutral', 'Agree']
+},
+
+{
+    id:'IE_23-',
+    question:'Hitler was less than human.',
+    labels:['Disagree', 'Neutral', 'Agree']
+},
+{
+    id:'IE_23-',
+    question:'I make eye contact with homeless people.',
+    labels:['Rarely', 'Sometimes', 'Frequently']
+},
+{
+    id:'IE_24-'
+    question:'I get intimidated by people who are smart, or pretty, or both.'
+labels:['Rarely', 'Sometimes', 'Frequently']
+},
+{
+    id:'IE_25-'
+    question: 'I use a ‘1-10’ scale when determining whom I might date.'
+    labels:['Rarely', 'Sometimes', 'Frequently']
+    }
+    
 ]);
 
 if (!_.indexBy) {
