@@ -48,7 +48,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F3+',
-     question: "In general, my mood changes...",
+     question: "In general, my overall mood changes...",
      labels: ['Once a week or less', '3-4 times a week', 'Once per day or more']
     },
     //{id: 'BF-F3.5+',
@@ -105,12 +105,12 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F14+', 
-     question: "I feel overwhelmed...", 
-     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']\
+     question: "I get overwhelmed...", 
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F15+', 
-     question: "I find myself fearful and /or afraid...",
+     question: "I get fearful or afraid...",
      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
@@ -126,7 +126,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F18+', 
      question: "I feel uncomfortable with myself...",
-     labels: ['Once a month or less', 'A few times a month', 'Two to three times a week or more']
+     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F19-', 
@@ -171,7 +171,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F27-', 
-     question: "I don't have time for other people's needs...", 
+     question: "I don't prioritize other people's needs...", 
      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
@@ -201,7 +201,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F33+', 
-     question: "I avoid imposing my will on others...", 
+     question: "I actively avoid imposing my will on others...", 
      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
@@ -222,11 +222,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F37-', 
      question: "I seek conflict...",
-     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    },
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
+   },
     {
      id: 'BF-F39-', 
-     question: "I have an argument and/or good fight..."
-     labels labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
+     question: "I have an argument and/or good fight...",
+     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F40', 
@@ -235,7 +236,7 @@ QUESTIONS.p = _.shuffle([
   },
     {
      id: 'BF-F41+', 
-     question: "I carry out the plans I make...", 
+     question: "I carry out the plans that I make...", 
      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
    },
     {
@@ -250,7 +251,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F44+', 
-     question: "I feel that know what I am doing...", 
+     question: "I feel like I know what I am doing...", 
      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    },
     {
      id: 'BF-F45-', 
@@ -264,7 +265,7 @@ QUESTIONS.p = _.shuffle([
   },
     {
      id: 'BF-F47-', 
-     question: "I mess things up...", 
+     question: "I generally mess things up...", 
      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
@@ -280,22 +281,22 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F50-', 
      question: "I get distracted...",
-     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
+     labels:['Every day', '3 times a week', 'Once every two weeks']
     },
     {
      id: 'BF-F51+', 
      question: "I make to-do lists...", 
-     labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
+     labels:['Once a week or less', '3 times a week', 'Every day']
     },
      {
      id: 'BF-F52-', 
-     question: "I tidy things up...", 
+     question: "I tidy up my living space...", 
      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
      id: 'BF-F53+', 
      question: "I follow a regular schedule...", 
-    labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
+    labels:['Once a week or less', '3 times a week', 'Every day']
     },
     {
      id: 'BF-F54+', 
@@ -309,7 +310,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F56+', 
-     question: "I am methodical in my work...", 
+     question: "I take care to be methodical in my work...", 
      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
@@ -325,12 +326,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F59-', 
      question: "I straighten up my room...", 
-     labels:['Once a week or less', 'Around 3 times a week,  Every day or more']
+     labels:['Once a week or less', 'Around 3 times a week',  'Every day or more']
     },
     {
      id: 'BF-F60-', 
      question: "I forget things when I travel...", 
-     labels: ['Once a month or less trips', 'Every 2-3 trips', 'Every trip']
+     labels: ['Once every 5 trips', 'Every 3 trips', 'Every trip']
     },
 
     {//Extroversion
@@ -340,7 +341,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F62+', 
-     question: "I quickly warm up to others...", 
+     question: "I warm up quickly to others...", 
       labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
 },
     {
@@ -362,12 +363,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F66+', 
      question: "I open up to my friends...", 
-     labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']      
+     labels: ['Less than once a month', 'A few times a month', 'Once a week or more']      
   },
     {
      id: 'BF-F67-', 
      question: "I keep others at a distance...", 
-      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']  
+      labels: ['Less than once a month', 'A few times a month', 'Once a week or more']  
         },
     {
      id: 'BF-F68-', 
@@ -396,7 +397,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F73+', 
-     question: "I captivate people...", 
+     question: "I captivate people during conversations...", 
      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
 },
     {
@@ -412,7 +413,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F76+', 
      question: "In a group, I am the first to act or decide what to do...", 
-      labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
+      labels:['Less than once a month', 'Once every two weeks', 'Once a week or more']    
     },
      {
      id: 'BF-F77-', 
@@ -421,7 +422,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F78-', 
-     question: "When I’m with multiple people, I follow what the will of the group...", 
+     question: "In a group, I 'go with the low' and follow what the group decides...", 
       labels:['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']    
     },
      {
@@ -451,49 +452,44 @@ QUESTIONS.p = _.shuffle([
  },
     {
      id: 'BF-F84+', 
-     question: "I use large or uncommon words...", 
+     question: "I use or make not of large / uncommon words...", 
       labels: ['Once every 2 weeks or less', 'Around 3 times a week', 'Every day']
 
     },
     {
      id: 'BF-F85+', 
-     question: "I find that people over-explain things...", 
-      labels: ['Once a month or less', 'A few times a month', 'Once a week or more']
-    },
-    {
-     id: 'BF-F86+', 
      question: "I formulate abstract ideas clearly...", 
       labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
-     id: 'BF-F87+', 
+     id: 'BF-F86+', 
      question: "I learn about new things on my own time...", 
       labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
-     id: 'BF-F88+', 
+     id: 'BF-F87+', 
      question: "I think about abstract, cerebral ideas...", 
       labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more']
     },
     {
-     id: 'BF-F89+', 
+     id: 'BF-F88+', 
      question: "I have a philosophical discussion...", 
       labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
    },
     {
-     id: 'BF-F90-', 
-    question: "Regarding my books,  the words 'easy', 'light' and/or 'fun' describe..."
+     id: 'BF-F89-', 
+    question: "Regarding books,  the words 'easy', 'light' and/or 'fun' describe...",
       labels: ['Almost none of the books I read', 'Some of the books I read', 'Nearly every book I read']
     },
      {
-     id: 'BF-F91-', 
-     question: "When I learn something new, it takes me a while to understand it...", 
-      labels: ['Hardly ever', 'Every so often', 'Every time']
+     id: 'BF-F90-', 
+     question: "When I learn something new, it takes me a while to fully understand it...", 
+      labels: ['Almost never', 'Every so often', 'Every time']
     },
     {
-    id:'BF-F92+',
-    question:"I read longform journalism articles..."
-    labels:['Less than once a month','A few times a month','once a week or more'
+    id:'BF-F91+',
+    question:"I read longform journalism articles...",
+    labels:['Less than once a month','A few times a month','Once a week or more']
     },
 
      {     ///////////////////////////////////////aesthetic 
@@ -503,7 +499,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F93-', 
-     question: "I make time to enjoy art, photography or sculpture...", 
+     question: "I spend time enjoying art, photography or sculpture...", 
      labels: ['Once every 2 weeks or less', 'Around once a week', '3 times a week or more'] 
     },
     {
@@ -575,7 +571,7 @@ QUESTIONS.mindset = _.shuffle([
     {
         id: 'PBR_5+',
         question: "How well I do in life is _____ under my control." ,
-        labels: 'Not really', 'Somewhat', 'Entirely']  
+        labels: ['Not really', 'Somewhat', 'Entirely']  
     },
     {
         id: 'PBR_6-',
@@ -650,7 +646,7 @@ QUESTIONS.mindset = _.shuffle([
     },
 {
         id: 'IE_19+',
-        question: "All people are of equal worth."
+        question: "All people are of equal worth.",
         labels: ['Disagree', 'Neutral ', 'Agree'] 
     },
 {
@@ -680,13 +676,13 @@ labels: ['Disagree', 'Neutral', 'Agree']
     labels:['Rarely', 'Sometimes', 'Frequently']
 },
 {
-    id:'IE_24-'
-    question:'I get intimidated by people who are smart, or pretty, or both.'
-labels:['Rarely', 'Sometimes', 'Frequently']
+    id:'IE_24-',
+    question:'I get intimidated by people who are smart, or pretty, or both.',
+    labels:['Rarely', 'Sometimes', 'Frequently']
 },
 {
-    id:'IE_25-'
-    question: 'I use a ‘1-10’ scale when determining whom I might date.'
+    id:'IE_25-',
+    question: 'I use a ‘1-10’ scale when determining whom I might date.',
     labels:['Rarely', 'Sometimes', 'Frequently']
     }
     
