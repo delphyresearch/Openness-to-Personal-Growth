@@ -830,7 +830,14 @@ var PhasedQuestions = function() {
 			.attr('start', startIndex + 1)
 			.html(questions.join("\n"));
 
-		$('.phased-questions .slider').noUiSlider(self.sliderOptions);
+		$('.phased-questions .slider')
+            .noUiSlider(self.sliderOptions)
+            .noUiSlider_pips({
+                 mode: 'values',
+                 values: [ 10,50,90],
+                 density: 1
+            });
+            
 
 		window.scrollTo(0,0);
 	};

@@ -1,4 +1,3 @@
-####QUESTIONS CURRENT 8/26/2014
 
 var QUESTIONS = {};
 
