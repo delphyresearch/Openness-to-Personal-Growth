@@ -13,7 +13,9 @@ var mycounterbalance = counterbalance;  // they tell you which condition you hav
 // All pages to be loaded
 var pages = [
 	"stage.html",
-	"postquestionnaire.html"
+	"postquestionnaire.html",
+    "debriefing.html",
+    "complete.html"
 ];
 
 // add as a list as many pages as you like
@@ -483,7 +485,7 @@ QUESTIONS.p = _.shuffle([
     },
      {
      id: 'BF-F90-', 
-     question: "I pretend to understand what other people are talking about..." 
+     question: "I pretend to understand what other people are talking about...", 
       labels: ['Rarely', 'Sometimes', 'Frequently']
     },
     {
