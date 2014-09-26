@@ -71,8 +71,8 @@ QUESTIONS.p = _.shuffle([
      labels: ['Once every 2 weeks', 'Around once a week', '3 times a week'] 
     },
     {
-     id: 'BF-F7-',
-     question: "I keep my emotions under control...",
+     id: 'BF-F7+',
+     question: "My emotions get out of control...",
      labels: ['Once every 2 weeks', 'Around once a week', '3 times a week']
     },
     {
@@ -91,7 +91,7 @@ QUESTIONS.p = _.shuffle([
      labels: ['Once every 2 weeks', 'Around once a week', '3 times a week']
     },
     {
-     id: 'BF-F11-',
+     id: 'BF-F11+',
      question: "On average, I feel threatened...",
      labels: ['Once every 2 weeks', 'Around once a week', '3 times a week']
     },
@@ -178,7 +178,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F28-',
-     question: "I am generally indifferent to the feelings of others...",
+     question: "I am indifferent to the feelings of others...",
      labels: ['Once every 2 weeks', 'Around once a week', '3 times a week']
     },
     {
@@ -232,11 +232,11 @@ QUESTIONS.p = _.shuffle([
      labels:['Once every 2 weeks', 'Around once a week', '3 times a week']
     },
     {
-     id: 'BF-F40', 
+     id: 'BF-F40-', 
      question: "I consider how a situation will benefit my own personal gain...", 
      labels:['Once every 2 weeks', 'Around once a week', '3 times a week']  
   },
-    {
+    {//////////////////////////////////////////
      id: 'BF-F41+', 
      question: "I carry out the plans that I make...", 
      labels:['Once every 2 weeks', 'Around once a week', '3 times a week'] 
@@ -291,7 +291,7 @@ QUESTIONS.p = _.shuffle([
      labels:['Once a week', '3 times a week', '   Every day   ']
     },
      {
-     id: 'BF-F52-', 
+     id: 'BF-F52+', 
      question: "I tidy up my living space...", 
      labels:['Once a week', '3 times a week', 'Every day']
     },
@@ -354,7 +354,7 @@ QUESTIONS.p = _.shuffle([
     },
      {
      id: 'BF-F64+', 
-     question: "I go out of my way to include people  in conversations...", 
+     question: "I go out of my way to include people in conversations...", 
       labels:['Once every 2 weeks', 'Around once a week', '3 times a week']    
     },
      {
@@ -480,7 +480,7 @@ QUESTIONS.p = _.shuffle([
    },
     {
      id: 'BF-F89-', 
-    question: "Regarding books,  the words 'easy', 'light' and/or 'fun' describe...",
+    question: "Regarding books,  the words 'easy', 'light' and 'fun' describe...",
       labels: ['Almost none of the books I read', 'Some of the books I read', 'Nearly every book I read']
     },
      {
@@ -495,18 +495,18 @@ QUESTIONS.p = _.shuffle([
     },
 
      {     ///////////////////////////////////////aesthetic 
-     id: 'BF-F92-', 
+     id: 'BF-F92+', 
      question: "I notice the beauty of nature...", 
      labels: ['Once every 2 weeks', 'Around once a week', '3 times a week'] 
     },
     {
-     id: 'BF-F93-', 
+     id: 'BF-F93+', 
      question: "I spend time enjoying art, photography or sculpture...", 
      labels: ['Once a month', 'A few times a month', 'Once a week'] 
     },
     {
      id: 'BF-F94+', 
-     question: "I reflect on things and/or introspect...", 
+     question: "I reflect on things and introspect...", 
       labels: ['Once every 2 weeks', 'Around once a week', '3 times a week'] 
     },
     {
