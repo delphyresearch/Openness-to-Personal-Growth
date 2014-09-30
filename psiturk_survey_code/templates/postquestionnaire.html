@@ -13,21 +13,13 @@
             <!-- beginning of a question -->
             <div class="row question">
                 <div class="col-md-8">
-                    Please indicate your age:
+                    Please indicate your gender:
                 </div>
                 <div class="col-md-4">
                     <select id="engagement" name="engagement">
-                        <option value="10">10 - Very engaging</option>
-                        <option value="9">9</option>
-                        <option value="8">8</option>
-                        <option value="7">7</option>
-                        <option value="6">6</option>
-                        <option value="5" SELECTED>5 - Moderately</option>
-                        <option value="4">4</option>
-                        <option value="3">3</option>
-                        <option value="2">2</option>
-                        <option value="1">1</option>
-                        <option value="0">0 - Not engaged</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
             </div>
@@ -35,27 +27,37 @@
 
 
             <!-- beginning of a question -->
+            <!-- text area or input?-->
             <div class="row question">
                 <div class="col-md-8">
-                    Please indicate your gender:
+                    Please indicate your Age:
                 </div>
                 <div class="col-md-4">
-                    <select id="difficulty" name="difficulty">
-                        <option value="10">10 - Very difficult</option>
-                        <option value="9">9</option>
-                        <option value="8">8</option>
-                        <option value="7">7</option>
-                        <option value="6">6</option>
-                        <option value="5" SELECTED>5 - Moderately difficult</option>
-                        <option value="4">4</option>
-                        <option value="3">3</option>
-                        <option value="2">2</option>
-                        <option value="1">1</option>
-                        <option value="0">0 - Not difficult at all</option>
-                    </select>
+                    <input id="age" min="18" step="1" type="number"/> 
                 </div>
+                <!--look at boostrap to add unstructured-->
             </div>
             <!-- end of a question -->
+
+
+
+
+            <!--to change into text -->
+             <div class="row question">
+                <div class="col-md-8">
+                    Optional comments / feedback:
+                </div>
+                <div class="col-md-4">
+                    <textarea id="comments" placeholder="your comments go here"></textarea>
+                </div>
+                <!--look at boostrap to add unstructured-->
+            </div>
+
+
+
+
+
+
         </form>
     </div>
 

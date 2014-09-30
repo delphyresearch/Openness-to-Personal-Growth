@@ -554,25 +554,24 @@ QUESTIONS.mindset = _.shuffle([
         labels: ['0', '50', '100']
     },
 
-
     {
         id: 'PBR_2-',
-        question: " If I’m running late, or I mess something up, it’s usually due to unforeseeable circumstances. ",   
+        question: "If I’m running late, or I mess something up, it’s usually due to unforeseeable circumstances. ",   
         labels: ['Disagree', 'Neutral', 'Agree']  
     },
     {
         id: 'PBR_3+',
-        question: " I take ______ % responsibility for what will happen to me during the next few months. ",
+        question: "I take ______ % responsibility for what will happen to me during the next few months. ",
         labels: ['0', '50', '100']  
     },
     {
         id: 'PBR_4+',
-        question: " It is ultimately my fault if I don’t end up seeing a project all the way through.",
+        question: "It is ultimately my fault if I don’t end up seeing a project all the way through.",
         labels: ['Disagree', 'Neutral', 'Agree']  
     },
     {
         id: 'PBR_5+',
-        question: "How well I do in life is _____ under my control." ,
+        question: "How well I do in life is _______ under my control." ,
         labels: ['Not really', 'Somewhat', 'Entirely']  
     },
     {
@@ -598,7 +597,7 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'OPG_10+',
-        question: "I How much do you believe the following phrase: 'The purpose of life is to learn life’s lessons'. ",
+        question: "How much do you believe the following phrase: 'The purpose of life is to learn life’s lessons'. ",
         labels: ['Disagree', 'Neutral', 'Agree']  
     },
     {
@@ -618,22 +617,22 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'OPG_14+',
-        question: " I am ____ talking about my flaws with my friends.",
+        question: "I am _________ talking about my flaws with my friends.",
         labels: ['Uncomfortable', 'Neutral', 'Comfortable']
     },
     {
         id: 'OPG_15+',
-        question: "I am ____trying to work on an aspect of my character.",
+        question: "I am __________ trying to work on an aspect of my character.",
         labels: ['Rarely', 'Neutral', 'Frequently']
     },
     {
         id: 'OPG_16+',
-        question: "There is something valuable I can learn from _______ of the people I know.",
-        labels: ['Few', 'Some', 'All']
+        question: "There is something valuable I can learn from ________ the people I know.",
+        labels: ['a few of', 'Some of', 'all of']
     },
     {
         id: 'OPG_17+',
-        question: "In comparison to others, I have more _______ __.",
+        question: "In comparison to others, I have more _________.",
         labels: ['Flaws', ' ', 'Virtues'] // scored as 2x distance away from 50.
     },
 {
@@ -653,24 +652,24 @@ QUESTIONS.mindset = _.shuffle([
     },
 {
     id:'IE_20+',
-    question:"The people I pass by, or run into day to day are of the same status as I.",
+    question:"I am of the same status as the strangers I pass by and interact with every day.",
     labels: ['Disagree', 'Neutral ', 'Agree']
 },
 {
     id:'IE_21+',
-    question:"I feel ______ __compared the people I interact with.",
-    labels: ['Less important', 'About the same', 'More important'] //2x distance from 50
+    question:"I am ________ most of the people I interact with.",
+    labels: ['Less important than', 'About the same as', 'More important than'] //2x distance from 50
 },
 {
     id:'IE_22-’',
     question:'Some people don’t deserve my empathy or attention.',
-labels: ['Disagree', 'Neutral', 'Agree']
+labels: ['Disagree', 'Neutral', 'Agree       ']
 },
 
 {
     id:'IE_23-',
     question:'Hitler was less than human.',
-    labels:['Disagree', 'Neutral', 'Agree']
+    labels:['Disagree', 'Neutral', '       Agree']
 },
 {
     id:'IE_23-',
@@ -719,7 +718,8 @@ var PhasedQuestions = function() {
 	// NOTE: the following variables can be safely modified
 
 	// Each set of questions, in the order they should appear
-	self.phases = [QUESTIONS.p, QUESTIONS.mindset];
+	//self.phases = [QUESTIONS.p, QUESTIONS.mindset];
+    self.phases = [QUESTIONS.mindset];
 
 	// The maximum number of questions per page
 	self.PER_PAGE = 25;
@@ -836,7 +836,7 @@ var PhasedQuestions = function() {
             .noUiSlider(self.sliderOptions)
             .noUiSlider_pips({
                  mode: 'values',
-                 values: [ 10,50,90],
+                 values: [ 5,50,96],
                  density: 5
             });
             
@@ -903,7 +903,7 @@ var Questionnaire = function() {
 	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
 
 	record_responses = function() {
-		psiTurk.recordTrialData({ phase: 'postquestionnaire', status: 'submit' });
+		psiTurk.recordTrialData({ 'phase': 'postquestionnaire', 'status': 'submit' });
 
 		$('textarea').each(function(i, val) {
 			psiTurk.recordUnstructuredData(this.id, this.value);
@@ -911,6 +911,11 @@ var Questionnaire = function() {
 		$('select').each(function(i, val) {
 			psiTurk.recordUnstructuredData(this.id, this.value);
 		});
+        $('input').each(function(i, val) {
+            psiTurk.recordUnstructuredData(this.id, this.value);
+        });
+
+
 	};
 
 	prompt_resubmit = function() {
@@ -925,7 +930,8 @@ var Questionnaire = function() {
 		psiTurk.saveData({
 			success: function() {
 				clearInterval(reprompt);
-				psiTurk.computeBonus('compute_bonus', finish);
+				//psiTurk.computeBonus('compute_bonus', finish);
+                psiTurk.completeHIT();
 			},
 			error: prompt_resubmit
 		});
@@ -933,15 +939,15 @@ var Questionnaire = function() {
 
 	// Load the questionnaire snippet
 	psiTurk.showPage('postquestionnaire.html');
-	psiTurk.recordTrialData({ phase: 'postquestionnaire', status: 'begin' });
+	psiTurk.recordTrialData({ 'phase': 'postquestionnaire', 'status': 'begin' });
 
 	$("#next").click(function() {
 		record_responses();
 		psiTurk.saveData({
 			success: function(){
-				psiTurk.computeBonus('compute_bonus', function() {
+				//psiTurk.computeBonus('compute_bonus', function() {
 					psiTurk.completeHIT(); // when finished saving compute bonus, the quit
-				});
+				//});
 			},
 			error: prompt_resubmit
 		});
