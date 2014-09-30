@@ -718,8 +718,8 @@ var PhasedQuestions = function() {
 	// NOTE: the following variables can be safely modified
 
 	// Each set of questions, in the order they should appear
-	//self.phases = [QUESTIONS.p, QUESTIONS.mindset];
-    self.phases = [QUESTIONS.mindset];
+	self.phases = [QUESTIONS.p, QUESTIONS.mindset];
+    //self.phases = [QUESTIONS.mindset];
 
 	// The maximum number of questions per page
 	self.PER_PAGE = 25;
@@ -903,7 +903,7 @@ var Questionnaire = function() {
 	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
 
 	record_responses = function() {
-		psiTurk.recordTrialData({ 'phase': 'postquestionnaire', 'status': 'submit' });
+		psiTurk.recordTrialData({ phase: 'postquestionnaire', status: 'submit' });
 
 		$('textarea').each(function(i, val) {
 			psiTurk.recordUnstructuredData(this.id, this.value);
@@ -939,7 +939,7 @@ var Questionnaire = function() {
 
 	// Load the questionnaire snippet
 	psiTurk.showPage('postquestionnaire.html');
-	psiTurk.recordTrialData({ 'phase': 'postquestionnaire', 'status': 'begin' });
+	psiTurk.recordTrialData({ phase: 'postquestionnaire', status: 'begin' });
 
 	$("#next").click(function() {
 		record_responses();
