@@ -257,7 +257,7 @@ QUESTIONS.p = _.shuffle([
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']    },
     {
      id: 'BF-F45-', 
-     question: "I waste time...", 
+     question: "I waste time while I'm attempting to be productive...", 
      labels:['Once a week', '3 times a week', 'Every day']
     },
     {
@@ -346,7 +346,7 @@ QUESTIONS.p = _.shuffle([
     {//Extroversion
      id: 'BF-F61+',
      question: "I try to be friendly towards others...",
-      labels: ['A few times a month', 'Around twice a week', 'Every day   ']
+      labels: ['Once Every 2.5 weeks', 'Around twice a week', 'Every day   ']
     },
     {
      id: 'BF-F62+', 
@@ -377,7 +377,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F67-', 
      question: "I keep others at a distance...", 
-      labels:['Once a month', 'Once every 2.5 weeks', 'Once a week']  
+      labels:['Rarely', 'Moderately', 'Frequently']  
         },
     {
      id: 'BF-F68-', 
@@ -446,7 +446,7 @@ QUESTIONS.p = _.shuffle([
     },
      {///////////OPENNESS
      id: 'BF-F81+', 
-     question: "I understand new things quickly...", 
+     question: "I learn new things...", 
       labels:['Once a month', 'Once every 2.5 weeks', 'Once a week']    
     },
      {
@@ -625,12 +625,12 @@ QUESTIONS.mindset = _.shuffle([
     {
         id: 'OPG_14+',
         question: "I am _________ talking about my flaws with my friends.",
-        labels: ['Uncomfortable', 'Neutral', 'Comfortable']
+        labels: ['Uncomfortable', ' Neutral', 'Comfortable']
     },
     {
         id: 'OPG_15+',
         question: "I am __________ trying to work on an aspect of my character.",
-        labels: ['Rarely', 'Neutral', 'Frequently']
+        labels: ['Rarely', 'Sometimes', 'Frequently']
     },
     {
         id: 'OPG_16+',
