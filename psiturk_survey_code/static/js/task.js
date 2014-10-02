@@ -92,7 +92,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F11+',
-     question: "On average, I feel threatened...",
+     question: "I feel threatened by the future or the unknown..",
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
@@ -172,8 +172,8 @@ QUESTIONS.p = _.shuffle([
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BF-F27-', 
-     question: "I prioritize my needs ahead of other peoples'...", 
+     id: 'BF-F27+', 
+     question: "I think about other people's needs...", 
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
@@ -213,12 +213,12 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F35-', 
-     question: "I insult people...",  
+     question: "I insult people behind their backs...",  
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
      id: 'BF-F36-', 
-     question: "I take advantage of others...", 
+     question: "I am rude to others...", 
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
@@ -381,7 +381,7 @@ QUESTIONS.p = _.shuffle([
         },
     {
      id: 'BF-F68-', 
-     question: "I generally keep to myself...", 
+     question: "If I weren't forced by work or school, I'd generally keep to myself ...", 
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']      
     },
     {
@@ -401,7 +401,7 @@ QUESTIONS.p = _.shuffle([
     },
      {
      id: 'BF-F72+', 
-     question: "I feel like I have a strong personality...", 
+     question: "I feel that I have an assertive personality...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
@@ -411,7 +411,12 @@ QUESTIONS.p = _.shuffle([
 },
     {
      id: 'BF-F74+', 
-     question: "I interrupt people and conversations to make a point...", 
+     question: "I interrupt conversations to make a point when speaking to men...", 
+      labels: ['Once every 2 weeks', '3 times a week', 'Every day   ']
+    },
+    {
+     id: 'BF-F75+', 
+     question: "I interrupt conversations to make a point when speaking to women...", 
       labels: ['Once every 2 weeks', '3 times a week', 'Every day   ']
     },
      {
@@ -456,7 +461,7 @@ QUESTIONS.p = _.shuffle([
    },
      {
      id: 'BF-F83+', 
-     question: "I try to solve complex problems...", 
+     question: "If I had no pressing obligations, I'd work on solving complex problems...", 
       labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
  },
     {
@@ -497,7 +502,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
     id:'BF-F91+',
-    question:"I read longform journalism articles...",
+    question:"I read longform journalism articles or non-fiction books...",
     labels:['Once a month','Once every 2.5 weeks','Once a week']
     },
 
@@ -583,7 +588,7 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'PBR_6-',
-        question: "In general, people’s personalities stop changing after a certain age.",
+        question: "In general, people’s personalities can't change after a certain age.",
         labels:  ['Disagree', 'Neutral', 'Agree']
         
     },
@@ -635,7 +640,7 @@ QUESTIONS.mindset = _.shuffle([
     {
         id: 'OPG_16+',
         question: "There is something valuable I can learn from ________ the people I know.",
-        labels: ['a few of', 'Some of', 'all of']
+        labels: ['A few of', 'Some of', 'All of']
     },
     {
         id: 'OPG_17+',
