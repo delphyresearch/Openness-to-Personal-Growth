@@ -493,7 +493,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F89-', 
     question: "Regarding books,  the words 'easy', 'light' and 'fun' describe...",
-      labels: ['Almost none of the books I read', 'Some of the books I read', 'Nearly every book I read']
+      labels: ['Few of the books I read', 'Some of the books I read', 'Nearly every book I read']
     },
      {
      id: 'BF-F90-', 
