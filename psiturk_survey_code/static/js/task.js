@@ -21,9 +21,6 @@ var pages = [
 // add as a list as many pages as you like
 var instructionPages = [
 	"instructions/instruct-1.html",
-	"instructions/instruct-2.html",
-	"instructions/instruct-3.html",
-	"instructions/instruct-ready.html"
 ];
 
 psiTurk.preloadPages(pages.concat(instructionPages));
