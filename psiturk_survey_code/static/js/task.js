@@ -21,6 +21,7 @@ var pages = [
 // add as a list as many pages as you like
 var instructionPages = [
 	"instructions/instruct-1.html",
+    "instructions/instruct-ready.html"
 ];
 
 psiTurk.preloadPages(pages.concat(instructionPages));
@@ -28,6 +29,20 @@ psiTurk.preloadPages(pages.concat(instructionPages));
 
 // Each key should represent a set of questions
 var QUESTIONS = {};
+
+//QUESTIONS.sample = _.shuffle([
+ //   {
+  //   id: 'SAMPLE1+',
+  //  question: "I eat chocolate cake...",
+  //  / labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+  //  },
+   // {
+  //   id: 'BF-F2+',
+  //   question: "I go to bookstores...",
+  //   labels: ['Once a month','Once every 2.5 weeks','Once a week'] 
+
+  //  }
+   // ]);
 
 
 QUESTIONS.p = _.shuffle([
@@ -408,12 +423,12 @@ QUESTIONS.p = _.shuffle([
 },
     {
      id: 'BF-F74+', 
-     question: "I interrupt conversations to make a point when speaking to men...", 
+     question: "I interrupt conversations to make a point when speaking with men...", 
       labels: ['Once every 2 weeks', '3 times a week', 'Every day   ']
     },
     {
      id: 'BF-F75+', 
-     question: "I interrupt conversations to make a point when speaking to women...", 
+     question: "I interrupt conversations to make a point when speaking with women...", 
       labels: ['Once every 2 weeks', '3 times a week', 'Every day   ']
     },
      {
@@ -729,6 +744,7 @@ var PhasedQuestions = function() {
 	// Each set of questions, in the order they should appear
 	self.phases = [QUESTIONS.p, QUESTIONS.mindset];
     //self.phases = [QUESTIONS.mindset];
+   // self.phases = [QUESTIONS.sample ];
 
 	// The maximum number of questions per page
 	self.PER_PAGE = 25;
