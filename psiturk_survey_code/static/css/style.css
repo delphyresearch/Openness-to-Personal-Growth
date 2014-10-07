@@ -101,10 +101,10 @@ strong {
 /*.phased-questions .noUi-pips .noUi-marker-normal {display:none;} */
 
 .phased-questions .labels { position: relative; height: 40px; }
-.phased-questions .labels .label { position: absolute; padding: 0; width: 10%; display: block; white-space: normal; color: #333; font-size: 95%; }
+.phased-questions .labels .label { position: absolute; padding: 0; width: 20%; display: block; white-space: normal; color: #333; font-size: 95%; }
 .phased-questions .labels .left { text-align: center; }
-.phased-questions .labels .center { text-align: center; left:50%; margin-left:-5%; }
-.phased-questions .labels .right { text-align: center; left: 90%; }
+.phased-questions .labels .center { text-align: center; left:50%; margin-left:-10%; }
+.phased-questions .labels .right { text-align: center; left: 80%; }
 
 .phased-questions .instructionsnav { text-align: center; }
 .phased-questions nav { text-align: right; }
