@@ -85,7 +85,7 @@ QUESTIONS.p = _.shuffle([
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BF-F8-',
+     id: 'BF-F8+',
      question: "I lose my composure...",
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
@@ -150,7 +150,7 @@ QUESTIONS.p = _.shuffle([
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
 
     },
-    { // Empathy/compassion
+    { // Agreeableness/compassion
      id: 'BF-F21+', 
      question: "In general, I empathize with the emotions of other people...",
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
@@ -336,19 +336,19 @@ QUESTIONS.p = _.shuffle([
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BF-F58-', 
+     id: 'BF-F58+', 
      question: "I straighten up my room...", 
      labels:['Once a week', '3 times a week',  'Every day']
     },
     {
-     id: 'BF-F59-', 
+     id: 'BF-F59+', 
      question: "I straighten up my desk or working space...", 
      labels:['Once a week', '3 times a week',  'Every day']
     },
     
     {
      id: 'BF-F60-', 
-     question: "I forget things when I travel...", 
+     question: "I forget belongings when I travel...", 
      labels:['Once every 5 trips', 'Every 3 trips', 'Every trip']
     },
 
@@ -400,7 +400,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F70-', 
-     question: " I feel nenthusiastic...", 
+     question: " I feel unenthusiastic...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']      
     },
     {
@@ -410,7 +410,7 @@ QUESTIONS.p = _.shuffle([
     },
      {
      id: 'BF-F72+', 
-     question: "I feel that I have an assertive personality...", 
+     question: "I feel like I have an assertive personality...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
