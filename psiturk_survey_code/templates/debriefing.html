@@ -11,31 +11,27 @@
 		<h1>Debriefing</h1>
 
 		<div id="debriefingtext">
-		<p>Thank you for your participation!  Your anonymous data makes an
+		<p>Thank you for your participation!  You've made an
 		important contribution to our understanding of personality and personality assessment. </p>
 
 		<p>
 			The goal of this research is to develop a more accurate personality test, by looking at the objective frequencies of behaviors associated with personality traits. Additionally, this research is testing how 'humility' influences ones personality and vice versa. Both 'humility' and the personality constructs in question represent just one attempt to measure them.
+		</p>
+		<p>
+			Please do not tell anybody who hasn't taken the survey about this research, as it may confound results
+		</p>
 		
 		<p>If you have any questions or comments about this research, you may contact the
 		principal investigator at e.warfel@gmail.com</p>
-		</div>
 
-			<p class="cool">Do you agree to the following statement?</p>
-			<div id="affirmationbox">
-				<p>I feel that I have been adequately debriefed about the nature
-					of the study.</p>
-					<table><tr>
-						<td id="affirmative" onClick="javascript:document.forms['accept'].submit()">Yes, I agree.</td>
-						<td id="negative" onClick="javascript:document.forms['decline'].submit()">No, please withhold my data. I will contact the experimenter with questions.</td>
-					</tr></table> 
-					<form id="accept" action="complete" method="post">
-						<input type="hidden" name="uniqueid" value="{{ uniqueId }}" />
-						<input type="hidden" name="agree" value="true" />
-					</form>
-					<form id="decline" action="complete" method="post">
-						<input type="hidden" name="uniqueid" value="{{ uniqueId }}" />
-						<input type="hidden" name="agree" value="false" />
+		<p>
+		</div>
+				<form id='completion' action ='complete' method = 'post' >
+
+						 <button type="submit" id="Finish" value="Finish" class="btn btn-sucess btn-lg" form="completion">Click here to finish</button>
+
+
+	
 					</form>
 			</div>
 	</div>

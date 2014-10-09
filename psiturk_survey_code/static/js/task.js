@@ -14,7 +14,6 @@ var mycounterbalance = counterbalance;  // they tell you which condition you hav
 var pages = [
 	"stage.html",
 	"postquestionnaire.html",
-    "debriefing.html",
     "complete.html"
 ];
 
@@ -47,11 +46,8 @@ var QUESTIONS = {};
 
 QUESTIONS.p = _.shuffle([
 //QUESTIONS.p = [
-//Question Id's point in the direction of the label. (1-10 = + on withdrawal)
 
-//paste this whole thing back into lines 31 – 634
-//need instructions that the endpoints should be thought of as containing the words ”, or, ”
-     {
+     { //Volatility
      id: 'BF-F1+',
      question: "I lose my temper...",
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
@@ -95,10 +91,10 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F9+',
-     question: "In general, I get annoyed...",
+     question: "I get annoyed...",
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
-    {
+    { //withdrawal
      id: 'BF-F10+',
      question: "I am filled with doubts about things...",
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
@@ -154,7 +150,7 @@ QUESTIONS.p = _.shuffle([
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
 
     },
-    { // Empathy/Agreeableness 
+    { // Empathy/compassion
      id: 'BF-F21+', 
      question: "In general, I empathize with the emotions of other people...",
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
@@ -204,7 +200,7 @@ QUESTIONS.p = _.shuffle([
      question: "I express my 'soft and caring' side to people I know...", 
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
-    {
+    {//politeness
      id: 'BF-F31+', 
      question: "I respect the will of my superiors...", 
      labels: ['Almost never', 'Some of the time', 'Nearly every time']
@@ -249,7 +245,7 @@ QUESTIONS.p = _.shuffle([
      question: "I consider how a situation will benefit my own personal gain...", 
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']  
   },
-    {//////////////////////////////////////////
+    {//////////////////////////////////////////industriousness
      id: 'BF-F40+', 
      question: "I carry out the plans that I make...", 
      labels:['Once every 2 weeks', 'Once a week', '3 times a week'] 
@@ -305,9 +301,9 @@ QUESTIONS.p = _.shuffle([
      labels:['Once a week', '3 times a week', 'Every day']
     },
      {
-     id: 'BF-F51+', 
-     question: "I tidy up my living space...", 
-     labels:['Once a week', '3 times a week', 'Every day']
+     id: 'BF-F51-', 
+     question: "I'm late to things..", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
      id: 'BF-F52+', 
@@ -394,7 +390,7 @@ QUESTIONS.p = _.shuffle([
         },
     {
      id: 'BF-F68-', 
-     question: "If I weren't forced by work or school, I'd generally keep to myself ...", 
+     question: "If I weren't forced by work or school, I'd keep to myself...", 
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']      
     },
     {
@@ -404,7 +400,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F70-', 
-     question: " I am generally unenthusiastic...", 
+     question: " I feel nenthusiastic...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']      
     },
     {
@@ -681,7 +677,7 @@ QUESTIONS.mindset = _.shuffle([
     labels: ['Less important than', 'About the same as', 'More important than'] //2x distance from 50
 },
 {
-    id:'IE_22-’',
+    id:'IE_22-',
     question:'Some people don’t deserve my empathy or attention.',
 labels: ['Disagree', 'Neutral', 'Agree       ']
 },
@@ -971,7 +967,8 @@ var Questionnaire = function() {
 				//psiTurk.computeBonus('compute_bonus', function() {
                     // TO DO TOMORROW: psiturk.pageload (debrief)
 					psiTurk.completeHIT(); // when finished saving compute bonus, the quit
-				//});
+				//psiTurk.showPage('debriefing.html')
+                //});
 			},
 			error: prompt_resubmit
 		});
@@ -979,6 +976,9 @@ var Questionnaire = function() {
 
 
 };
+
+/*********************************************
+//debrie
 
 // Task object to keep track of the current phase
 var currentview;
