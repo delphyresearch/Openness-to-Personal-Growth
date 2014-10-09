@@ -611,57 +611,52 @@ QUESTIONS.mindset = _.shuffle([
         labels: ['Disagree', 'Neutral', 'Agree']  
     },
     {
-        id: 'PBR8_',
+        id: 'PBR_8-',
         question: "Fate has a lot to do with who a person becomes.",
         labels: ['Disagree', 'Neutral', 'Agree'] 
     },
     {
-        id: 'OPG9+',
+        id: 'OPG_9+',
         question: "How familiar are you with the following phrase: 'The purpose of life is to learn life’s lessons'. ",
         labels: ['Unfamiliar', 'Neutral', 'Familiar']  
     },
     {
         id: 'OPG_10+',
-        question: "How much do you believe the following phrase: 'The purpose of life is to learn life’s lessons'. ",
-        labels: ['Disagree', 'Neutral', 'Agree']  
-    },
-    {
-        id: 'OPG_11+',
         question:  "There is something I can learn from every experience I have, regardless of how it makes me feel. ",
         labels: ['Disagree', 'Neutral', 'Agree']  
     },
     {
-        id: 'OPG_12-',
+        id: 'OPG_11-',
         question: "Negative emotions and feelings should be avoided.",
         labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-        id: 'OPG_13+',
+        id: 'OPG_12+',
         question: "In general, I keep myself ‘open’ to criticism and feedback about my behavior.",
         labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-        id: 'OPG_14+',
+        id: 'OPG_13+',
         question: "I am _________ talking about my flaws with my friends.",
         labels: ['Uncomfortable', ' Neutral', 'Comfortable']
     },
     {
-        id: 'OPG_15+',
+        id: 'OPG_14+',
         question: "I am __________ trying to work on an aspect of my character.",
         labels: ['Rarely', 'Sometimes', 'Frequently']
     },
     {
-        id: 'OPG_16+',
+        id: 'OPG_15+',
         question: "There is something valuable I can learn from ________ the people I know.",
         labels: ['A few of', 'Some of', 'All of']
     },
     {
-        id: 'OPG_17+',
+        id: 'OPG_16+',
         question: "In comparison to others, I have more _________.",
         labels: ['Flaws', ' ', 'Virtues'] // scored as 2x distance away from 50.
     },
 {
-        id: 'OPG_18-',
+        id: 'OPG_17-',
         question: "Negative criticism is detrimental.",
         labels: ['Disagree', 'Neutral ', 'Agree'] 
     },
@@ -697,17 +692,17 @@ labels: ['Disagree', 'Neutral', 'Agree       ']
     labels:['Disagree', 'Neutral', '       Agree']
 },
 {
-    id:'IE_23-',
+    id:'IE_24-',
     question:'I make eye contact with homeless people.',
     labels:['Rarely', 'Sometimes', 'Frequently']
 },
 {
-    id:'IE_24-',
+    id:'IE_25-',
     question:'I get intimidated by people who are smart, or pretty, or both.',
     labels:['Rarely', 'Sometimes', 'Frequently']
 },
 {
-    id:'IE_25-',
+    id:'IE_26-',
     question: 'I use a ‘1-10’ scale when determining whom I might date.',
     labels:['Rarely', 'Sometimes', 'Frequently']
     }
@@ -743,9 +738,9 @@ var PhasedQuestions = function() {
 	// NOTE: the following variables can be safely modified
 
 	// Each set of questions, in the order they should appear
-	self.phases = [QUESTIONS.p, QUESTIONS.mindset];
-    //self.phases = [QUESTIONS.mindset];
-   // self.phases = [QUESTIONS.sample ];
+	//self.phases = [QUESTIONS.p, QUESTIONS.mindset];
+    self.phases = [QUESTIONS.mindset];
+    //self.phases = [QUESTIONS.sample ];
 
 	// The maximum number of questions per page
 	self.PER_PAGE = 25;
@@ -967,11 +962,14 @@ var Questionnaire = function() {
 	psiTurk.showPage('postquestionnaire.html');
 	psiTurk.recordTrialData({ phase: 'postquestionnaire', status: 'begin' });
 
-	$("#next").click(function() {
+    $("#postquiz").submit(function(e){
+	//$("#next").click(function() {
+        e.preventDefault();
 		record_responses();
 		psiTurk.saveData({
 			success: function(){
 				//psiTurk.computeBonus('compute_bonus', function() {
+                    // TO DO TOMORROW: psiturk.pageload (debrief)
 					psiTurk.completeHIT(); // when finished saving compute bonus, the quit
 				//});
 			},
