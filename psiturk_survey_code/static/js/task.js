@@ -202,7 +202,7 @@ QUESTIONS.p = _.shuffle([
     },
     {//politeness
      id: 'BF-F31+', 
-     question: "I respect the will of my superiors...", 
+     question: "I respect the authority of my superiors...", 
      labels: ['Almost never', 'Some of the time', 'Nearly every time']
     },
     {
@@ -252,7 +252,7 @@ QUESTIONS.p = _.shuffle([
    },
     {
      id: 'BF-F41+', 
-     question: "I finish the tasks that I start...", 
+     question: "I finish the tasks that I start in one sitting...", 
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
@@ -312,7 +312,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F53+', 
-     question: "I find that I want everything to be 'just right'...",
+     question: "I find that I want most things to be 'just right'...",
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']   
  },
     {
@@ -674,7 +674,7 @@ QUESTIONS.mindset = _.shuffle([
 {
     id:'IE_21+',
     question:"I am ________ most of the people I interact with.",
-    labels: ['Less important than', 'About the same as', 'More important than'] //2x distance from 50
+    labels: ['Less important than', 'As important as', 'More important than'] //2x distance from 50
 },
 {
     id:'IE_22-',
