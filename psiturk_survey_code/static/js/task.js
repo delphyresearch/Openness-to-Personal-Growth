@@ -355,7 +355,7 @@ QUESTIONS.p = _.shuffle([
     {//Extroversion
      id: 'BF-F61+',
      question: "I am friendly towards people who aren't my friends...",
-      labels:['Once Every 2.5 weeks', 'Twice a week', 'Every day   ']
+      labels:['Once every 2.5 weeks', 'Twice a week', 'Every day   ']
     },
     {
      id: 'BF-F62+', 
@@ -366,7 +366,7 @@ QUESTIONS.p = _.shuffle([
      id: 'BF-F63+', 
      question: "I show my feelings when I'm happy...",  
       labels:['Rarely', 'Sometimes', 'Every time'] 
-//might have something to do with intensity of happiness… ‘everytime I’m even remotely happy’…
+
     },
      {
      id: 'BF-F64+', 
@@ -735,8 +735,8 @@ var PhasedQuestions = function() {
 	// NOTE: the following variables can be safely modified
 
 	// Each set of questions, in the order they should appear
-	//self.phases = [QUESTIONS.p, QUESTIONS.mindset];
-    self.phases = [QUESTIONS.mindset];
+	self.phases = [QUESTIONS.p, QUESTIONS.mindset];
+    //self.phases = [QUESTIONS.mindset];
     //self.phases = [QUESTIONS.sample ];
 
 	// The maximum number of questions per page

@@ -12,11 +12,11 @@ organization_name = Warfel Research Projects
 browser_exclude_rule = MSIE, mobile, tablet
 
 [Database Parameters]
-database_url = sqlite:///participants.db
-table_name = turkdemo
+database_url = mysql://evan:seldon@127.0.0.1:3306/personality
+table_name = bffopg
 
 [Server Parameters]
-host = localhost
+host = 127.0.0.1
 port = 22362
 cutoff_time = 30
 logfile = server.log
