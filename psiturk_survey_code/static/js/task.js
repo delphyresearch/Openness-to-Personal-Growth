@@ -50,7 +50,7 @@ QUESTIONS.p = _.shuffle([
      { //Volatility
      id: 'BF-F1+',
      question: "I lose my temper...",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F2+',
@@ -82,12 +82,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F7+',
      question: "My emotions get the better of me...",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F8+',
      question: "I lose my composure...",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F9+',
@@ -102,7 +102,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F11+',
      question: "I feel threatened by the future or the unknown..",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F12+',
@@ -132,12 +132,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F17-', 
      question: " I feel alive and full of life... ",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F18+', 
      question: "I feel uncomfortable with myself...",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F19-', 
@@ -188,7 +188,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F28-',
      question: "I am indifferent to the feelings of others...",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F29+',
@@ -223,17 +223,17 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F35-', 
      question: "I insult people behind their backs...",  
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F36-', 
      question: "I am rude to others...", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
      id: 'BF-F37-', 
      question: "I seek conflict...",
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week'] 
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
    },
     {
      id: 'BF-F38-', 
@@ -258,7 +258,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F42+', 
      question: "I get small tasks done quickly...", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels:['Once a week', '3 times a week', 'Every day']
     },
     {
      id: 'BF-F43+', 
@@ -303,7 +303,7 @@ QUESTIONS.p = _.shuffle([
      {
      id: 'BF-F51-', 
      question: "I'm late to things..", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels:['Once a month', 'Once every two weeks', 'Once a week']
     },
     {
      id: 'BF-F52+', 
@@ -349,7 +349,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F60-', 
      question: "I forget belongings when I travel...", 
-     labels:['Once every 5 trips', 'Every 3 trips', 'Every trip']
+     labels:['Once every 7 trips', 'Every 4 trips', 'Every other trip']
     },
 
     {//Extroversion
@@ -421,12 +421,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F74+', 
      question: "I interrupt conversations to make a point when speaking with men...", 
-      labels:['Once every 2 weeks', '3 times a week', 'Every day   ']
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
      id: 'BF-F75+', 
      question: "I interrupt conversations to make a point when speaking with women...", 
-      labels:['Once every 2 weeks', '3 times a week', 'Every day']
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
      {
      id: 'BF-F76+', 
@@ -460,8 +460,8 @@ QUESTIONS.p = _.shuffle([
     },
      {///////////OPENNESS
      id: 'BF-F82+', 
-     question: "I learn new things...", 
-      labels:['Once a month', 'Once every 2.5 weeks', 'Once a week']    
+     question: "I seek new experiences...", 
+      labels:['Once every 3 weeks', 'Once a week', '3 times a week']    
     },
      {
      id: 'BF-F83-', 
@@ -577,9 +577,10 @@ QUESTIONS.mindset = _.shuffle([
 
     {
         id: 'PBR_2-',
-        question: "If I’m running late, or I mess something up, it’s usually due to unforeseeable circumstances. ",   
+        question: "If I’m running late, or I mess something up, I tend to blame external circumstances. ",   
         labels: ['Disagree', 'Neutral', 'Agree']  
     },
+    
     {
         id: 'PBR_3+',
         question: "I take ______ % responsibility for what will happen to me during the next few months. ",
@@ -688,8 +689,8 @@ labels: ['Disagree', 'Neutral', 'Agree       ']
     labels:['Disagree', 'Neutral', '       Agree']
 },
 {
-    id:'IE_24-',
-    question:'I make eye contact with homeless people.',
+    id:'IE_24+',
+    question:'I make eye contact with homeless people when I pass them.',
     labels:['Rarely', 'Sometimes', 'Frequently']
 },
 {

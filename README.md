@@ -6,7 +6,7 @@ Looking into the general factor of personality and openness to personal growth /
 
 This repo is for all of the data analysis code, including factor analysis and reliability estimates, as well as STAN model code. Additionally, this repository houses the code used to facillitate the data collection.
 
-Please see https://osf.io/u8nwr/ for more details regarding the research.
+Please see https://osf.io/6uha3/ for more details regarding the research.
 
 Specifically, click above to read the registration of intention for this project. 
 
