@@ -5753,3 +5753,2137 @@ OperationalError: (OperationalError) (1049, "Unknown database 'personality'") No
 2014-10-16 15:39:07,447 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2014-10-16 15:39:07,472 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2014-10-16 15:39:07,494 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-10-16 20:10:07 -0700] [15036] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-16 20:10:07 -0700] [15037] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-16 20:10:07 -0700] [15038] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-16 20:10:07 -0700] [15040] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-16 20:10:07 -0700] [15039] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-16 20:10:07 -0700] [15041] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-16 20:10:07 -0700] [15042] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-16 20:10:07 -0700] [15043] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-17 10:55:29 -0700] [1028] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-17 10:55:29 -0700] [1029] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-17 10:55:29 -0700] [1030] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-17 10:55:29 -0700] [1031] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-17 10:55:30 -0700] [1032] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-17 10:55:30 -0700] [1033] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-17 10:55:30 -0700] [1034] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+2014-10-17 11:05:45,732 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:45,773 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:45,788 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:45,848 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:45,957 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,018 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,032 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,108 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,134 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,155 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,287 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,307 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,354 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,460 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,509 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,523 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-17 11:05:46,543 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-10-18 13:35:49 -0700] [1165] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-18 13:35:49 -0700] [1166] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-18 13:35:49 -0700] [1167] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-18 13:35:49 -0700] [1168] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+[2014-10-18 13:35:49 -0700] [1169] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 85, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 23, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3404, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1615, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1608, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1798, in contextual_connect
+    self.pool.connect(),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 644, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 963, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool.py", line 538, in __connect
+    connection = self.__pool._creator()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") None None
+2014-10-18 13:37:48,199 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,243 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,338 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,452 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,572 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,650 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,795 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,796 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,808 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,873 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,961 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,973 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:48,992 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:49,018 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:49,078 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:49,109 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-18 13:37:49,109 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js

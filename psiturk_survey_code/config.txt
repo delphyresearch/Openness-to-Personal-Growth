@@ -12,11 +12,11 @@ organization_name = Warfel Research Projects
 browser_exclude_rule = MSIE, mobile, tablet
 
 [Database Parameters]
-database_url = mysql://evan:seldon@127.0.0.1:3306/personality
-table_name = bffopg
+database_url = 
+table_name =
 
 [Server Parameters]
-host = 127.0.0.1
+host = 
 port = 22362
 cutoff_time = 30
 logfile = server.log
