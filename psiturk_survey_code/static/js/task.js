@@ -101,7 +101,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F11+',
-     question: "I feel threatened by the future or the unknown..",
+     question: "I feel threatened by the future or the unknown...",
      labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
@@ -302,7 +302,7 @@ QUESTIONS.p = _.shuffle([
     },
      {
      id: 'BF-F51-', 
-     question: "I'm late to things..", 
+     question: "I'm late to things...", 
      labels:['Once a month', 'Once every two weeks', 'Once a week']
     },
     {
@@ -400,7 +400,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BF-F70-', 
-     question: " I feel unenthusiastic...", 
+     question: "I feel unenthusiastic...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']      
     },
     {
@@ -430,7 +430,7 @@ QUESTIONS.p = _.shuffle([
     },
      {
      id: 'BF-F76+', 
-     question: " I talk others into doing things my way...", 
+     question: "I talk others into doing things my way...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']    
     },
     {
@@ -562,7 +562,7 @@ QUESTIONS.p = _.shuffle([
     },
      {
      id: 'BF-F102+', 
-     question: "I notice emotional aspects of paintings and photographs ...", 
+     question: "I notice emotional aspects of paintings and photographs...", 
      labels: ['Rarely', 'Every few times I look at one', 'Every time I look at one']
     }
 ]);
