@@ -19,7 +19,8 @@ psiTurk.preloadPages(pages);
 //big five aspect scales:
 
 var QUESTIONS_BFAS = _.shuffle([ //anyway to shuffle the two large blocks?/////////////////
-    {
+    
+     {//NOTE POSITIVELY KEYED TOWARDS NEUROTICISM, NOT STABILITY!!!!!
      id: 'BFAS-1+',
      question: "I get angry easily.",
      labels: ['Disagree', 'Neutral', 'Agree'] 
@@ -127,7 +128,7 @@ var QUESTIONS_BFAS = _.shuffle([ //anyway to shuffle the two large blocks?//////
     },
     {
      id: 'BFAS-22+', 
-     question: "I inquire about other people's well-being.",
+     question: "I inquire about others' well-being.",
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
@@ -160,382 +161,370 @@ var QUESTIONS_BFAS = _.shuffle([ //anyway to shuffle the two large blocks?//////
      question: "I am indifferent to the feelings of others.", //#####
      labels: ['Disagree', 'Neutral', 'Agree']
     },
-    { %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Pausing entering BFAS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    { 
      id: 'BFAS-29-',
      question: "I take no time for others.", 
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-30+', 
-     question: "I express my 'soft and caring' side...", 
+     id: 'BFAS-30-', 
+     question: "I don't have a soft side.", 
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      id: 'BFAS-31+', 
-     question: "I respect the will of authority...", 
+     question: "I respect authority.", 
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
      id: 'BFAS-32+',
-     question: "I try to avoid seeming pushy...", //#######
+     question: "I hate to seem pushy.", //#######
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
      id: 'BFAS-33+', 
-     question: "I avoid imposing my will on others...", //#######
+     question: "I avoid imposing my will on others.", //#######
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-34-', 
-     question: "I put people under pressure...", //#######
+     id: 'BFAS-34+', 
+     question: "I rarely put people under pressure.", //#######
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F35-', 
-     question: "I probably insult people...", //#######
+     id: 'BFAS-35-', 
+     question: "I insult people.", //#######
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F36-', 
-     question: "I think/believe that I am better than certain, other people...", //
+     id: 'BFAS-36-', 
+     question: "I believe that I am better than others.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F37-', 
-     question: "I take advantage of others...", //
+     id: 'BFAS-37-', 
+     question: "I take advantage of others.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F38-', 
-     question: "I  seek conflict...", //
+     id: 'BFAS-38-', 
+     question: "I  seek conflict.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F39-', 
-     question: " I love having a good fight...", //
+     id: 'BFAS-39-', 
+     question: " I love a good fight.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F40', 
-     question: "I consider how a situation will benefit my own personal gain...", //
+     id: 'BFAS-40-', 
+     question: "I am out for my own personal gain.", //
+     labels: ['Disagree', 'Neutral', 'Agree']
+    },
+    {///conci...
+     id: 'BFAS-41+', 
+     question: "I carry out my plans.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F41+', 
-     question: "I carry out my plans...", //
+     id: 'BFAS-42+', 
+     question: "I finish what I start.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F42+', 
-     question: "I finish the projects or tasks that I start...", //
+     id: 'BFAS-43+', 
+     question: "I get things done quickly.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F43+', 
-     question: "I get things done quickly...", //
+     id: 'BFAS-44+', 
+     question: "I always know what I am doing.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F44+', 
-     question: "I feel like know what I am doing...", //
+     id: 'BFAS-45-', 
+     question: "I waste my time.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F45-', 
-     question: "I waste my time...", //
+     id: 'BFAS-46-', 
+     question: "I find it difficult to get down to work.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F46-', 
-     question: "I find it difficult to start working...", //
+     id: 'BFAS-47-', 
+     question: "I mess things up.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F47-', 
-     question: "I mess things up...", //
+     id: 'BFAS-48-', 
+     question: "I don't put my mind to the task at hand.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F48-', 
-     question: "I don't put my mind to the task at hand...", //
+     id: 'BFAS-49-', 
+     question: "I postpone making decisions.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F49-', 
-     question: "I postpone  making decisions...", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BF-F50-', 
-     question: "I get distracted...", //
+     id: 'BFAS-50-', 
+     question: "I am easily distracted.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {/////////////////////////////////////////////////////////////////////////////////////////////////////////
-     id: 'BF-F51', 
-     question: "I make to-do lists...", //
+     id: 'BFAS-51+', 
+     question: "I like order.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F52-', 
-     question: "I keep things tidy...", //
+     id: 'BFAS-52+', 
+     question: "I keep things tidy.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F53+', 
-     question: "I follow a regular schedule...", //
+     id: 'BFAS-53+', 
+     question: "I follow a schedule.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F54+', 
-     question: "I want everything to be 'just right'...", //
+     id: 'BFAS-54+', 
+     question: "I want everything to be 'just right'.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F55+', 
-     question: "I see to it that rules are observed...", //
+     id: 'BFAS-55+', 
+     question: "I see that rules are observed.", //
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F56+', 
-     question: "I am methodical in my work...", // 
+     id: 'BFAS-56+', 
+     question: "I want every detail taken care of.", // 
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F57-', 
-     question: "I leave my belongings around...", // 
+     id: 'BFAS-57-', 
+     question: "I leave my belongings around.", // 
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F58-', 
-     question: "I misplace things...", // '''''''''''''''''''''''''''''''''''''''''''
+     id: 'BFAS-58-', 
+     question: "I am not bothered by messy people.", // '''''''''''''''''''''''''''''''''''''''''''
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F59-', 
-     question: "I clean my room...", // 
-     labels: ['Less than once a week', 'A few times a week', 'Every day or more']
+     id: 'BFAS-59-', 
+     question: "I am not bothered by disorder.", // 
+     labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F60-', 
-     question: "I forget to bring items when I travel...", // ***************************************************
-     labels: ['Once every so often', 'Every few times', 'Every trip']
+     id: 'BFAS-60-', 
+     question: "I dislike routine.", // ***************************************************
+     labels: ['Disagree', 'Neutral', 'Agree']
     },
 
     {///////////////////////////////////////////////////////////////////////Extroversion-Assertiveness
-     id: 'BF-F61+', 
-     question: "I try to make new friends...", // 
+     id: 'BFAS-61+', 
+     question: "I make friends easily.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F62+', 
-     question: "I quickly warm up to to others...", // 
+     id: 'BFAS-62+', 
+     question: "I warm up quickly to to others.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F63+', 
-     question: "I show my feelings when I'm happy...", // 
+     id: 'BFAS-63+', 
+     question: "I show my feelings when I'm happy.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F64+', 
-     question: "I enjoy what I happen to be doing...", // 
+     id: 'BFAS-64+', 
+     question: "I have a lot of fun.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F65+', 
-     question: "I laugh heartily...", // 
+     id: 'BFAS-65+', 
+     question: "I laugh a lot.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
 
     {
-     id: 'BF-F66+', 
-     question: "I open up to friends...", // 
+     id: 'BFAS-66-', 
+     question: "I am hard to get to know.", // 
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F67-', 
-     question: "I keep others at a distance...", // 
+     id: 'BFAS-67-', 
+     question: "I keep others at a distance.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F68-', 
-     question: "In social settings, I keep to myself...", // talking to strangers on the bus???
+     id: 'BFAS-68-', 
+     question: "I reveal little about myself.", // talking to strangers on the bus???
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F69-', 
-     question: "I get caught up in the excitement...", // 
+     id: 'BFAS-69-', 
+     question: "I rarely get caught up in the excitement.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F70-', 
-     question: "I am generally unenthusiastic about what I am doing or where I am...", // 
+     id: 'BFAS-70-', 
+     question: "I am not a very enthusiastic person.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {///////////////////////////////////////////////////////////////////////////////////////////
-     id: 'BF-F71+', 
-     question: "I take charge of siturations...", // 
+     id: 'BFAS-71+', 
+     question: "I take charge.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F72+', 
-     question: "I feel like I have a strong personality...", // 
+     id: 'BFAS-72+', 
+     question: "I have a strong personality.", // 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F73+', 
-     question: "I captivate people...", 
+     id: 'BFAS-73+', 
+     question: "I know how to captivate people.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F74+', 
-     question: "I interrupt people and/or conversations to make a point...", 
+     id: 'BFAS-74+', 
+     question: "I see myself as a good leader.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F75+', 
-     question: " I talk others into doing things my way...", 
+     id: 'BFAS-75+', 
+     question: "I can talk others into doing things.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F76+', 
-     question: "I am the first to act or decide what to do...", 
+     id: 'BFAS-76+', 
+     question: "I am the first to act.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F77-', 
-     question: "I do not act assertively...", 
+     id: 'BFAS-77-', 
+     question: "I do not have an assertive personality.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F78-', 
-     question: "I follow what the group wants to do...", 
+     id: 'BFAS-78-', 
+     question: "I lack the talent for influencing people.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F79-', 
-     question: "I wait for others to lead the way...", 
+     id: 'BFAS-79-', 
+     question: "I wait for others to lead the way.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F80-', 
-     question: "I hold back my opinions...", 
+     id: 'BFAS-80-', 
+     question: "I hold back my opinions.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {/////////////////////////////////////////////////////OPENNESSS//////////////////////////////////
-     id: 'BF-F81+', 
-     question: "I understand new things quickly...", 
+     id: 'BFAS-81+', 
+     question: "I am quick to understand things.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F82-', 
-     question: "I am overwhelmed by information...", 
+     id: 'BFAS-82+', 
+     question: "I can handle a lot of information.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F83+', 
-     question: "I try to solve complex problems...", 
+     id: 'BFAS-F83+', 
+     question: "I like to solve complex problems.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F84+', 
-     question: "I use large or uncommon words...", 
+     id: 'BFAS-F84+', 
+     question: "I have a rich vocabularly.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F85+', 
-     question: "I find that people over-explain things...", 
+     id: 'BFAS-F85+', 
+     question: "I think quickly.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F86+', 
-     question: "I formulate abstract ideas clearly...", 
+     id: 'BFAS-F86+', 
+     question: "I formulate ideas clearly.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F87+', 
-     question: "I try to learn about new things on my own time...", 
+     id: 'BFAS-F87-', 
+     question: "I have difficulty understanding abstract ideas.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F88+', 
-     question: "I think about abstract, cerebral ideas...", 
+     id: 'BFAS-88-', 
+     question: "I avoid philosophical discussions.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F89+', 
-     question: "I have philosophical discussions...", 
+     id: 'BFAS-89-', 
+     question: "I avoid difficult reading material.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F90-', 
-     question: "I read light, fun books...", 
-      labels: ['Hardly ever', 'About once a month', 'Disagree or Neutral'
+     id: 'BFAS-90-', 
+     question: "I learn things slowly.", 
+     labels: ['Disagree', 'Neutral', 'Agree']
 
-      %%%%%%%%%%%%%%WHAT IS QUESTION 91?
-
-
-       {
-  gree, 
-     question: "It takes me a while to learn something new...", 
-      labels: ['Hardly ever', 'Every so often', 'Constantly']
+  },
+  {//////////////////////////////////////aesthetic sense/
+     id: 'BFAS-90+',
+     question: "I enjoy the beauty of nature.", 
+      labels: ['Disagree', 'Neutral', 'Agree']
     },
-     {///////////////////////////////////////aesthetic sense///////////////////////////////////////////////////////////////////////
-     id: 'BF-F92-', 
-     question: "I enjoy/notice the beauty of nature...", 
-       labels: ['Disagree', 'Neutral', 'Agree']
-    },
+     {//
     {
-     id: 'BF-F93-', 
-     question: "I make time to enjoy art, photography or sculpture...", 
+     id: 'BFAS-91+', 
+     question: "I believe in the importance of art.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F94+', 
-     question: "I reflect on things...", 
+     id: 'BFAS-92+', 
+     question: "I love to reflect on things.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F95+', 
-     question: "I get deeply immersed in music...", 
+     id: 'BFAS-95+', 
+     question: "I get deeply immersed in music.", 
      labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F96+', 
-     question: "I see beauty in things that others might not notice...", 
+     id: 'BFAS-96+', 
+     question: "I see beauty in things that others might not notice.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BF-F97+', 
-     question: "I need a creative outlet...", 
+     id: 'BFAS-97+', 
+     question: "I need a creative outlet.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F98+', 
-     question: "I read poems and literature...", 
+     id: 'BFAS-98-', 
+     question: "I do not like poetry.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F99+', 
-     question: "I see plays...", 
+     id: 'BFAS-99-', 
+     question: "I seldom get lost in thought.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F100+', 
-     question: "I get lost in thought...", 
+     id: 'BFAS-100-', 
+     question: "I seldom daydream", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BF-F101+', 
-     question: "I daydream...", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BF-F102+', 
-     question: "I notice emotional aspects of paintings and photographs ...", 
+     id: 'BFAS-101-', 
+     question: "I seldom notice the emotional aspects of paintings and pictures.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     }
-
  
         
 ]);

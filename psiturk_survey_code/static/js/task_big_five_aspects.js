@@ -79,7 +79,7 @@ QUESTIONS.p = _.shuffle([
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-F7-',
+     id: 'BFAS-F7-'
      question: "I rarely get irritated.",
      labels: ['Disagree', 'Neutral', 'Agree']
     },
@@ -140,7 +140,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BFAS-19-', 
-     question: "I rarely feel depressed.",
+     question: "I rarely feel depressed."
      labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
@@ -506,6 +506,7 @@ QUESTIONS.p = _.shuffle([
      question: "I enjoy the beauty of nature.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
+     {//
     {
      id: 'BFAS-91+', 
      question: "I believe in the importance of art.", 
@@ -543,7 +544,7 @@ QUESTIONS.p = _.shuffle([
     },
     {
      id: 'BFAS-100-', 
-     question: "I seldom daydream.    ", 
+     question: "I seldom daydream", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
@@ -727,7 +728,7 @@ var PhasedQuestions = function() {
     //self.phases = [QUESTIONS.sample ];
 
 	// The maximum number of questions per page
-	self.PER_PAGE = 24;
+	self.PER_PAGE = 25;
 
 	// WARNING: the following variables are intended for internal use
 

@@ -12,11 +12,11 @@ organization_name = Warfel Research Projects
 browser_exclude_rule = MSIE, mobile, tablet
 
 [Database Parameters]
-database_url = 
-table_name =
+database_url = sqlite:///participants.db
+table_name = sampleBFAS
 
 [Server Parameters]
-host = 
+host = 127.0.0.1
 port = 22362
 cutoff_time = 30
 logfile = server.log

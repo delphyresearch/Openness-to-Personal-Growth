@@ -7887,3 +7887,81 @@ OperationalError: (OperationalError) (2003, "Can't connect to MySQL server on '1
 2014-10-18 13:37:49,078 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2014-10-18 13:37:49,109 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2014-10-18 13:37:49,109 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,163 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,217 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,260 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,308 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,387 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,413 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,514 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,543 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,693 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,841 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,850 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,861 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,941 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:37,989 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:38,006 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:38,032 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:38,052 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 13:21:49,961 Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 664, in regularpage
+    return render_template(pagename)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: dashboard
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2496)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2497)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2498)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2499)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2500)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2501)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2502)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2503)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2504)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2505)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2506)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2507)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2508)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2509)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2493)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2494)
+[2014-10-23 14:25:52 -0700] [2489] [CRITICAL] WORKER TIMEOUT (pid:2495)
+2014-10-23 14:25:52,744 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:52,748 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:52,866 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:52,902 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,122 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,176 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,203 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,227 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,251 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,341 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,346 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,394 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,448 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,458 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,492 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,511 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-10-23 14:25:53,523 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
