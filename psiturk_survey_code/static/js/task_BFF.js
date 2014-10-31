@@ -50,12 +50,12 @@ QUESTIONS.p = _.shuffle([
      { //Volatility
      id: 'BF-F1+',
      question: "I lose my temper...",
-     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
+     labels: ['Once every 2.5 weeks', 'Once a week', 'Twice a week'] 
     },
     {
      id: 'BF-F2+',
      question: "I get upset...",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+     labels: ['Once every 2.5 weeks', 'Once a week', 'Twice a week'] 
     },
     {
      id: 'BF-F3+',
@@ -77,7 +77,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F6-',
      question: "I find myself calm and relaxed...",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+     labels: ['Once every 2.5 weeks', 'Once a week', 'Twice a week'] 
     },
     {
      id: 'BF-F7+',
@@ -87,7 +87,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F8+',
      question: "I lose my composure...",
-     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
+     labels: ['Once every 2.5 weeks', 'Once a week', 'Twice a week'] 
     },
     {
      id: 'BF-F9+',
@@ -153,12 +153,12 @@ QUESTIONS.p = _.shuffle([
     { // Agreeableness/compassion
      id: 'BF-F21+', 
      question: "In general, I empathize with the emotions of other people...",
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once or twice every 2 weeks', 'Once or twice a week', '4 times a week']
     },
     {
      id: 'BF-F22+', 
      question: "I sincerely inquire about other people's well-being...",
-    labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    labels: ['Once or twice every 2 weeks', 'Once or twice a week', '4 times a week']
     },
     {
      id: 'BF-F23+',
@@ -183,10 +183,10 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F27+', 
      question: "I think about other people's needs...", 
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once a week', '3 times a week', 'Every day']
     },
     {
-     id: 'BF-F28-',
+     id: 'BF-F28-', //REWORD?
      question: "I am indifferent to the feelings of others...",
      labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
@@ -248,22 +248,23 @@ QUESTIONS.p = _.shuffle([
     {//////////////////////////////////////////industriousness
      id: 'BF-F40+', 
      question: "I carry out the plans that I make...", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week'] 
+     labels:['Once a week', '2-3 times a week', 'Every day'] 
    },
     {
      id: 'BF-F41+', 
-     question: "I finish the tasks that I start in one sitting...", 
+     question: "I finish nearly all of the tasks that I start, in one sitting...", 
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
      id: 'BF-F42+', 
      question: "I get small tasks done quickly...", 
-     labels:['Once a week', '3 times a week', 'Every day']
+     labels:['Twice a week', '4 times a week', 'Every day']
     },
     {
      id: 'BF-F43+', 
      question: "I feel like I know what I am doing...", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']    },
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']  
+     },
     {
      id: 'BF-F44-', 
      question: "I waste time while I'm attempting to be productive...", 
@@ -277,12 +278,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F46-', 
      question: "I generally mess things up...", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels:['Once every 2.5 weeks', 'Once a week', '3 times a week']
     },
     {
      id: 'BF-F47-', 
      question: "I don't put my mind to the task at hand...", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels:['Once every 2.5 weeks', 'Once a week', '3 times a week']
     },
     {
      id: 'BF-F48-', 
@@ -303,7 +304,7 @@ QUESTIONS.p = _.shuffle([
      {
      id: 'BF-F51-', 
      question: "I'm late to things...", 
-     labels:['Once a month', 'Once every two weeks', 'Once a week']
+     labels:['Once every 2.5 weeks', 'Once a week', 'Twice week']
     },
     {
      id: 'BF-F52+', 
@@ -313,7 +314,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F53+', 
      question: "I find that I want most things to be 'just right'...",
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']   
+     labels:['Once a week', '3 times a week', 'Every day']   
  },
     {
      id: 'BF-F54+', 
@@ -323,7 +324,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F55+', 
      question: "I take care to be methodical in my work...", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels:['Once a week', 'Three times a wek', 'Every day']
     },
     {
      id: 'BF-F56-', 
@@ -349,7 +350,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F60-', 
      question: "I forget belongings when I travel...", 
-     labels:['Once every 7 trips', 'Every 4 trips', 'Every other trip']
+     labels:['Once every 7 trips', 'Every 4 trips', 'Every trip']
     },
 
     {//Extroversion
@@ -365,7 +366,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F63+', 
      question: "I show my feelings when I'm happy...",  
-      labels:['Rarely', 'Sometimes', 'Every time'] 
+      labels:['Sometimes', '', 'Every time'] 
 
     },
      {
@@ -391,7 +392,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F68-', 
      question: "If I weren't forced by work or school, I'd keep to myself...", 
-     labels:['Once every 2 weeks', 'Once a week', '3 times a week']      
+     labels:['Once every 2 weeks', '1-2 times a week', '3-4 times a week']      
     },
     {
      id: 'BF-F69+', 
@@ -421,12 +422,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F74+', 
      question: "I interrupt conversations to make a point when speaking with men...", 
-      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+      labels:['Once every 2.5 weeks', 'Once a week', 'Twice a week']
     },
     {
      id: 'BF-F75+', 
      question: "I interrupt conversations to make a point when speaking with women...", 
-      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+       labels:['Once every 2.5 weeks', 'Once a week', 'Twice a week']
     },
      {
      id: 'BF-F76+', 
@@ -456,7 +457,7 @@ QUESTIONS.p = _.shuffle([
      {
      id: 'BF-F81-', 
      question: "I hold back my opinions from people close to me...", 
-      labels:['Once every 2 weeks', 'Once a week', '3 times a week']    
+      labels:['Once every 2.5 weeks', 'Once a week', '3 times a week']    
     },
      {///////////OPENNESS
      id: 'BF-F82+', 
@@ -486,7 +487,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F87+', 
      question: "I learn about new things on my own time...", 
-      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+      labels:['Once every 1.5 weeks', 'Twice a week', '3 times a week']
     },
     {
      id: 'BF-F88+', 
@@ -517,7 +518,7 @@ QUESTIONS.p = _.shuffle([
      {     ///////////////////////////////////////aesthetic 
      id: 'BF-F93+', 
      question: "I notice the beauty of nature...", 
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+     labels: ['Once every 1.5 weeks', 'Twice a week', '4 times a week'] 
     },
     {
      id: 'BF-F94+', 
@@ -527,12 +528,12 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F95+', 
      question: "I reflect on what is happening in my life...", 
-      labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+      labels: ['Once every 1.5 weeks', 'Twice a week', '4 times a week'] 
     },
     {
      id: 'BF-F96+', 
      question: "I get deeply immersed or lost in music...", 
-     labels: ['Once a month', 'A few times a month', 'Once a week'] 
+     labels: ['Twice a month', 'Once every 1.5 weeks', 'Twice a week'] 
     },
      {
      id: 'BF-F97+', 
@@ -547,18 +548,18 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F99+', 
      question: "I read poems, literature or plays...", 
-     labels: ['Once a month', 'Once every 2.5 weeks', 'Once a week'] 
+     labels: ['Once every 2 months', 'Once a month', 'Twice a month'] 
     },
   
     {
      id: 'BF-F100+', 
      question: "I get lost in thought...", 
-      labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+      labels: ['Once every 1.5 weeks', 'Three times a week', 'Everyday'] 
    },
     {
      id: 'BF-F101+', 
      question: "I daydream...", 
-     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+     labels: ['Once every 1.5 weeks', 'Twice a week', 'Everyday ']
     },
      {
      id: 'BF-F102+', 
