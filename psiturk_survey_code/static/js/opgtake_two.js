@@ -39,7 +39,7 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'PBR_8-',
-        question: "Who a person becomes depends on fate.",
+        question: "Who a person becomes depends on fate or luck.",
         labels: ['Disagree', 'Neutral', 'Agree'] 
     },
     {
@@ -69,7 +69,7 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'OPG_14+',
-        question: "I am __________ trying to work on an aspect of my character or my behavior.",// My personal goals involve changing who I am?
+        question: "I write down goals for improving aspects of my character or my behavior.",
         labels: ['Rarely', 'Sometimes', 'Frequently']
     },
     {
@@ -79,12 +79,12 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'OPG_16+',
-        question: "In comparison to others, I have more _________ on average.",
+        question: "In general, I have more _________  than most of the people that I know.",
         labels: ['Flaws', ' ', 'Virtues'] // scored as 2x distance away from 50.
     },
 {
         id: 'OPG_17-',
-        question: "Negative criticism is detrimental.",
+        question: "Criticism is detrimental and unproductive.",
         labels: ['Disagree', 'Neutral ', 'Agree'] 
     },
 {
@@ -115,7 +115,7 @@ labels: ['Disagree', 'Neutral', 'Agree       ']
 
 {
     id:'IE_23-',
-    question:'Hitler was less than human.',
+    question:'Hitler was evil / less than human.',
     labels:['Disagree', 'Neutral', 'Agree']
 },
 {

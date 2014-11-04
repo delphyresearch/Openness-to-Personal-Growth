@@ -4,6 +4,9 @@
  *     utils.js
  */
 
+//////////////////////////////STUDY II: now with extra Humility / Personal Growth (V2) !
+
+
 // Initalize psiturk object
 var psiTurk = PsiTurk(uniqueId, adServerLoc);
 
@@ -554,7 +557,6 @@ QUESTIONS.p = _.shuffle([
  
 ]);
 //];
-
 QUESTIONS.mindset = _.shuffle([
     { //naming scheme : ‘construct_humilityitemnumber_direction’
         id: 'PBR_1+',
@@ -585,7 +587,7 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'PBR_6-',
-        question: "In general, people’s personalities can't change after a certain age.",
+        question: "I'd rather 'play it safe' instead of getting out of my comfort zone.",
         labels:  ['Disagree', 'Neutral', 'Agree']
         
     },
@@ -596,12 +598,12 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'PBR_8-',
-        question: "Fate has a lot to do with who a person becomes.",
+        question: "Who a person becomes depends on fate or luck.",
         labels: ['Disagree', 'Neutral', 'Agree'] 
     },
     {
         id: 'OPG_9+',
-        question: "How familiar are you with the following phrase: 'The purpose of life is to learn life’s lessons'. ",
+        question: "How familiar are you with the concept 'The purpose of life is to learn life’s lessons'? ",
         labels: ['Unfamiliar', 'Neutral', 'Familiar']  
     },
     {
@@ -611,7 +613,7 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'OPG_11-',
-        question: "Negative emotions and feelings should be avoided.",
+        question: "Negative emotions and feelings are bad.",
         labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
@@ -626,7 +628,7 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'OPG_14+',
-        question: "I am __________ trying to work on an aspect of my character.",
+        question: "I write down goals for improving aspects of my character or my behavior.",
         labels: ['Rarely', 'Sometimes', 'Frequently']
     },
     {
@@ -636,17 +638,17 @@ QUESTIONS.mindset = _.shuffle([
     },
     {
         id: 'OPG_16+',
-        question: "In comparison to others, I have more _________.",
+        question: "In general, I have more _________  than most of the people that I know.",
         labels: ['Flaws', ' ', 'Virtues'] // scored as 2x distance away from 50.
     },
 {
         id: 'OPG_17-',
-        question: "Negative criticism is detrimental.",
+        question: "Criticism is detrimental and unproductive.",
         labels: ['Disagree', 'Neutral ', 'Agree'] 
     },
 {
         id: 'OPG_18-',
-        question: "I mentally criticize myself when I make a mistake.",
+        question: "I negatively criticize myself when I make a mistake.",
         labels: ['Disagree', 'Neutral ', 'Agree'] 
     },
 {
@@ -672,8 +674,8 @@ labels: ['Disagree', 'Neutral', 'Agree       ']
 
 {
     id:'IE_23-',
-    question:'Hitler was less than human.',
-    labels:['Disagree', 'Neutral', '       Agree']
+    question:'Hitler was evil / less than human.',
+    labels:['Disagree', 'Neutral', 'Agree']
 },
 {
     id:'IE_24+',
@@ -687,9 +689,10 @@ labels: ['Disagree', 'Neutral', 'Agree       ']
 },
 {
     id:'IE_26-',
-    question: 'I use a ‘1-10’ scale when determining whom I might date.',
+    question: 'I use a ‘1-10’ scale when thinking about potential romantic partners.',
     labels:['Rarely', 'Sometimes', 'Frequently']
     }
+
     
 ]);
 
