@@ -505,52 +505,52 @@ QUESTIONS.p = _.shuffle([
 
   },
   {//////////////////////////////////////aesthetic sense/
-     id: 'BFAS-90+',
+     id: 'BFAS-91+',///numbering has been adjusted to account for errors in labeling
      question: "I enjoy the beauty of nature.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-91+', 
+     id: 'BFAS-92+', 
      question: "I believe in the importance of art.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-92+', 
+     id: 'BFAS-93+', 
      question: "I love to reflect on things.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-95+', 
+     id: 'BFAS-94+', 
      question: "I get deeply immersed in music.", 
      labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BFAS-96+', 
+     id: 'BFAS-95+', 
      question: "I see beauty in things that others might not notice.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
      {
-     id: 'BFAS-97+', 
+     id: 'BFAS-96+', 
      question: "I need a creative outlet.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-98-', 
+     id: 'BFAS-97-', 
      question: "I do not like poetry.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-99-', 
+     id: 'BFAS-98-', 
      question: "I seldom get lost in thought.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-100-', 
+     id: 'BFAS-99-', 
      question: "I seldom daydream.    ", 
       labels: ['Disagree', 'Neutral', 'Agree']
     },
     {
-     id: 'BFAS-101-', 
+     id: 'BFAS-100-', 
      question: "I seldom notice the emotional aspects of paintings and pictures.", 
       labels: ['Disagree', 'Neutral', 'Agree']
     }
