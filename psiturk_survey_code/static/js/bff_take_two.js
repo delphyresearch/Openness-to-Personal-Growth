@@ -328,7 +328,7 @@ QUESTIONS.p = _.shuffle([
      {
      id: 'BF-F63-', 
      question: "I'm late to things...", 
-     labels:['Once every 2.5 weeks', 'Once a week', 'Twice week']
+     labels:['Once every 2.5 weeks', 'Once a week', '3 times a week']
     },
     {
      id: 'BF-F64+', 
@@ -341,7 +341,7 @@ QUESTIONS.p = _.shuffle([
      labels:['Once a week', '3 times a week', 'Every day']   
  },
     {
-     id: 'BF-F66+', 
+     id: 'BF-F66-', 
      question: "I put off cleaning the dishes...", 
      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
@@ -403,7 +403,7 @@ QUESTIONS.p = _.shuffle([
     {
      id: 'BF-F77+', 
      question: "I do some sort of evening activity...", 
-      labels:['Once every 2 weeks', '3 times a  week', '5 times a week']      
+      labels:['Once every 2 weeks', '2 times a  week', '4 times a week']      
     },
 
     {
@@ -452,109 +452,102 @@ QUESTIONS.p = _.shuffle([
       labels:['Rarely', 'Sometimes', 'Frequently']    
     },
     {
-     id: 'BF-F86+', // Go up onstage?
-     question: "I tell jokes in group settings."?????????????????????????????????????????????????????????????????????????, 
-      labels:['Rarely', 'Sometimes', 'Frequently']    
+     id: 'BF-F87+', 
+     question: "I remember details from conversations with people I've only met once...", 
+     labels:['Rarely', 'Sometimes', 'Frequently']    
     },
-    
-    //TO DO: FInish this up, launch survey tomorrow.
-  
+ 
      {///////////OPENNESS
-     id: 'BF-F86+', 
+     id: 'BF-F88+', 
      question: "I seek new experiences...", 
       labels:['Once every 3 weeks', 'Once a week', '3 times a week']    
     },
  
      {
-     id: 'BF-F87+', 
+     id: 'BF-F89+', 
      question: "If I had no pressing obligations, I'd work on solving complex, multi-part problems...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BF-F88+', 
+     id: 'BF-F90+', 
      question: "I use large or uncommon words...", 
       labels:['Once every 2 weeks', 'Around 3 times a week', 'Every day']
     },
     {
-     id: 'BF-F89+', 
+     id: 'BF-F91+', 
      question: "I formulate abstract ideas...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BF-F90+', 
+     id: 'BF-F92+', 
      question: "I learn about new things on my own time...", 
       labels:['Once every 1.5 weeks', 'Twice a week', '3 times a week']
     },
     {
-     id: 'BF-F91+', 
+     id: 'BF-F93+', 
      question: "I think about abstract, cerebral ideas...", 
       labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BF-F92+', 
+     id: 'BF-F94+', 
      question: "I have philosophical discussions...", 
       labels:['Once a month', 'Once every 2.5 weeks', 'Once a week'] 
    },
     {
-     id: 'BF-F93-', 
+     id: 'BF-F95-', 
     question: "Regarding books, the words 'easy' or 'light' describe...",
       labels: ['Few of the books I read', 'Some of the books I read', 'Nearly every book I read']
     },
 
     {
-    id:'BF-F94+',
+    id:'BF-F96+',
     question:"I read longform journalism articles or non-fiction books...",
     labels:['Once a month','Once every 2.5 weeks','Once a week']
     },
 
      {     ///////////////////////////////////////aesthetic 
-     id: 'BF-F95+', 
+     id: 'BF-F97+', 
      question: "I notice the beauty of nature...", 
      labels: ['Once every 1.5 weeks', 'Twice a week', '4 times a week'] 
     },
     {
-     id: 'BF-F96+', 
+     id: 'BF-F98+', 
      question: "I spend time appreciating art, photography or sculpture...", 
      labels: ['Once a month', 'Once every 2.5 weeks', 'Once a week'] 
     },
     {
-     id: 'BF-F97+', 
+     id: 'BF-F99+', 
      question: "I reflect on what is happening in my life...", 
       labels: ['Once every 1.5 weeks', 'Twice a week', '4 times a week'] 
     },
     {
-     id: 'BF-F98+', 
+     id: 'BF-F100+', 
      question: "I get deeply immersed or lost in music...", 
      labels: ['Twice a month', 'Once every 1.5 weeks', 'Twice a week'] 
     },
      {
-     id: 'BF-F99+', 
+     id: 'BF-F101+', 
      question: "I see beauty in things that others might not notice...", 
       labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
     },
      {
-     id: 'BF-F100+', 
+     id: 'BF-F102+', 
      question: "I find that I need a creative outlet...", 
      labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
     },
     {
-     id: 'BF-F101+', 
+     id: 'BF-F103+', 
      question: "I read poems, literature or plays...", 
      labels: ['Once every 2 months', 'Once a month', 'Twice a month'] 
     },
   
     {
-     id: 'BF-F102+', 
+     id: 'BF-F104+', 
      question: "I get lost in thought...", 
       labels: ['Once every 1.5 weeks', 'Three times a week', 'Everyday'] 
    },
-    {
-     id: 'BF-F103+', 
-     question: "I daydream...", 
-     labels: ['Once every 1.5 weeks', 'Twice a week', 'Everyday ']
-    },
      {
-     id: 'BF-F104+', 
+     id: 'BF-F105+', 
      question: "I notice emotional aspects of paintings and photographs...", 
      labels: ['Rarely', 'Every few times I look at one', 'Every time I look at one']
     }

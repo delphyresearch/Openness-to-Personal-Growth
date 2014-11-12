@@ -50,511 +50,554 @@ var QUESTIONS = {};
 QUESTIONS.p = _.shuffle([
 //QUESTIONS.p = [
 
-  {//NOTE POSITIVELY KEYED TOWARDS NEUROTICISM, NOT STABILITY!!!!!
-     id: 'BFAS-1+',
-     question: "I get angry easily.",
-     labels: ['Disagree', 'Neutral', 'Agree'] 
-    },
-    {
-     id: 'BFAS-2+',
-     question: "I get upset easily.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-3+',
-     question: "I change my mood a lot.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
 
-    {
-     id: 'BFAS-4+',
-     question: "I am a person whose moods go up and down easily.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-5+',
-     question: "I get agitated easily.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-6+',
-     question: "I can be stirred up easily.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-F7-',
-     question: "I rarely get irritated.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-8-',
-     question: "I keep my emotions under control",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-9-',
-     question: "I rarely lose my composure.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-10-',
-     question: "I am not easily annoyed.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {//Withdrawal~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     id: 'BFAS-11+',
-     question: "I am filled with doubts about things.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-12+',
-     question: "I feel threatened easily.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-13+',
-     question: "I worry about things.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-14+', 
-     question: "I am easily discouraged.", 
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-15+', 
-     question: "I become overwhelmed by events.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-16+', 
-     question: "I am afraid of many things.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-17-', 
-     question: "I seldom feel blue.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-18-', 
-     question: "I feel comfortable with myself.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-19-', 
-     question: "I rarely feel depressed.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-20-',
-     question: "I am not embarrassed easily.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {///AGREEABLENESS///////////////////////////////////////////////////////////////////////////////////////////////////
-     id: 'BFAS-21+', 
-     question: "I feel others' emotions.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-22+', 
-     question: "I inquire about others' well-being.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-23+',
-     question: "I sympathize with others' feelings.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-24+', 
-     question: "I take an interest in other people's lives.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-25+', 
-     question: "I like to do things for others.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-26-', 
-     question: "I am not interested in other people's problems.",
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-27-', 
-     question: "I can't be bothered with other's needs.", //#####
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-28-',
-     question: "I am indifferent to the feelings of others.", //#####
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    { 
-     id: 'BFAS-29-',
-     question: "I take no time for others.", 
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-30-', 
-     question: "I don't have a soft side.", 
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-     id: 'BFAS-31+', 
-     question: "I respect authority.", 
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-32+',
-     question: "I hate to seem pushy.", //#######
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-33+', 
-     question: "I avoid imposing my will on others.", //#######
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-34+', 
-     question: "I rarely put people under pressure.", //#######
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-35-', 
-     question: "I insult people.", //#######
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-36-', 
-     question: "I believe that I am better than others.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-37-', 
-     question: "I take advantage of others.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-38-', 
-     question: "I  seek conflict.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-39-', 
-     question: " I love a good fight.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-40-', 
-     question: "I am out for my own personal gain.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {///conci...
-     id: 'BFAS-41+', 
-     question: "I carry out my plans.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-42+', 
-     question: "I finish what I start.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-43+', 
-     question: "I get things done quickly.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-44+', 
-     question: "I always know what I am doing.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-45-', 
-     question: "I waste my time.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-46-', 
-     question: "I find it difficult to get down to work.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-47-', 
-     question: "I mess things up.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-48-', 
-     question: "I don't put my mind to the task at hand.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-49-', 
-     question: "I postpone making decisions.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-50-', 
-     question: "I am easily distracted.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {/////////////////////////////////////////////////////////////////////////////////////////////////////////
-     id: 'BFAS-51+', 
-     question: "I like order.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-52+', 
-     question: "I keep things tidy.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-53+', 
-     question: "I follow a schedule.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-54+', 
-     question: "I want everything to be 'just right'.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
+     { //Volatility
+     id: 'BF-F1+',
+     question: "I lose my temper...",
+     labels: ['Once every 2.5 weeks', 'Once a week', 'Twice a week'] 
     },
     {
-     id: 'BFAS-55+', 
-     question: "I see that rules are observed.", //
-     labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F2+',
+     question: "I get upset...",
+     labels: ['Once every 2.5 weeks', 'Once a week', 'Twice a week'] 
     },
     {
-     id: 'BFAS-56+', 
-     question: "I want every detail taken care of.", // 
-     labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F3+',
+     question: "In general, my overall mood changes...",
+     labels: ['Once a week', '3-4 times a week', 'Once per day']
     },
     {
-     id: 'BFAS-57-', 
-     question: "I leave my belongings around.", // 
-     labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F4+',
+     question: "I get agitated...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
     },
     {
-     id: 'BFAS-58-', 
-     question: "I am not bothered by messy people.", // '''''''''''''''''''''''''''''''''''''''''''
-     labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F5+',
+     question: "I get worked up...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
     },
     {
-     id: 'BFAS-59-', 
-     question: "I am not bothered by disorder.", // 
-     labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F6-',
+     question: "I find myself calm and relaxed...",
+     labels: ['Once every 2.5 weeks', 'Once a week', 'Twice a week'] 
     },
     {
-     id: 'BFAS-60-', 
-     question: "I dislike routine.", // ***************************************************
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-
-    {///////////////////////////////////////////////////////////////////////Extroversion-Assertiveness
-     id: 'BFAS-61+', 
-     question: "I make friends easily.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F7+',
+     question: "My emotions get the better of me...",
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
-     id: 'BFAS-62+', 
-     question: "I warm up quickly to to others.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F8+',
+     question: "I lose my composure...",
+     labels: ['Once every 2.5 weeks', 'Once a week', 'Twice a week'] 
     },
     {
-     id: 'BFAS-63+', 
-     question: "I show my feelings when I'm happy.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-64+', 
-     question: "I have a lot of fun.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-65+', 
-     question: "I laugh a lot.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-
-    {
-     id: 'BFAS-66-', 
-     question: "I am hard to get to know.", // 
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-67-', 
-     question: "I keep others at a distance.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-68-', 
-     question: "I reveal little about myself.", // talking to strangers on the bus???
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-69-', 
-     question: "I rarely get caught up in the excitement.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-70-', 
-     question: "I am not a very enthusiastic person.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {///////////////////////////////////////////////////////////////////////////////////////////
-     id: 'BFAS-71+', 
-     question: "I take charge.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-72+', 
-     question: "I have a strong personality.", // 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-73+', 
-     question: "I know how to captivate people.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-74+', 
-     question: "I see myself as a good leader.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-75+', 
-     question: "I can talk others into doing things.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-76+', 
-     question: "I am the first to act.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-77-', 
-     question: "I do not have an assertive personality.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-78-', 
-     question: "I lack the talent for influencing people.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-79-', 
-     question: "I wait for others to lead the way.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-80-', 
-     question: "I hold back my opinions.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {/////////////////////////////////////////////////////OPENNESSS//////////////////////////////////
-     id: 'BFAS-81+', 
-     question: "I am quick to understand things.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-82+', 
-     question: "I can handle a lot of information.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-F83+', 
-     question: "I like to solve complex problems.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-F84+', 
-     question: "I have a rich vocabularly.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-F85+', 
-     question: "I think quickly.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F9+',
+     question: "I get annoyed...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BFAS-F86+', 
-     question: "I formulate ideas clearly.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F10+', 
+     question: "I have an argument and/or good fight...",
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
     },
-    {
-     id: 'BFAS-F87-', 
-     question: "I have difficulty understanding abstract ideas.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-88-', 
-     question: "I avoid philosophical discussions.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-89-', 
-     question: "I avoid difficult reading material.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-    {
-     id: 'BFAS-90-', 
-     question: "I learn things slowly.", 
-     labels: ['Disagree', 'Neutral', 'Agree']
-
-  },
-  {//////////////////////////////////////aesthetic sense/
-     id: 'BFAS-91+',///numbering has been adjusted to account for errors in labeling
-     question: "I enjoy the beauty of nature.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+    { //withdrawal
+     id: 'BF-F11+',
+     question: "I am filled with doubts about things...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BFAS-92+', 
-     question: "I believe in the importance of art.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F12+',
+     question: "I feel threatened by the future or the unknown...",
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
     },
     {
-     id: 'BFAS-93+', 
-     question: "I love to reflect on things.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F13+',
+     question: "I worry about my future...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BFAS-94+', 
-     question: "I get deeply immersed in music.", 
-     labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-95+', 
-     question: "I see beauty in things that others might not notice.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    },
-     {
-     id: 'BFAS-96+', 
-     question: "I need a creative outlet.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F14+',
+     question: "I get discouraged about what I am doing...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BFAS-97-', 
-     question: "I do not like poetry.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F15+', 
+     question: "I get overwhelmed...", 
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BFAS-98-', 
-     question: "I seldom get lost in thought.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F16+', 
+     question: "I get fearful or afraid of the future...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
     {
-     id: 'BFAS-99-', 
-     question: "I seldom daydream.    ", 
-      labels: ['Disagree', 'Neutral', 'Agree']
+     id: 'BF-F17+', 
+     question: "I generally feel blue... ",
+    labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
     },
-    {
-     id: 'BFAS-100-', 
-     question: "I seldom notice the emotional aspects of paintings and pictures.", 
-      labels: ['Disagree', 'Neutral', 'Agree']
-    }
  
+    {
+     id: 'BF-F18+', 
+     question: "I feel uncomfortable with myself...",
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
+    },
+    {
+     id: 'BF-F19-', 
+     question: "I try to live in the moment...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F20+',
+     question: "I get embarrassed...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+   {
+     id: 'BF-F21+', 
+     question: "I act in a passive manner...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']    
+    },
+    {
+     id: 'BF-F22+', 
+     question: "In a group, I 'go with the flow' and follow what the group decides...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']    
+    },
+     {
+     id: 'BF-F23+', 
+     question: "I wait for others to lead the way...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']    
+    },
+     {
+     id: 'BF-F24+', 
+     question: "I hold back my opinions from people close to me...", 
+      labels:['Once every 2.5 weeks', 'Once a week', '3 times a week']    
+    },
+
+     {
+     id: 'BF-F25+', 
+     question: "I pretend to understand what other people are talking about...", 
+      labels: ['Rarely', 'Sometimes', 'Frequently']
+    },
+    {
+     id: 'BF-F26+', 
+     question: "I get overwhelmed by too much information...", 
+     labels:['Once a month', 'Once every 2.5 weeks', 'Once a week'] 
+    },
+
+    { // Agreeableness
+        //compassion
+     id: 'BF-F27+', 
+     question: "In general, I empathize with the emotions of other people...",
+     labels: ['Once or twice every 2 weeks', 'Once or twice a week', '4 times a week']
+    },
+    {
+     id: 'BF-F28+', 
+     question: "I sincerely inquire about other people's well-being...",
+    labels: ['Once or twice every 2 weeks', 'Once or twice a week', '4 times a week']
+    },
+    {
+     id: 'BF-F29+',
+     question: "I sympathize with other people's feelings...",
+     labels: ['Once a week', '3 times a week', 'Every day']
+    },
+    {
+     id: 'BF-F30+', 
+     question: "I take an interest in other people's lives...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F31+', 
+     question: "I do things for others...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F32+', 
+     question: "I take an interest in other people's problems...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F33+', 
+     question: "I think about other people's needs...", 
+     labels: ['Once a week', '3 times a week', 'Every day']
+    },
+    {
+     id: 'BF-F34-', 
+     question: "I am indifferent to the feelings of others...",
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
+    },
+       {
+     id: 'BF-F35+', //WARMTH!
+     question: " I feel alive and full of life... ",
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
+    },
+   
+    {
+     id: 'BF-F36+', 
+     question: "I express my 'soft and caring' side to people I know...", 
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+   {
+     id: 'BF-F37+',
+     question: "I am friendly towards people who aren't my friends...",
+      labels:['Once every 2.5 weeks', 'Twice a week', 'Every day   ']
+    },
+    
+    {
+     id: 'BF-F38+', 
+     question: "I show my feelings when I'm happy...",  
+      labels:['Sometimes', '', 'Every time'] 
+
+    },
+     {
+     id: 'BF-F39+', 
+     question: "I go out of my way to include people in conversations...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']    
+    },
+     {
+     id: 'BF-F40+', 
+     question: "I laugh heartily...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']    
+    },
+    {
+     id: 'BF-F41+', 
+     question: "I open up to my friends...", 
+     labels:['Rarely', 'Sometimes', 'Frequently']      
+  },
+    {
+     id: 'BF-F42-', 
+     question: "I keep others at a distance...", 
+      labels:['Rarely', 'Moderately', 'Frequently']  
+        },
+
+    {//Agreeableness - politeness
+        
+
+     id: 'BF-F43+', //Keep
+     question: "I respect the authority of my superiors...", 
+     labels: ['Almost never', 'Some of the time', 'Nearly every time']
+    },
+    {
+     id: 'BF-F44-', //..
+     question: "I compete with my peers or co-workers...",
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+
+     id: 'BF-F45+', //..
+     question: "I assume people have the best of intentions...", 
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F46-', //..
+     question: "I hang out / interact with friends because they are 'important'...", 
+     labels: ['Once every 2 weeks', 'Once every two weeks', 'Twice a week']
+    },
+    {
+     id: 'BF-F47-', //..
+     question: "I think about negative qualities of people I dislike...",  
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+    },
+    {
+     id: 'BF-F48-', //..
+     question: "I am rude to others when I need to be...", 
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
+    },
+    {
+     id: 'BF-F49-',//..
+     question: "I interact with people I don't like....", 
+     labels: ['Once a month', 'Once every two weeks', 'Once a week'] 
+   },
+   
+    { 
+     id: 'BF-F50+', //.
+     question: "I give people the benefit of doubt...", 
+     labels:['Once a month', 'Once every 2 weeks', 'Twice a week']  
+  },
+
+  //CONCIENTIOUSNESS 
+
+    {//////////////////////////////////////////industriousness
+     id: 'BF-F51+', 
+     question: "I carry out the plans that I make...", 
+     labels:['Once a week', '2-3 times a week', 'Every day'] 
+   },
+    {
+     id: 'BF-F52+', 
+     question: "I finish nearly all of the tasks that I start, in one sitting...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F53+', 
+     question: "I get small tasks done quickly...", 
+     labels:['Twice a week', '4 times a week', 'Every day']
+    },
+    {
+     id: 'BF-F54+', 
+     question: "I feel like I know what I am doing...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']  
+     },
+    {
+     id: 'BF-F55-', 
+     question: "I waste time while I'm attempting to be productive...", 
+     labels:['Once a week', '3 times a week', 'Every day']
+    },
+    {
+     id: 'BF-F56-', 
+     question: "I find it difficult to start working...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']  
+  },
+    {
+     id: 'BF-F57-', 
+     question: "I generally mess things up...", 
+     labels:['Once every 2.5 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F58-', 
+     question: "I don't put my mind to the task at hand...", 
+     labels:['Once every 2.5 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F59-', 
+     question: "I postpone making decisions...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F60-', 
+     question: "I get distracted while working...",
+     labels:['Once every 2 weeks','3 times a week','    Every day   ']
+    },
+
+    {
+     id: 'BF-F61+', 
+     question: "I make to-do lists...", 
+     labels:['Once a week', '3 times a week', 'Every day']
+    },
+     {
+     id: 'BF-F63-', 
+     question: "I'm late to things...", 
+     labels:['Once every 2.5 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F64+', 
+     question: "I follow a regular schedule...", 
+    labels:['Once a week', '3 times a week', 'Every day   ']
+    },
+    {
+     id: 'BF-F65+', 
+     question: "I find that I want most things to be 'just right'...",
+     labels:['Once a week', '3 times a week', 'Every day']   
+ },
+    {
+     id: 'BF-F66-', 
+     question: "I put off cleaning the dishes...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F67+', 
+     question: "I take care to be methodical in my work...", 
+     labels:['Once a week', 'Three times a week', 'Every day']
+    },
+    {
+     id: 'BF-F68-', 
+     question: "I leave my belongings lying around...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F69-', 
+     question: "I misplace things...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F70+', 
+     question: "I straighten up my room...", 
+     labels:['Once a week', '3 times a week',  'Every day']
+    },
+    {
+     id: 'BF-F71+', 
+     question: "I straighten up my desk or working space...", 
+     labels:['Once a week', '3 times a week',  'Every day']
+    },
+    
+    {
+     id: 'BF-F72-', 
+     question: "I forget belongings when I travel...", 
+     labels:['Once every 7 trips', 'Every 4 trips', 'Nearly every trip']
+    },
+
+    //EXTRAVERSION
+
+     {
+     id: 'BF-F73+',
+     question: "I make time for people who I'm not close with...", 
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+ 
+    {
+     id: 'BF-F74+', 
+     question: "I have trouble disengaging from stimulating activities...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']      
+    },
+    {
+     id: 'BF-F75+', 
+     question: "I get caught up in the excitement of what is going on...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']      
+    },
+    {
+     id: 'BF-F76+', 
+     question: "Other people pick up on my enthusiasm...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']      
+    },
+    {
+     id: 'BF-F77+', 
+     question: "I do some sort of evening activity...", 
+      labels:['Once every 2 weeks', '2 times a  week', '4 times a week']      
+    },
+
+    {
+     id: 'BF-F78+', 
+     question: "I take charge of situations...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+     {
+     id: 'BF-F79+', 
+     question: "I feel like I have an assertive personality...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F80+', 
+     question: "I captivate people during conversations...", 
+     labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+},
+    {
+     id: 'BF-F81+', 
+     question: "I interrupt conversations to make a point when speaking with men...", 
+      labels:['Once every 2.5 weeks', 'Once a week', 'Twice a week']
+    },
+    {
+     id: 'BF-F82+', 
+     question: "I interrupt conversations to make a point when speaking with women...", 
+       labels:['Once every 2.5 weeks', 'Once a week', 'Twice a week']
+    },
+    {
+     id: 'BF-F83+', 
+     question: "In a group, I am the first to act or decide what to do...", 
+      labels:['Once a month', 'Once every 2.5 weeks', 'Once a week']    
+    },
+     {
+     id: 'BF-F84+', 
+     question: "I talk others into doing things my way...", 
+      labels:['Once a month', 'Once every 2.5 weeks', 'Once a week']    
+    },
+     {
+     id: 'BF-F85+', 
+     question: "I talk with people I don't know...", 
+      labels:['Once every two weeks', 'Once a week', 'Three times a week']    
+    },
+     {
+     id: 'BF-F86+', 
+     question: "While waiting in a long line, I'll strike up a conversation with a stranger...", 
+      labels:['Rarely', 'Sometimes', 'Frequently']    
+    },
+    {
+     id: 'BF-F87+', 
+     question: "I remember details from conversations with people I've only met once...", 
+     labels:['Rarely', 'Sometimes', 'Frequently']    
+    },
+ 
+     {///////////OPENNESS
+     id: 'BF-F88+', 
+     question: "I seek new experiences...", 
+      labels:['Once every 3 weeks', 'Once a week', '3 times a week']    
+    },
+ 
+     {
+     id: 'BF-F89+', 
+     question: "If I had no pressing obligations, I'd work on solving complex, multi-part problems...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F90+', 
+     question: "I use large or uncommon words...", 
+      labels:['Once every 2 weeks', 'Around 3 times a week', 'Every day']
+    },
+    {
+     id: 'BF-F91+', 
+     question: "I formulate abstract ideas...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F92+', 
+     question: "I learn about new things on my own time...", 
+      labels:['Once every 1.5 weeks', 'Twice a week', '3 times a week']
+    },
+    {
+     id: 'BF-F93+', 
+     question: "I think about abstract, cerebral ideas...", 
+      labels:['Once every 2 weeks', 'Once a week', '3 times a week']
+    },
+    {
+     id: 'BF-F94+', 
+     question: "I have philosophical discussions...", 
+      labels:['Once a month', 'Once every 2.5 weeks', 'Once a week'] 
+   },
+    {
+     id: 'BF-F95-', 
+    question: "Regarding books, the words 'easy' or 'light' describe...",
+      labels: ['Few of the books I read', 'Some of the books I read', 'Nearly every book I read']
+    },
+
+    {
+    id:'BF-F96+',
+    question:"I read longform journalism articles or non-fiction books...",
+    labels:['Once a month','Once every 2.5 weeks','Once a week']
+    },
+
+     {     ///////////////////////////////////////aesthetic 
+     id: 'BF-F97+', 
+     question: "I notice the beauty of nature...", 
+     labels: ['Once every 1.5 weeks', 'Twice a week', '4 times a week'] 
+    },
+    {
+     id: 'BF-F98+', 
+     question: "I spend time appreciating art, photography or sculpture...", 
+     labels: ['Once a month', 'Once every 2.5 weeks', 'Once a week'] 
+    },
+    {
+     id: 'BF-F99+', 
+     question: "I reflect on what is happening in my life...", 
+      labels: ['Once every 1.5 weeks', 'Twice a week', '4 times a week'] 
+    },
+    {
+     id: 'BF-F100+', 
+     question: "I get deeply immersed or lost in music...", 
+     labels: ['Twice a month', 'Once every 1.5 weeks', 'Twice a week'] 
+    },
+     {
+     id: 'BF-F101+', 
+     question: "I see beauty in things that others might not notice...", 
+      labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+    },
+     {
+     id: 'BF-F102+', 
+     question: "I find that I need a creative outlet...", 
+     labels: ['Once every 2 weeks', 'Once a week', '3 times a week'] 
+    },
+    {
+     id: 'BF-F103+', 
+     question: "I read poems, literature or plays...", 
+     labels: ['Once every 2 months', 'Once a month', 'Twice a month'] 
+    },
+  
+    {
+     id: 'BF-F104+', 
+     question: "I get lost in thought...", 
+      labels: ['Once every 1.5 weeks', 'Three times a week', 'Everyday'] 
+   },
+     {
+     id: 'BF-F105+', 
+     question: "I notice emotional aspects of paintings and photographs...", 
+     labels: ['Rarely', 'Every few times I look at one', 'Every time I look at one']
+    }
 ]);
 //];
 QUESTIONS.mindset = _.shuffle([
@@ -691,9 +734,18 @@ labels: ['Disagree', 'Neutral', 'Agree       ']
     id:'IE_26-',
     question: 'I use a ‘1-10’ scale when thinking about potential romantic partners.',
     labels:['Rarely', 'Sometimes', 'Frequently']
-    }
+    },
 
-    
+{
+    id:'Extra_27-',
+    question: "Fundementally, who I am can't change.",
+    labels:['Disagree', 'Neutral', 'Agree']
+    }, 
+    {
+    id:'Extra_28+',
+    question: "I seek out perspectives that are different than my own.",
+    labels:['Disagree', 'Neutral', 'Agree']
+    }
 ]);
 
 if (!_.indexBy) {
