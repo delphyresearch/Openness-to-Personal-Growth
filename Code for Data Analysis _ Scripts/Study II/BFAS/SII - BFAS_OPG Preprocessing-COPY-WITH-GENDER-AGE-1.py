@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[10]:
+# In[6]:
 
 import numpy as np
 import pandas as pd
@@ -12,24 +12,23 @@ import json
 import demjson
 get_ipython().magic(u'matplotlib inline')
 
-#CHANGE VAIRABLES TO BFAS
 
 
-# In[11]:
+# In[7]:
 
 pd.set_option('display.max_columns', None)
 
 
-# In[12]:
+# In[8]:
 
-engine = sa.create_engine('mysql://evan:*(*(*(*(*(*(;;;;;;;/////##########t/personality')
+engine = sa.create_engine('mysql://###$$****************')
 con = engine.raw_connection()
 df = sql.read_frame("SELECT * FROM BFASOPG_STUDY_II", con)
 df = df.convert_objects(convert_numeric=True)
 con.close()
 
 
-# In[13]:
+# In[9]:
 
 dff = df
 df.tail()
@@ -207,16 +206,16 @@ def split_and_reverse(df):
     ls_col.sort()
    # print ls_col
     r_ls_col = ls_col[:-17] #the restricted list of columns #MAKE SURE THIS PARAM IS RIGHT
-    bff_cols = ['workerid']
+    bfas_cols = ['workerid']
     opg_cols = ['workerid']
-    bff_cols.extend(corder)
+    bfas_cols.extend(corder)
     opg_cols.extend(r_ls_col[-26:])
     Neuroticism = ['BFAS-1+','BFAS-2+','BFAS-3+','BFAS-4+','BFAS-5+','BFAS-6+','BFAS-F7-','BFAS-8-','BFAS-9-','BFAS-10-','BFAS-11+','BFAS-12+','BFAS-13+','BFAS-14+','BFAS-15+','BFAS-16+','BFAS-17-','BFAS-18-','BFAS-19-','BFAS-20-']
     print bff_cols[0:10]
     print '\n'
     print opg_cols[0:10]
     print '\n'
-    BffDf = df[bff_cols]
+    BfasDf = df[bff_cols]
     OpgDf = df[opg_cols]
 
    # df['ref'] = pd.Series([100.0 for x in range(len(BffDf['workerId']))])
@@ -232,14 +231,14 @@ def split_and_reverse(df):
              #print len(BffDf[label])
              #a = ref.sub(BffDf[label])
              #print a.head()
-            BffDf[label] = 100- BffDf[label].astype(float)
+            BfasDf[label] = 100- BfasDf[label].astype(float)
 
 
 
         elif label[-1]=='+': #label = workerID
             pass
         else:
-            BffDf.loc[label] = df['workerid']
+            BfasDf.loc[label] = df['workerid']
 
     print OpgDf['OPG_16+'].loc[1]
     print type(OpgDf['OPG_16+'].loc[1])
@@ -269,23 +268,23 @@ def split_and_reverse(df):
 
     ##Now, change neuroticism to stability
     for label in Neuroticism:
-        BffDf[label] = 100-BffDf[label].astype(float)
+        BfasDf[label] = 100-BfasDf[label].astype(float)
 
     #BffDf.sort(axis=1,inplace=True,ascending=True)
     #OpgDf.sort(axis=1,inplace=True,ascending=True)
 
-    return BffDf,OpgDf
+    return BfasDf,OpgDf
 
 
 
 # In[27]:
 
-master_bff,master_opg = split_and_reverse(df)
+master_bfas,master_opg = split_and_reverse(df)
 
 
 # In[28]:
 
-master_bff.head()
+master_bfas.head()
 
 
 # In[29]:
@@ -295,11 +294,17 @@ master_opg.head()
 
 # In[30]:
 
-master_bff.to_csv('Master_preprocessed_BFAS.csv')
+master_bfas.to_csv('Master_preprocessed_BFAS.csv')
 master_opg.to_csv('Master_preprocessed_BFASOPG.csv')
 
 
-# In[19]:
+# In[4]:
+
+master_bfas = pd.read_csv('Master_preprocessed_BFAS.csv')
+master_opg = pd.read_csv('Master_preprocessed_BFASOPG.csv')
+
+
+# In[10]:
 
 def extract_questionnare(df):
     for i,row in df.iterrows():
@@ -352,6 +357,17 @@ a = df_questionnaire_complete.age.values.astype(np.float)
 # In[55]:
 
 a.mean()
+
+
+# In[21]:
+
+######################################
+df_questionnaire_complete[['workerid','age','engagement']].to_csv('WorkerID_Gender_Age_pairing_BFAS_II.csv')
+
+
+# In[19]:
+
+
 
 
 # In[56]:

@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[20]:
+# In[58]:
 
 import pandas as pd
 import numpy
@@ -9,15 +9,15 @@ import matplotlib
 from  matplotlib import pyplot as plt
 import scipy.stats.stats as sss
 get_ipython().magic(u'matplotlib inline')
-#The analysis below considers all items, and does not drop the ones that don't load
 
 
-# In[21]:
+
+# In[59]:
 
 pd.set_option('display.max_columns', None)
 
 
-# In[22]:
+# In[60]:
 
 bff = pd.read_csv('./Master_preprocessed_BFF.csv')
 opg = pd.read_csv('./Master_preprocessed_BFFOPG.csv')
@@ -25,17 +25,17 @@ bff = bff.convert_objects(convert_numeric=True)
 opg = opg.convert_objects(convert_numeric=True)
 
 
-# In[23]:
+# In[61]:
 
 bff.head()
 
 
-# In[24]:
+# In[62]:
 
 opg.head()
 
 
-# In[25]:
+# In[63]:
 
 correct_order_opg = ['workerid','PBR_1+',
  'PBR_2-',
@@ -63,12 +63,12 @@ correct_order_opg = ['workerid','PBR_1+',
 ]
 
 
-# In[26]:
+# In[64]:
 
 opg = opg[correct_order_opg]
 
 
-# In[27]:
+# In[65]:
 
 correct_order_bff = [
  'BF-F1+',
@@ -175,18 +175,18 @@ correct_order_bff = [
  'BF-F102+']
 
 
-# In[28]:
+# In[66]:
 
 bff = bff[correct_order_bff]
 
 
-# In[29]:
+# In[67]:
 
 cbff = bff.corr()
 cbff.to_csv('STUDY_I_BFF_CORR_TABLE.csv')
 
 
-# In[10]:
+# In[68]:
 
 #bff.to_csv('master_ordered_and_preprocessed_bff.csv')
 #opg.to_csv('master_ordered_and_preprocessed_bffopg.csv')
@@ -194,17 +194,17 @@ cbff.to_csv('STUDY_I_BFF_CORR_TABLE.csv')
 #opg = pd.read_csv('master_ordered_and_preprocessed_bffopg.csv')
 
 
-# In[11]:
+# In[69]:
 
 #bff = bff[bff.columns.values.tolist()[1:]
 
 
-# In[12]:
+# In[70]:
 
 opg.head()
 
 
-# In[13]:
+# In[71]:
 
 #Histograms
 import prettyplotlib as ppl
@@ -215,7 +215,7 @@ import prettyplotlib as ppl
     ppl.plt.close()
 
 
-# In[14]:
+# In[72]:
 
 opg_subset =  [
  'PBR_1+',
@@ -239,71 +239,71 @@ opg_subset =  [
 ]
 
 
-# In[15]:
+# In[73]:
 
 opg=opg[opg_subset]
 
 
-# In[16]:
+# In[74]:
 
 opg.head()
 
 
-# In[17]:
+# In[75]:
 
 opg['mean'] = opg.mean(axis=1)
 
 
-# In[18]:
+# In[76]:
 
 bff['gfp'] = bff.mean(axis=1)
 
 
-# In[19]:
+# In[76]:
 
 
 
 
-# In[19]:
+# In[77]:
 
 opg.head()
 
 
-# In[20]:
+# In[78]:
 
 bff.head()
 
 
-# In[21]:
+# In[79]:
 
 len(bff)
 
 
-# In[28]:
+# In[79]:
 
 
 
 
-# In[28]:
+# In[79]:
 
 
 
 
-# In[28]:
+# In[79]:
 
 
 
 
-# In[29]:
+# In[80]:
 
 ############################
 clnbff = bff
 
 
-# In[30]:
+# In[81]:
 
 #INFO FROM FACTOR ANALYSIS (FA(BFF,7,minres,oblimn))
-# reverse all the items that negatively loaded on to their factors...
+# reverse all the items that negatively loaded on to their factors...s
 clnbff['BF-F33+'] =  pd.Series(100 - clnbff['BF-F33+'])
 clnbff['BF-F32+'] = pd.Series( 100 - clnbff['BF-F32+'])
 clnbff['BF-F101+'] =  pd.Series(100 - clnbff['BF-F101+'])
@@ -316,7 +316,7 @@ clnbff['BF-F35-'] =  pd.Series(100 - clnbff['BF-F35-'])
 clnbff['BF-F39-'] =  pd.Series(100 - clnbff['BF-F39-'])
 
 
-# In[31]:
+# In[82]:
 
 Agreeableness_indexes = [23,
 22,
@@ -346,12 +346,12 @@ for i in sorted(Agreeableness_indexes):
 AGREE = bff[agree]
 
 
-# In[32]:
+# In[83]:
 
 AGREE.head()
 
 
-# In[33]:
+# In[84]:
 
 Volatility_indexes = [5,
 1,
@@ -367,7 +367,7 @@ Volatility_indexes = [5,
 36]
 
 
-# In[34]:
+# In[85]:
 
 Withdrawal_indexes = [15,#last two are reversed....
 11,
@@ -389,12 +389,12 @@ Withdrawal_indexes = [15,#last two are reversed....
 ]
 
 
-# In[34]:
+# In[85]:
 
 
 
 
-# In[35]:
+# In[86]:
 
 rneuro = []
 Volatility_indexes.extend(Withdrawal_indexes)
@@ -405,24 +405,24 @@ for i in sorted(Volatility_indexes):
 #reverse the last twoo
 
 
-# In[36]:
+# In[87]:
 
 NEUROTIC = bff[rneuro]
 NEUROTIC['BF-F32+'] = pd.Series(100-NEUROTIC['BF-F32+'])
 NEUROTIC['BF-F33+'] = pd.Series(100-NEUROTIC['BF-F33+'])
 
 
-# In[37]:
+# In[88]:
 
 Volatility_indexes
 
 
-# In[37]:
+# In[88]:
 
 
 
 
-# In[38]:
+# In[89]:
 
 Openness_indexes = [86,
 88,
@@ -452,7 +452,7 @@ OPEN['BF-F54+'] = pd.Series(100-OPEN['BF-F54+'])
 OPEN['BF-F95+'] = pd.Series(100-OPEN['BF-F95+'])
 
 
-# In[39]:
+# In[90]:
 
 Concientiousness_org_indexes = [49, #last one is reversed
 44,
@@ -471,7 +471,7 @@ Concientiousness_org_indexes = [49, #last one is reversed
 101]
 
 
-# In[40]:
+# In[91]:
 
 Concientiousness_indus_indexes = [55,
 40,
@@ -481,7 +481,7 @@ Concientiousness_indus_indexes = [55,
 53]
 
 
-# In[41]:
+# In[92]:
 
 conci = []
 Concientiousness_indus_indexes.extend(Concientiousness_org_indexes)
@@ -492,17 +492,17 @@ CONCI = bff[conci]
 CONCI['BF-F101+'] = pd.Series(100-CONCI['BF-F101+'])
 
 
-# In[42]:
+# In[93]:
 
 CONCI.head()
 
 
-# In[42]:
+# In[93]:
 
 
 
 
-# In[43]:
+# In[94]:
 
 Extraversion_assert_indexes = [76,
 77,
@@ -517,7 +517,7 @@ Extraversion_assert_indexes = [76,
 34,35,39]
 
 
-# In[44]:
+# In[95]:
 
 ext = []
 for i in sorted(Extraversion_assert_indexes):
@@ -531,54 +531,59 @@ EXTRA['BF-F35-'] = pd.Series(100-EXTRA['BF-F35-'])
 EXTRA['BF-F39-'] = pd.Series(100-EXTRA['BF-F39-'])
 
 
-# In[45]:
+# In[96]:
 
 factor_measures = [AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
 
 
-# In[46]:
+# In[97]:
 
 masterls = [Agreeableness_indexes,Volatility_indexes,Openness_indexes,Concientiousness_indus_indexes,Extraversion_assert_indexes]
 
 
-# In[47]:
+# In[98]:
 
 mls =[item for sublist in masterls for item in sublist]
 
 
-# In[48]:
+# In[99]:
 
 factor_measures[0]
 
 
-# In[49]:
+# In[100]:
 
 colls=bff.columns.values.tolist()
 
 
-# In[50]:
+# In[101]:
 
 sorted(mls)
 
 
-# In[51]:
+# In[102]:
 
 len(mls)
 
 
-# In[52]:
+# In[103]:
 
 neo = []
 for i in sorted(mls):
     neo.append(correct_order_bff[i-1])
 
 
-# In[53]:
+# In[104]:
+
+neo
+
+
+# In[105]:
 
 clnbff = bff[neo]
 
 
-# In[54]:
+# In[106]:
 
 # reverse all the items that negatively loaded on to their factors...
 clnbff['BF-F33+'] =  pd.Series(100 - clnbff['BF-F33+'])
@@ -595,12 +600,26 @@ clnbff['BF-F39-'] =  pd.Series(100 - clnbff['BF-F39-'])
 
 
 
-# In[55]:
+# In[107]:
 
 clnbff['gfp'] = clnbff.mean(axis=1)
 
 
-# In[56]:
+# In[108]:
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(opg.mean(axis=1),clnbff['gfp'],alpha=.5,s=30)
+#plt.title('Humility vs GFP, Factor Analyzed, N =  434')
+plt.xlabel('H-OPG')
+plt.ylabel('BFF FFPE Estimate')
+plt.xlim((25,100))
+plt.ylim((25,100))
+plt.savefig('BFF_HOPG_I.eps',format='eps', dpi=450
+            )
+plt.show()
+
+
+# In[47]:
 
 fig = plt.figure(figsize=(15, 9))
 plt.scatter(opg['mean'],clnbff['gfp'],alpha=.5,s=30)
@@ -612,17 +631,27 @@ plt.ylabel('Naive GFP Estimate')
 plt.show()
 
 
-# In[57]:
+# In[ ]:
+
+
+
+
+# In[ ]:
+
+
+
+
+# In[109]:
 
 len(opg)
 
 
-# In[58]:
+# In[110]:
 
 print sss.pearsonr(opg['mean'],clnbff['gfp']) #Over all correlation FFPE and H_OPG
 
 
-# In[59]:
+# In[111]:
 
 for m in factor_measures:
     #measures = [AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
@@ -630,7 +659,7 @@ for m in factor_measures:
     #[AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
 
 
-# In[60]:
+# In[123]:
 
 for m in factor_measures:
     #measures = [AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
@@ -639,46 +668,64 @@ for m in factor_measures:
     #[AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
 
 
-# In[58]:
+# In[112]:
+
 
 df_loadings = pd.read_csv('./STUDY_I_BFF_7_G_SOLUTION.csv')
 dfl = df_loadings
 dfl.head()
 
 
-# In[60]:
+# In[113]:
 
-bff['opg'] = opg['mean']
+clnbff['opg'] = opg['mean']
 
 
-# In[61]:
+# In[114]:
 
 bff.tail()
 
 
-# In[62]:
+# In[115]:
 
-c = bff.corr()
+c = clnbff.corr()
 
 
-# In[64]:
+# In[116]:
 
 plt.scatter(c['opg'][:-2],dfl['g'])
 
 
-# In[66]:
+# In[117]:
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(c['opg'][:-2],dfl['g'],alpha=.5,s=30)
+#plt.title('Humility vs GFP, Factor Analyzed, N =  434')
+plt.xlabel('H-OPG - Item correlations')
+plt.ylabel('BFF General Factor - Item loadings')
+plt.xlim(xmin=-.3)
+plt.ylim(ymin=-.3)
+plt.savefig('Figure_5_GLoadings_vs_HOPG_Correlations_Study_I_BFF.eps',format='eps', dpi=450
+           )
+plt.show()
+
+
+# In[135]:
+
+f.sort()
+
+
+# In[136]:
+
+f
+
+
+# In[137]:
 
 sss.pearsonr(c['opg'][:-2],dfl['g'])
 
 
 # In[68]:
 
-fig = plt.figure()
-plt.scatter(c['opg'][:-2],dfl['g'],alpha=.85,s=30)
-plt.title('Prediction of G loadings from H-OPG correlations')
-plt.xlabel('Item - H-OPG correlation')
-plt.ylabel('Item G loading')
-plt.savefig('G_vs_HOPG_loadings.png',format='png', dpi=500
-            )
-plt.show()
+
 

@@ -19,7 +19,7 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', 30)
 
 
-# In[24]:
+# In[3]:
 
 bfas= pd.read_csv('./Master_preprocessed_BFAS.csv')
 opg = pd.read_csv('./Master_preprocessed_BFASOPG.csv')
@@ -28,24 +28,24 @@ bfas = bfas.convert_objects(convert_numeric=True)
 opg = opg.convert_objects(convert_numeric=True)
 
 
-# In[25]:
+# In[4]:
 
 bfas.head()
 
 
-# In[26]:
+# In[5]:
 
 opg.head()
 
 
-# In[27]:
+# In[6]:
 
 ################################################
 demo = demo[['workerid','age','engagement']]
 
 
 
-# In[28]:
+# In[7]:
 
 ##################################################
 
@@ -54,19 +54,19 @@ demo = demo[['workerid','age','engagement']]
 opg = pd.merge(opg,demo,how='outer',)
 
 
-# In[29]:
+# In[8]:
 
 ####################################
 
 bfas = pd.merge(bfas,demo,how='outer',)
 
 
-# In[29]:
+# In[8]:
 
 
 
 
-# In[30]:
+# In[9]:
 
 correct_order_opg = ['workerid','age','engagement',
  'PBR_1+',
@@ -98,7 +98,7 @@ correct_order_opg = ['workerid','age','engagement',
 ]
 
 
-# In[31]:
+# In[10]:
 
 bfas_cols = [
  'workerid',
@@ -205,38 +205,38 @@ bfas_cols = [
  'BFAS-100-']
 
 
-# In[32]:
+# In[11]:
 
 opg = opg[correct_order_opg]
 bfas = bfas[bfas_cols]
 
 
-# In[36]:
+# In[11]:
 
 
-
-
-# In[37]:
-
-bfas = bfas.drop(419,axis=0)
 
 
 # In[12]:
 
+bfas = bfas.drop(419,axis=0)
+
+
+# In[13]:
+
 bcorr = bfas.corr()
 
 
-# In[15]:
+# In[14]:
 
 bcorr.to_csv('BFAS_II_CORR_TABLE.csv')
 
 
-# In[31]:
+# In[15]:
 
 opg.head()
 
 
-# In[38]:
+# In[16]:
 
 dropped_opg2 = [#from the g-loadings of the schmid-lieman solution, gloadings >.2
  'age','engagement',
@@ -265,7 +265,7 @@ dropped_opg2 = [#from the g-loadings of the schmid-lieman solution, gloadings >.
 opg = opg[dropped_opg2]
 
 
-# In[13]:
+# In[17]:
 
 #Histograms
 import prettyplotlib as ppl
@@ -276,7 +276,7 @@ import prettyplotlib as ppl
     ppl.plt.close()
 
 
-# In[14]:
+# In[18]:
 
 #Histograms
 import prettyplotlib as ppl
@@ -287,17 +287,17 @@ import prettyplotlib as ppl
     ppl.plt.close()
 
 
-# In[42]:
+# In[19]:
 
 bfas.head()
 
 
-# In[45]:
+# In[20]:
 
 bfas
 
 
-# In[50]:
+# In[21]:
 
 ###################################
 #Need to exlude age from the ffpe calculation.
@@ -307,18 +307,18 @@ bfas['ffpe'] = bfas.mean(axis=1,numeric_only=True)
 opg['mean']=opg.mean(axis=1,numeric_only=True)
 
 
-# In[51]:
+# In[22]:
 
 bfas['age'] = bfas['age'].astype(float)
 opg['age'] = opg['age'].astype(float)
 
 
-# In[52]:
+# In[23]:
 
 plt.scatter(bfas['ffpe'],opg['mean'])
 
 
-# In[55]:
+# In[24]:
 
 ##########################
 
@@ -328,18 +328,18 @@ mopg = opg[opg['engagement']=='Male']
 fopg = opg[opg['engagement']=='Female']
 
 
-# In[56]:
+# In[25]:
 
 ##############################
 plt.scatter(mbfas['ffpe'],mopg['mean'])
 
 
-# In[57]:
+# In[26]:
 
 plt.scatter(fbgas['ffpe'],fopg['mean'])
 
 
-# In[58]:
+# In[27]:
 
 print 'total, scored as written:'
 print sss.pearsonr(bfas['ffpe'],opg['mean'])
@@ -351,7 +351,7 @@ print sss.pearsonr(fbgas['ffpe'],fopg['mean'])
 #according to vassar stats, the male-female correlation difference
 
 
-# In[59]:
+# In[28]:
 
 len(mbfas)
 
@@ -674,69 +674,89 @@ import os
 os.getcwd()
 
 
-# In[76]:
+# In[30]:
 
 gload = pd.read_csv('BFAS_II_OMEGA_FA_6_LOADING_FIGSHARE.csv')
 
 
-# In[77]:
+# In[31]:
 
 gload.head()
 
 
-# In[78]:
+# In[32]:
 
 gload.tail()
 
 
-# In[79]:
+# In[ ]:
+
+
+
+
+# In[33]:
 
 bfas['hopg'] = opg['mean']
 
 
-# In[80]:
+# In[34]:
 
 c = bfas.corr()
 
 
-# In[81]:
+# In[35]:
 
 c.head()
 
 
-# In[82]:
+# In[36]:
 
 c.tail()
 
 
-# In[83]:
+# In[37]:
 
 gload['opgcorr']= c['hopg'][:-2]
 
 
-# In[84]:
+# In[43]:
 
 print len(c['hopg'][:-2])
 print len(gload['g'])
 print len(gload['opgcorr'])
 
 
-# In[85]:
+# In[39]:
 
 gload.head()
 
 
-# In[86]:
+# In[44]:
 
-print sss.pearsonr(c['hopg'][:-2],gload['g'])
-
-
-# In[87]:
-
-plt.scatter(c['hopg'][:-2],gload['g'])
+print sss.pearsonr(c['hopg'][:-3],gload['g'])
 
 
-# In[59]:
+# In[45]:
+
+plt.scatter(c['hopg'][:-3],gload['g'])
+
+
+# In[ ]:
+
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(c['hopg'][:-2],gload['g'],alpha=.5,s=30)
+#plt.title('Humility vs GFP, Factor Analyzed, N =  434')
+plt.xlabel('H-OPG - Item correlations')
+plt.ylabel('BFAS General Factor - Item loadings')
+plt.xlim(xmin=-.1)
+plt.ylim(ymin=-.1)
+plt.savefig('Figure_8_BFAS_GLoadings_vs_HOPG_Correlations_Study_II.eps',format='eps', dpi=450
+           )
+plt.show()
+
+
+# In[41]:
 
 
 

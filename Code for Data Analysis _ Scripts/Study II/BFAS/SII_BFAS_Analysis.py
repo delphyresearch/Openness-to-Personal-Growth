@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 import pandas as pd
 import numpy as np
@@ -13,31 +13,31 @@ import pystan
 from __future__ import division
 
 
-# In[4]:
+# In[2]:
 
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', 30)
 
 
-# In[5]:
+# In[3]:
 
 bfas= pd.read_csv('./Master_preprocessed_BFAS.csv')
 opg = pd.read_csv('./Master_preprocessed_BFASOPG.csv')
-bfas = bfas.convert_objects(convert_numeric=True) 
+bfas = bfas.convert_objects(convert_numeric=True)
 opg = opg.convert_objects(convert_numeric=True)
 
 
-# In[6]:
+# In[4]:
 
 bfas.head()
 
 
-# In[7]:
+# In[5]:
 
 opg.head()
 
 
-# In[8]:
+# In[6]:
 
 correct_order_opg = ['workerid',
  'PBR_1+',
@@ -69,7 +69,7 @@ correct_order_opg = ['workerid',
 ]
 
 
-# In[9]:
+# In[7]:
 
 bfas_cols = [
  'workerid',
@@ -175,50 +175,40 @@ bfas_cols = [
  'BFAS-100-']
 
 
-# In[10]:
+# In[8]:
 
 opg = opg[correct_order_opg]
 bfas = bfas[bfas_cols]
 
 
-# In[11]:
+# In[9]:
 
 bfas.head()
 
 
-# In[12]:
+# In[10]:
 
 bfas = bfas.drop(419,axis=0)
 
 
-# In[12]:
+# In[11]:
+
+bcorr = bfas.corr()
 
 
+# In[15]:
 
-
-# In[12]:
-
-
-
-
-# In[12]:
-
-
+bcorr.to_csv('BFAS_II_CORR_TABLE.csv')
 
 
 # In[12]:
 
-
-
-
-# In[12]:
-
-
+opg.head()
 
 
 # In[13]:
 
-dropped_opg2 = [#from the g-loadings of the schmid-lieman transformed 6 factor solution, all items with loadings >.25
+dropped_opg2 = [#from the g-loadings of the schmid-lieman solution, gloadings >.2
  'PBR_1+',
  'PBR_2-',
  'PBR_3+',
@@ -227,20 +217,19 @@ dropped_opg2 = [#from the g-loadings of the schmid-lieman transformed 6 factor s
  'PBR_6-',
  'PBR_7-',
  'PBR_8-',
- #'OPG_9+',
+ 'OPG_9+',
  'OPG_10+',
+ 'OPG_11-',
  'OPG_12+',
  'OPG_13+',
- #'OPG_14+',
  'OPG_15+',
- #'OPG_17-',
+ 'OPG_17-',
  'IE_19+',
  'IE_20+',
  'IE_21+',
  'IE_22-',
  'IE_24+',
  'IE_25-',
-
 ]
 opg = opg[dropped_opg2]
 
@@ -274,52 +263,45 @@ bfas.head()
 
 # In[17]:
 
-bfas['gfp'] = bfas[bfas_cols[1:-1]].mean(axis=1)
+bfas
 
 
 # In[18]:
 
-opg['mean'] = opg[dropped_opg2].mean(axis=1)
+bfas['ffpe'] = bfas.mean(axis=1)
+opg['mean']=opg.mean(axis=1)
 
 
 # In[19]:
 
-opg.head()
+plt.scatter(bfas['ffpe'],opg['mean'])
+
+
+# In[21]:
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(opg.mean(axis=1),bfas.mean(axis=1),alpha=.5,s=30)
+#scored as written
+plt.xlabel('H-OPG')
+plt.ylabel('BFAS FFPE Estimate Study II')
+plt.xlim((25,100))
+plt.ylim((25,100))
+plt.savefig('BFAS_HOPG_II.eps',format='eps', dpi=450
+            )
+plt.show()
 
 
 # In[20]:
 
-fig = plt.figure(figsize=(15, 9))
-#AS WRITTEN
-plt.scatter(opg['mean'],bfas['gfp'],alpha=.5,s=30)
-plt.title('STUDY II: Naive GFP/MEAN OPG and BFAS,  N =  420')
-plt.xlabel('Naive Humility')
-plt.ylabel('Naive BFAS GFP')
-#plt.savefig('WeightedOPG_naiveGFP_10_21_Raw.png',format='png', 
- #         )
-plt.show()
-
-
-# In[21]:
-
-print sss.pearsonr(bfas['gfp'].tolist(),opg['mean'].tolist())
-
-print len(bfas['gfp'])
-print len(opg['mean'])
-#Hot Damn.
-
-
-# In[21]:
-
-
-
-
-# In[21]:
-
-
+sss.pearsonr(bfas['ffpe'],opg['mean'])
 
 
 # In[22]:
+
+len(bfas)
+
+
+# In[23]:
 
 ####The theory should hold for individual factors, too
 stability_columns = bfas_cols[1:][0:20]
@@ -329,7 +311,7 @@ conci_columns = bfas_cols[1:][40:60]
 agree_columns = bfas_cols[1:][20:40]
 
 
-# In[23]:
+# In[24]:
 
 df_stable = bfas[stability_columns]
 df_open = bfas[openness_columns]
@@ -338,27 +320,27 @@ df_conci = bfas[conci_columns]
 df_agree = bfas[agree_columns]
 
 
-# In[24]:
+# In[25]:
 
 df_stable['stability'] = df_stable.mean(axis=1)
-df_open['openness'] = df_open.mean(axis=1) 
+df_open['openness'] = df_open.mean(axis=1)
 df_extro['extro'] = df_extro.mean(axis=1)
 df_conci['conci'] = df_conci.mean(axis=1)
 df_agree['agree'] = df_agree.mean(axis=1)
 
 
-# In[25]:
+# In[26]:
 
 measures = [df_stable['stability'],df_open['openness'],df_extro['extro'],df_conci['conci'],df_agree['agree']]
 
 
-# In[26]:
+# In[27]:
 
 for construct in measures:
     print sss.pearsonr(opg['mean'],construct)
 
 
-# In[27]:
+# In[28]:
 
 ####THAT WAS 'AS PRESCRIBED'
 
@@ -480,7 +462,7 @@ openls = [ #combing the two last factors identified -- both were aspects of Open
 ]
 
 
-# In[28]:
+# In[29]:
 
 factor_stable = bfas[neurols]
 factor_open= bfas[openls]
@@ -489,9 +471,9 @@ factor_conci = bfas[concils]
 factor_agree = bfas[agreels]
 
 
-# In[29]:
+# In[30]:
 
-lss = neurols 
+lss = neurols
 lss.extend(openls)
 lss.extend(extrols)
 lss.extend(concils)
@@ -501,13 +483,13 @@ print (len(lss))
 lss
 
 
-# In[30]:
+# In[31]:
 
 factor_extro.head()
 factor_stable.head()
 
 
-# In[31]:
+# In[32]:
 
 factor_extro['BFAS-34+'] = pd.Series(100-factor_extro['BFAS-34+'])
 factor_extro['BFAS-33+'] = pd.Series(100-factor_extro['BFAS-33+'])
@@ -515,12 +497,12 @@ factor_extro['BFAS-39-'] = pd.Series(100-factor_extro['BFAS-39-'])
 factor_stable['BFAS-98-'] = pd.Series(100-factor_stable['BFAS-98-'])
 
 
-# In[32]:
+# In[33]:
 
 factor_extro.head()
 
 
-# In[33]:
+# In[34]:
 
 factor_stable['m'] = factor_stable.mean(axis=1)
 factor_open['m'] = factor_open.mean(axis=1)
@@ -529,18 +511,18 @@ factor_conci['m'] = factor_conci.mean(axis=1)
 factor_agree['m'] = factor_agree.mean(axis=1)
 
 
-# In[34]:
+# In[35]:
 
 factor_measures=[factor_stable['m'],factor_open['m'],factor_extro['m'],factor_conci['m'],factor_agree['m']]
 
 
-# In[35]:
+# In[36]:
 
 for construct in factor_measures:
     print sss.pearsonr(opg['mean'],construct)
 
 
-# In[36]:
+# In[37]:
 
 #Mean of means, and all that.
 
@@ -549,137 +531,56 @@ ffpe = .2 * (factor_stable['m'] + factor_open['m'] + factor_extro['m'] + factor_
 
 
 
-# In[37]:
+# In[70]:
 
 sss.pearsonr(opg['mean'],ffpe) #FFPE AS FACTOR ANALYZED.
 
 
-# In[38]:
+# In[71]:
 
 fig = plt.figure(figsize=(7, 5))
 plt.scatter(opg['mean'],ffpe, alpha=.5,s=30)
 plt.title('H-OPG vs. BFAS FFPE')
 plt.xlabel("Respondent's H-OPG estimate")
 plt.ylabel("Respondent's five factor estimate")
-plt.savefig('HOPG_VS_BFAS_FFPE.eps',format='eps', 
+plt.savefig('HOPG_VS_BFAS_FFPE.eps',format='eps',
          )
 plt.show()
 
 
-# In[39]:
+# In[72]:
 
 measures = [df_stable['stability'].tolist(),df_open['openness'].tolist(),df_extro['extro'].tolist(),df_conci['conci'].tolist(),df_agree['agree'].tolist()]
 
 
+# In[73]:
+
+for construct in measures: #AS WRITTEN
+    print sss.pearsonr(opg['mean'],construct)
+
+
+# In[75]:
+
+for construct in factor_measures: #As factor analyzed
+    print sss.pearsonr(opg['mean'],construct)
+
+
+# In[39]:
+
+for construct in measures:
+    print sss.pearsonr(opg['mean'],construct)
+
+
 # In[40]:
-
-for construct in measures:
-    print sss.pearsonr(opg['mean'],construct)
-
-
-# In[41]:
-
-fig = plt.figure(figsize=(30, 20))
-colors = ['g','r','c','m','b']
-for i,construct in enumerate(factor_measures):
-    #fig = plt.figure(figsize=(15, 9))
-    plt.scatter(opg['mean'],construct,alpha=.38,s=33,c=colors[i])
-plt.title('five dimensions')
-plt.xlabel('Naive Humility')
-plt.ylabel('Naive five factors')
-plt.savefig('Each_factor_and_OPG_BFAS.png',format='png', 
-         )
-plt.show()
-
-
-# In[41]:
-
-
-
-
-# In[41]:
-
-
-
-
-# In[44]:
-
-for construct in factor_measures:
-    print sss.pearsonr(opg['mean'],construct)
-
-
-# In[45]:
-
-fig = plt.figure(figsize=(30, 20))
-colors = ['g','r','c','m','b']
-for i,construct in enumerate(measures):
-    #fig = plt.figure(figsize=(15, 9))
-    plt.scatter(opg['mean'],construct,alpha=.38,s=33,c=colors[i])
-plt.title('five dimensions')
-plt.xlabel('Naive Humility')
-plt.ylabel('Naive five factors')
-plt.savefig('Each_factor_and_OPG_BFAS.png',format='png', 
-         )
-plt.show()
-
-
-# In[46]:
-
-for construct in measures:
-    print sss.pearsonr(opg['mean'],construct)
-
-
-# In[47]:
 
 import os
 os.getcwd()
 
 
-# In[48]:
-
-gload = pd.read_csv('STUDYII_BFAS_6_G.csv')
-
-
-# In[49]:
-
-gload.head()
-
-
-# In[50]:
-
-gload.tail()
-
-
-# In[51]:
-
-bfas['hopg'] = opg['mean']
-
-
-# In[52]:
-
-c = bfas.corr()
-
-
-# In[53]:
-
-c.head()
-
-
-# In[54]:
-
-c.tail()
-
-
-# In[55]:
-
-gload['opgcorr']= c['hopg'][:-2]
-
-
 # In[56]:
 
-print len(c['hopg'][:-2])
-print len(gload['g'])
-print len(gload['opgcorr'])
+gload = pd.read_csv('BFAS_II_OMEGA_FA_6_LOADING_FIGSHARE.csv')
+#gload = pd.read_csv('BFAS_II_OMEGA_FA_6_LOADING_FIGSHARE.csv')
 
 
 # In[57]:
@@ -689,17 +590,87 @@ gload.head()
 
 # In[58]:
 
-print sss.pearsonr(c['hopg'][:-2],gload['g'])
+gload.tail()
 
 
-# In[59]:
+# In[60]:
 
-plt.scatter(c['hopg'][:-2],gload['g'])
-
-
-# In[59]:
+bbbfas = bfas
 
 
+# In[61]:
+
+bbbfas.head()
+
+
+# In[63]:
+
+bbbfas = bbbfas.drop(['workerid','ffpe','hopg'],axis=1)
+
+
+# In[64]:
+
+bbbfas['hopg'] = opg['mean']
+
+
+# In[67]:
+
+c = bbbfas.corr()
+
+
+# In[68]:
+
+c.head()
+
+
+# In[69]:
+
+c.tail()
+
+
+# In[48]:
+
+gload['opgcorr']= c['hopg'][:-2]
+
+
+# In[71]:
+
+print len(c['hopg'][:-1])
+print len(gload['g'])
+
+
+# In[72]:
+
+gload.head()
+
+
+# In[80]:
+
+print sss.pearsonr(c['hopg'][:-1],gload['g'])
+
+
+# In[81]:
+
+plt.scatter(c['hopg'][:-1],gload['g'])
+
+
+# In[88]:
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(c['hopg'][:-1],gload['g'],s=30)
+#scored as written
+plt.xlabel('H-OPG item loadings')
+plt.ylabel('BFAS item general factor loadings ')
+plt.xlim(xmin=-.2)
+plt.ylim(ymin=-.2)
+plt.savefig('BFAS_HOPG_Gloadings_II.eps',format='eps', dpi=450
+            )
+plt.show()
+
+
+# In[84]:
+
+plt.scatter(c['hopg'][:-1],gload['g'])
 
 
 # In[ ]:

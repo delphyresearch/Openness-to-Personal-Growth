@@ -218,24 +218,24 @@ opg = opg[correct_order_opg]
 bff = bff[correct_order_bff]
 
 
-# In[27]:
+# In[14]:
 
 opg.to_csv('Ordered_II_BFF_OPG.csv')
 bff.to_csv('Ordered_II_BFF.csv')
 
 
-# In[13]:
+# In[15]:
 
 cbff = bff.corr()
 cbff.to_csv("STUDYII_BFF_COR_TABLE.csv")
 
 
-# In[14]:
+# In[16]:
 
 opg.head()
 
 
-# In[15]:
+# In[17]:
 
 opg_subset =  [
 'age','engagement',
@@ -287,23 +287,23 @@ opg_no_extra = [
  'IE_25-',]
 
 
-# In[16]:
+# In[18]:
 
 opg1=opg[opg_subset]
 opg2 = opg[opg_no_extra]
 
 
-# In[17]:
+# In[19]:
 
 opg1.head()
 
 
-# In[17]:
+# In[19]:
 
 
 
 
-# In[17]:
+# In[20]:
 
 ###################################
 #Need to exlude age from the ffpe calculation.
@@ -316,12 +316,12 @@ opg2['mean']=opg2.mean(axis=1,numeric_only=True)
 bff['gfp'] = bff[correct_order_bff].mean(axis=1,numeric_only=True)
 
 
-# In[26]:
+# In[21]:
 
 plt.scatter(opg2['mean'],bff['gfp'])
 
 
-# In[27]:
+# In[22]:
 
 mbff = bff[bff['engagement']=='Male']
 fbff = bff[bff['engagement']=='Female']
@@ -331,17 +331,17 @@ mopg2 = opg2[opg2['engagement']=='Male']
 fopg2 = opg2[opg2['engagement']=='Female']
 
 
-# In[28]:
+# In[23]:
 
 plt.scatter(mopg2['mean'],mbff['gfp'],)
 
 
-# In[31]:
+# In[24]:
 
 plt.scatter(fopg2['mean'],fbff['gfp'],)
 
 
-# In[32]:
+# In[25]:
 
 print 'total, scored as written:'
 print sss.pearsonr(bff['gfp'],opg2['mean'])
@@ -351,18 +351,18 @@ print 'female:'
 print sss.pearsonr(fbff['gfp'],fopg2['mean'])
 
 
-# In[34]:
+# In[26]:
 
 print 'm',len(mopg2)
 print 'f',len(fopg2)
 
 
-# In[36]:
+# In[27]:
 
 ############Factor Level Analysis
 
 
-# In[18]:
+# In[28]:
 
 Neurotic_indices = [2,
 4,
@@ -399,7 +399,7 @@ NEUROTIC = bff[Neuro]
 NEUROTIC['BF-F65+'] = pd.Series(100-NEUROTIC['BF-F65+'])
 
 
-# In[19]:
+# In[29]:
 
 Agreeable_indices = [
 27,
@@ -429,7 +429,7 @@ AGREE = bff[agree]
 AGREE['BF-F46-'] = pd.Series(100-AGREE['BF-F46-'])
 
 
-# In[20]:
+# In[30]:
 
 Open_indices = [
 92,
@@ -458,7 +458,7 @@ for i in sorted(Open_indices):
 OPEN = bff[opn]
 
 
-# In[21]:
+# In[31]:
 
 Extra_indices = [
 75,
@@ -491,7 +491,7 @@ EXTRA['BF-F48-'] = pd.Series(100-EXTRA['BF-F48-'])
 EXTRA['BF-F49-'] = pd.Series(100-EXTRA['BF-F49-'])
 
 
-# In[22]:
+# In[32]:
 
 method_indices = [
 54,
@@ -504,7 +504,7 @@ method_indices = [
 ]
 
 
-# In[23]:
+# In[33]:
 
 conci_distracted = [
 55,
@@ -537,88 +537,85 @@ CONCI = bff[conci]
 CONCI['BF-F74+'] = pd.Series(100-CONCI['BF-F74+'])
 
 
-# In[23]:
+# In[33]:
 
 
 
 
-# In[24]:
+# In[34]:
 
 masterls = [Neurotic_indices,Agreeable_indices,Open_indices,Extra_indices,conci_distracted]
 
 
-# In[25]:
+# In[35]:
 
 masterls
 
 
-# In[26]:
+# In[36]:
 
 method_indices
 
 
-# In[27]:
+# In[37]:
 
 mls =[item for sublist in masterls for item in sublist]
 
 
-# In[28]:
+# In[38]:
 
 len(mls)
 
 
-# In[29]:
+# In[39]:
 
 sorted(mls)
 
 
-# In[30]:
+# In[40]:
 
 neo = []
 for i in sorted(mls):
     neo.append(correct_order_bff[i+1])
 
 
-# In[31]:
+# In[41]:
 
 a = ['age','engagement'] + neo
 
 
-# In[32]:
+# In[42]:
 
 #a
 
 
-# In[33]:
+# In[43]:
 
 clnbff = bff[a]
+#c
 
 
-# In[50]:
+# In[44]:
 
 #Reverse the Reversals for the overall correlation
 
-rlist= [64,46,22,44,48,49,73]
 
-
-# In[34]:
+# In[45]:
 
 clnbff['BF-F65+'] =  pd.Series(100 - clnbff['BF-F65+'])
 clnbff['BF-F46-'] = pd.Series( 100 - clnbff['BF-F46-'])
-clnbff['BF-F22+'] =  pd.Series(100 - clnbff['BF-F22+'])
 clnbff['BF-F44-'] =  pd.Series(100 - clnbff['BF-F44-'])
-clnbff['BF-F54+'] =  pd.Series(100 - clnbff['BF-F54+'])
 clnbff['BF-F48-'] =  pd.Series(100 - clnbff['BF-F48-'])
 clnbff['BF-F49-'] =  pd.Series(100 - clnbff['BF-F49-'])
 clnbff['BF-F74+'] =  pd.Series(100 - clnbff['BF-F74+'])
 
 
-# In[35]:
+# In[46]:
 
 clnbff.columns.values
 
 
-# In[37]:
+# In[47]:
 
 ###################################
 #Need to exlude age from the ffpe calculation.
@@ -628,17 +625,71 @@ opg2['age'] = opg2['age'].astype(str)
 
 clnbff['gfp'] = clnbff.mean(axis=1,numeric_only=True)
 opg1['mean']=opg1.mean(axis=1,numeric_only=True)
-opg2['mean']=opg1.mean(axis=1,numeric_only=True)
+opg2['mean']=opg2.mean(axis=1,numeric_only=True)
 
 
-# In[38]:
+# In[48]:
 
 clnbff['age'] = clnbff['age'].astype(float)
 opg1['age'] = opg1['age'].astype(float)
 opg2['age'] = opg2['age'].astype(float)
 
 
-# In[40]:
+# In[49]:
+
+ccbff =clnbff.drop(['age','engagement'],axis=1)
+copg1 = opg1.drop(['age','engagement'],axis=1)
+copg2 = opg2.drop(['age','engagement'],axis=1)
+
+
+# In[50]:
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(opg1['mean'],ccbff['gfp'],alpha=.5,s=30)
+#scored as written
+plt.xlabel('H-OPG')
+plt.ylabel('BFF FFPE Estimate Study II')
+plt.xlim((25,100))
+plt.ylim((25,100))
+plt.savefig('BFF_HOPG_II.eps',format='eps', dpi=450
+            )
+plt.show()
+
+
+# In[51]:
+
+sss.pearsonr(ccbff['gfp'],copg1['mean'])
+
+
+# In[52]:
+
+len(copg1)
+
+
+# In[53]:
+
+sss.pearsonr(ccbff['gfp'],copg2['mean'])
+
+
+# In[54]:
+
+#for each factor:
+constructs = [AGREE,NEUROTIC,OPEN,CONCI,EXTRA]
+for construct in constructs:
+    print sss.pearsonr(copg1['mean'],construct.mean(axis=1))
+
+
+# In[63]:
+
+copg1.head()
+
+
+# In[64]:
+
+copg2.head()
+
+
+# In[62]:
 
 mbff = clnbff[clnbff['engagement']=='Male']
 fbff = clnbff[clnbff['engagement']=='Female']
@@ -648,22 +699,27 @@ mopg1 = opg1[opg1['engagement']=='Male']
 fopg1 = opg1[opg1['engagement']=='Female']
 
 
-# In[39]:
+# In[62]:
+
+
+
+
+# In[63]:
 
 plt.scatter(opg1['mean'],clnbff['gfp'])
 
 
-# In[41]:
+# In[64]:
 
 plt.scatter(mopg1['mean'],mbff['gfp'])
 
 
-# In[42]:
+# In[65]:
 
 plt.scatter(fopg1['mean'],fbff['gfp'])
 
 
-# In[44]:
+# In[66]:
 
 print 'total, scored as written:'
 print sss.pearsonr(clnbff['gfp'],opg2['mean'])
@@ -675,18 +731,18 @@ print sss.pearsonr(fbff['gfp'],fopg2['mean'])
 #Not significant. Not large enough sample size anyways.
 
 
-# In[45]:
+# In[67]:
 
 print len(mbff)
 print len(fbff)
 
 
-# In[63]:
+# In[55]:
 
 clnbff.age.max()
 
 
-# In[87]:
+# In[68]:
 
 #######################BY AGE
 ########BY AGE
@@ -705,7 +761,7 @@ def age_stuff(start,stop,step):
     return A
 
 
-# In[92]:
+# In[69]:
 
 age_stuff(28,75,10)
 
@@ -732,18 +788,18 @@ plt.ylabel('Naive GFP Estimate')
 plt.show()
 
 
-# In[54]:
+# In[70]:
 
 print sss.pearsonr(opg1['mean'],clnbff['gfp'])
 print sss.pearsonr(opg2['mean'],clnbff['gfp'])
 
 
-# In[55]:
+# In[71]:
 
 factor_measures = [AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
 
 
-# In[56]:
+# In[72]:
 
 for m in factor_measures:
     #measures = [AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
@@ -772,58 +828,89 @@ import os
 os.getcwd()
 
 
-# In[43]:
+# In[55]:
 
 dfl = pd.read_csv('./BFF_II_OMEGA_FA_6_LOADING_FIGSHARE.csv')
 dfl.convert_objects(convert_numeric=True)
 
 
-# In[44]:
+# In[56]:
 
 dfl.head()
 
 
-# In[45]:
+# In[57]:
 
 dfl.tail(9)
 
 
-# In[46]:
-
-bff['meanopg1'] = opg1['mean']
-bff['meanopg2'] = opg2['mean']
+# In[57]:
 
 
-# In[47]:
-
-cc = bff.corr()
 
 
-# In[48]:
+# In[58]:
+
+ccbff.head()
+
+
+# In[59]:
+
+ccc = ccbff.drop(['gfp'],axis=1)
+
+
+# In[60]:
+
+ccc['meanopg1'] = opg1['mean']
+ccc['meanopg2'] = opg2['mean']
+
+
+# In[61]:
+
+cc = ccc.corr()
+
+
+# In[62]:
 
 cc.tail()
 
 
-# In[49]:
+# In[63]:
 
 len(cc)
 
 
-# In[50]:
+# In[64]:
 
 cc
 
 
-# In[52]:
+# In[65]:
+
+cc['meanopg1'][:-2]
+
+
+# In[66]:
 
 print len(dfl['g'])
-print len(cc['meanopg1'][:-4])
+print len(cc['meanopg1'][:-2])
 
 
-# In[53]:
+# In[67]:
+
+z = cc['meanopg1'][:-2]
+
+
+# In[68]:
+
+z.sort()
+z
+
+
+# In[69]:
 
 fig = plt.figure(figsize=(15, 9))
-plt.scatter(cc['meanopg1'][:-4],dfl['g'],alpha=.5,s=30)
+plt.scatter(cc['meanopg1'][:-2],dfl['g'],alpha=.5,s=30)
 plt.title('Humilty loadings vs g, STUDY II BFF')
 plt.xlabel('Humility')
 plt.ylabel('G')
@@ -832,10 +919,10 @@ plt.ylabel('G')
 plt.show()
 
 
-# In[54]:
+# In[72]:
 
 fig = plt.figure(figsize=(15, 9))
-plt.scatter(cc['meanopg2'][:-4],dfl['g'],alpha=.5,s=30)
+plt.scatter(cc['meanopg2'][:-2],dfl['g'],alpha=.5,s=30)
 plt.title('Humilty loadings vs g, STUDY II BFF')
 plt.xlabel('Humility')
 plt.ylabel('G')
@@ -844,15 +931,24 @@ plt.ylabel('G')
 plt.show()
 
 
-# In[56]:
+# In[71]:
 
-print sss.pearsonr(cc['meanopg1'][:-4],dfl['g'])
-print sss.pearsonr(cc['meanopg2'][:-4],dfl['g'])
-
-
-# In[105]:
+print sss.pearsonr(cc['meanopg1'][:-2],dfl['g'])#2.1
+print sss.pearsonr(cc['meanopg2'][:-2],dfl['g'])#2.0
 
 
+# In[75]:
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(cc['meanopg2'][:-2],dfl['g'],s=30)
+#scored as written
+plt.xlabel('H-OPG - item correlations')
+plt.ylabel('BFF item general factor loadings ')
+plt.xlim(xmin=-.3)
+plt.ylim(ymin=-.3)
+plt.savefig('BFF_HOPG_Gloadings_II.eps',format='eps', dpi=450
+            )
+plt.show()
 
 
 # In[ ]:
