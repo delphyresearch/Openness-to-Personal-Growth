@@ -22,7 +22,7 @@ from __future__ import division
 
 bfas= pd.read_csv('./Master_preprocessed_BFAS.csv')
 opg = pd.read_csv('./Master_preprocessed_BFASOPG.csv')
-bfas = bfas.convert_objects(convert_numeric=True)
+bfas = bfas.convert_objects(convert_numeric=True) 
 opg = opg.convert_objects(convert_numeric=True)
 #Scroll down to read in bfas..
 
@@ -30,6 +30,11 @@ opg = opg.convert_objects(convert_numeric=True)
 # In[4]:
 
 bfas.head()
+
+
+# In[5]:
+
+bfas['BFAS-32+'].head()
 
 
 # In[6]:
@@ -42,7 +47,7 @@ bfas.tail()
 opg.head()
 
 
-# In[5]:
+# In[8]:
 
 correct_order_opg = ['workerid',
  'PBR_1+',
@@ -74,7 +79,7 @@ correct_order_opg = ['workerid',
 ]
 
 
-# In[6]:
+# In[9]:
 
 bfas_cols = [
  'workerid',
@@ -180,19 +185,19 @@ bfas_cols = [
  'BFAS-101-']
 
 
-# In[7]:
+# In[10]:
 
 bfas.to_csv("MASTER_last_round_preprocessing-BFAS.csv")
 bfas = pd.read_csv("MASTER_last_round_preprocessing-BFAS.csv")
 
 
-# In[8]:
+# In[10]:
 
 opg = opg[correct_order_opg]
 bfas = bfas[bfas_cols]
 
 
-# In[9]:
+# In[11]:
 
 subset = ['PBR_1+', #From Factor analysis - G loadings from a five factor solution of less than 20 are dropped
  'PBR_2-',
@@ -216,12 +221,12 @@ subset = ['PBR_1+', #From Factor analysis - G loadings from a five factor soluti
 opg = opg[subset]
 
 
-# In[10]:
+# In[12]:
 
 opg['mean'] = opg.mean(axis=1)
 
 
-# In[11]:
+# In[13]:
 
 bfas.columns.values.tolist()
 
@@ -232,31 +237,31 @@ cbfas = bfas.corr()
 cbfas.to_csv('Study_I_BFAS_CORR_TABLE.csv')
 
 
-# In[12]:
+# In[15]:
 
 fig = plt.figure(figsize=(7.5, 5.5))
 plt.scatter(opg.mean(axis=1),bfas.mean(axis=1),alpha=.5,s=30)
 #scored as written
-plt.xlabel('H-OPG')
-plt.ylabel('BFAS FFPE Estimate')
+plt.xlabel('H/OPG')
+plt.ylabel('BFAS GFPE Estimate')
 plt.xlim((25,100))
 plt.ylim((25,100))
-plt.savefig('BFAS_HOPG_I.eps',format='eps', dpi=450
+plt.savefig('SCIENCE_BFAS_HOPG_I.png',format='png', dpi=300
             )
 plt.show()
 
 
-# In[13]:
+# In[17]:
 
 sss.pearsonr(opg['mean'],bfas.mean(axis=1))
 
 
-# In[23]:
+# In[18]:
 
 #bfas.columns.values.tolist()
 
 
-# In[15]:
+# In[19]:
 
 #scoring factors as written
 stability_columns = bfas_cols[1:][0:20]
@@ -266,7 +271,7 @@ conci_columns = bfas_cols[1:][40:60]
 agree_columns = bfas_cols[1:][20:40]
 
 
-# In[16]:
+# In[20]:
 
 df_stable = bfas[stability_columns]
 df_open = bfas[openness_columns]
@@ -275,25 +280,25 @@ df_conci = bfas[conci_columns]
 df_agree = bfas[agree_columns]
 
 
-# In[17]:
+# In[21]:
 
 df_stable['stability'] = df_stable.mean(axis=1)
-df_open['openness'] = df_open.mean(axis=1)
+df_open['openness'] = df_open.mean(axis=1) 
 df_extro['extro'] = df_extro.mean(axis=1)
 df_conci['conci'] = df_conci.mean(axis=1)
 df_agree['agree'] = df_agree.mean(axis=1)
 
 
-# In[18]:
+# In[22]:
 
 written_measures = [df_stable['stability'],df_open['openness'],df_extro['extro'],df_conci['conci'],df_agree['agree']]
 
 
-# In[19]:
+# In[23]:
 
 for construct in written_measures:
     print sss.pearsonr(opg['mean'],construct)
-
+    
     #AS WRITTEN
     #Stable
     #Open
@@ -302,7 +307,7 @@ for construct in written_measures:
     #Agree
 
 
-# In[13]:
+# In[24]:
 
 
   #Histograms
@@ -314,18 +319,18 @@ import prettyplotlib as ppl
     ppl.plt.close()
 
 
-# In[14]:
+# In[25]:
 
 
 bfas.head()
 
 
-# In[15]:
+# In[ ]:
 
 
 
 
-# In[24]:
+# In[26]:
 
 Neuro_Ind = [5,
 2,
@@ -358,12 +363,12 @@ for i in sorted(Neuro_Ind):
 NEURO = bfas[neur]
 
 
-# In[24]:
+# In[ ]:
 
 
 
 
-# In[25]:
+# In[27]:
 
 Agree_Ind = [26,
 23,
@@ -393,7 +398,7 @@ for i in sorted(Agree_Ind):
 AGREE = bfas[agre]
 
 
-# In[26]:
+# In[28]:
 
 extro_assert_Ind = [73,
 75,
@@ -430,12 +435,17 @@ EXTRA['BFAS-33+'] = pd.Series(100-EXTRA['BFAS-33+'])
 EXTRA['BFAS-39-'] = pd.Series(100-EXTRA['BFAS-39-'])
 
 
-# In[27]:
+# In[29]:
+
+EXTRA.head()
+
+
+# In[30]:
 
 bfas_cols[45]
 
 
-# In[28]:
+# In[31]:
 
 concientiousness_Ind = [51,
 52,
@@ -455,7 +465,7 @@ concientiousness_Ind = [51,
 43,
 46,
 48,
-86]#
+86]# 
 
 conci= []
 for i in sorted(concientiousness_Ind):
@@ -465,7 +475,7 @@ CONCI = bfas[conci]
 CONCI['BFAS-100-'] = pd.Series(100-CONCI['BFAS-100-'])
 
 
-# In[29]:
+# In[32]:
 
 openness_Ind = [87,
 83,
@@ -492,32 +502,32 @@ OPEN = bfas[opn]
 OPEN['BFAS-66-'] = pd.Series(100-OPEN['BFAS-66-'])
 
 
-# In[30]:
+# In[33]:
 
 OPEN.head()
 
 
-# In[31]:
+# In[34]:
 
 masterls = [Neuro_Ind,Agree_Ind,extro_assert_Ind,concientiousness_Ind,openness_Ind]
 
 
-# In[32]:
+# In[35]:
 
 mls =[item for sublist in masterls for item in sublist]
 
 
-# In[33]:
+# In[36]:
 
 sorted(mls)
 
 
-# In[34]:
+# In[37]:
 
 factor_measures = [AGREE,NEURO,OPEN,EXTRA,CONCI]
 
 
-# In[35]:
+# In[38]:
 
 for m in factor_measures:
     #measures = [AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
@@ -525,7 +535,7 @@ for m in factor_measures:
     #[AGREE,NEUROTIC,OPEN,EXTRA,CONCI]
 
 
-# In[37]:
+# In[39]:
 
 #FFPE
 
@@ -545,22 +555,29 @@ bfas_proc['BFAS-33+'] = pd.Series(100-bfas_proc['BFAS-33+'])
 bfas_proc['BFAS-39-'] = pd.Series(100-bfas_proc['BFAS-39-'])
 
 
-# In[38]:
+# In[40]:
 
 bfas_proc.head()
 
 
-# In[39]:
+# In[41]:
 
 bfas_proc['gfp'] = bfas_proc.mean(axis=1)
 
 
-# In[40]:
+# In[62]:
+
+fig = plt.figure(figsize=(11,7))#(figsize=(15, 9))
+plt.scatter(opg.mean(axis=1),bfas_proc['gfp'],alpha=.7,s=30)
+#plt.title('Relationship of H/OPG vs GFP')
+plt.xlabel('H/OPG')
+plt.ylabel('BFAS-GFP Estimate')
+plt.savefig('LabledBFASGFPSI_IV.eps',format='eps', dpi=500
+           )
+plt.show()
 
 
-
-
-# In[41]:
+# In[43]:
 
 print sss.pearsonr(opg.mean(axis=1),bfas_proc['gfp'])
 
@@ -570,29 +587,29 @@ print sss.pearsonr(opg.mean(axis=1),bfas_proc['gfp'])
 
 
 
-# In[50]:
+# In[64]:
 
 #Connections with G
 df_loadings = pd.read_csv('./STUDY_I_BFAS_5_G_SOLUTION.csv')
 
 
-# In[51]:
+# In[65]:
 
 df_loadings.tail()
 
 
-# In[52]:
+# In[66]:
 
 bfas.head()
 
 
-# In[62]:
+# In[67]:
 
 bbfas = bfas
 bbfas['opg'] = opg.mean(axis=1)
 
 
-# In[63]:
+# In[68]:
 
 bbcfas = bfas_proc
 bbcfas['opg'] = opg.mean(axis=1)
@@ -603,27 +620,50 @@ bbcfas['opg'] = opg.mean(axis=1)
 bbfas.head()
 
 
-# In[67]:
+# In[69]:
 
 bbcfas.head()
 
 
-# In[68]:
+# In[70]:
 
 c = bbfas.corr()
 d = bbcfas.corr()
 
 
-# In[69]:
+# In[71]:
 
 print "as written:",sss.pearsonr(c['opg'][:-1],df_loadings['g'])
 print "as FA:",sss.pearsonr(d['opg'][:-2],df_loadings['g'])
 
 
-# In[38]:
+# In[85]:
 
-fig = plt.figure()
-plt.scatter(c['opg'][:-1],df_loadings['g']) #Don't need the correlation of opg with itself...
+fig = plt.figure(figsize=(11,7))
+plt.scatter(c['opg'][:-1],df_loadings['g'],alpha=.7,s=30) #Don't need the correlation of opg with itself...
+
+
+plt.xlabel('BFAS Item - H-OPG correlation')
+plt.ylabel('g loading on item')
+plt.savefig('g_vs_HOPG_loadings_BFAS_as_writtenI.eps',format='eps', dpi=500
+           )
+plt.show()
+
+
+# In[77]:
+
+len(df_loadings['g'])
+
+
+# In[79]:
+
+d.tail()
+
+
+# In[80]:
+
+fig = plt.figure(figsize=(11,7))
+plt.scatter(d['opg'][:-2],df_loadings['g'],alpha=.7,s=30) #Don't need the correlation of opg with itself...
 
 plt.title('Prediction of G loadings from H-OPG correlations_BFAS')
 plt.xlabel('BFAS Item - H-OPG correlation')
@@ -631,6 +671,12 @@ plt.ylabel('Item G loading')
 #plt.savefig('G_vs_HOPG_loadings_BFAS.png',format='png', dpi=500
 #            )
 plt.show()
+
+
+# In[82]:
+
+print sss.pearsonr(d['opg'][:-2],df_loadings['g'])
+print sss.pearsonr(c['opg'][:-1],df_loadings['g'])
 
 
 # In[30]:

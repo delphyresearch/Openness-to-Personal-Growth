@@ -7965,3 +7965,71 @@ TemplateNotFound: dashboard
 2014-10-23 14:25:53,492 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2014-10-23 14:25:53,511 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
 2014-10-23 14:25:53,523 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:54,748 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:54,787 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:54,937 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,068 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,076 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,079 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,123 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,229 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,230 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,368 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,391 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,391 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,458 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,479 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,550 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,578 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:46:55,619 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,146 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,271 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,343 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,369 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,384 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,506 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,523 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,556 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,665 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,699 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,710 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,789 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,811 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,888 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,936 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:56,988 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:47:57,044 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1024)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1025)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1026)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1027)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1028)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1012)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1013)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1014)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1015)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1016)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1017)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1018)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1019)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1020)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1021)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1022)
+[2014-11-11 15:54:42 -0800] [1008] [CRITICAL] WORKER TIMEOUT (pid:1023)
+2014-11-11 15:54:42,687 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:42,694 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:42,749 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:42,910 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,052 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,103 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,130 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,167 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,305 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,369 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,384 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,462 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,490 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,491 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,513 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,528 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2014-11-11 15:54:43,552 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js

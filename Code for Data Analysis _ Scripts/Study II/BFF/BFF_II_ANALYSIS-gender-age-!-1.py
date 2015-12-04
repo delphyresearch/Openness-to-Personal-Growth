@@ -33,7 +33,7 @@ os.getcwd()
 bff= pd.read_csv('./BFF_II_Pre.csv')
 opg = pd.read_csv('./OPG_II_Pre.csv')
 demo = pd.read_csv('./WorkerID_Gender_Age_pairing_BFF_II.csv')
-bff = bff.convert_objects(convert_numeric=True)
+bff = bff.convert_objects(convert_numeric=True) 
 opg = opg.convert_objects(convert_numeric=True)
 
 
@@ -230,12 +230,12 @@ cbff = bff.corr()
 cbff.to_csv("STUDYII_BFF_COR_TABLE.csv")
 
 
-# In[16]:
+# In[14]:
 
 opg.head()
 
 
-# In[17]:
+# In[15]:
 
 opg_subset =  [
 'age','engagement',
@@ -287,23 +287,23 @@ opg_no_extra = [
  'IE_25-',]
 
 
-# In[18]:
+# In[16]:
 
 opg1=opg[opg_subset]
 opg2 = opg[opg_no_extra]
 
 
-# In[19]:
+# In[17]:
 
 opg1.head()
 
 
-# In[19]:
+# In[ ]:
 
 
 
 
-# In[20]:
+# In[18]:
 
 ###################################
 #Need to exlude age from the ffpe calculation.
@@ -316,12 +316,12 @@ opg2['mean']=opg2.mean(axis=1,numeric_only=True)
 bff['gfp'] = bff[correct_order_bff].mean(axis=1,numeric_only=True)
 
 
-# In[21]:
+# In[19]:
 
 plt.scatter(opg2['mean'],bff['gfp'])
 
 
-# In[22]:
+# In[20]:
 
 mbff = bff[bff['engagement']=='Male']
 fbff = bff[bff['engagement']=='Female']
@@ -331,17 +331,17 @@ mopg2 = opg2[opg2['engagement']=='Male']
 fopg2 = opg2[opg2['engagement']=='Female']
 
 
-# In[23]:
+# In[21]:
 
 plt.scatter(mopg2['mean'],mbff['gfp'],)
 
 
-# In[24]:
+# In[22]:
 
 plt.scatter(fopg2['mean'],fbff['gfp'],)
 
 
-# In[25]:
+# In[23]:
 
 print 'total, scored as written:'
 print sss.pearsonr(bff['gfp'],opg2['mean'])
@@ -351,18 +351,18 @@ print 'female:'
 print sss.pearsonr(fbff['gfp'],fopg2['mean'])
 
 
-# In[26]:
+# In[24]:
 
 print 'm',len(mopg2)
 print 'f',len(fopg2)
 
 
-# In[27]:
+# In[25]:
 
 ############Factor Level Analysis
 
 
-# In[28]:
+# In[26]:
 
 Neurotic_indices = [2,
 4,
@@ -399,7 +399,7 @@ NEUROTIC = bff[Neuro]
 NEUROTIC['BF-F65+'] = pd.Series(100-NEUROTIC['BF-F65+'])
 
 
-# In[29]:
+# In[27]:
 
 Agreeable_indices = [
 27,
@@ -429,7 +429,7 @@ AGREE = bff[agree]
 AGREE['BF-F46-'] = pd.Series(100-AGREE['BF-F46-'])
 
 
-# In[30]:
+# In[28]:
 
 Open_indices = [
 92,
@@ -458,7 +458,7 @@ for i in sorted(Open_indices):
 OPEN = bff[opn]
 
 
-# In[31]:
+# In[29]:
 
 Extra_indices = [
 75,
@@ -491,7 +491,7 @@ EXTRA['BF-F48-'] = pd.Series(100-EXTRA['BF-F48-'])
 EXTRA['BF-F49-'] = pd.Series(100-EXTRA['BF-F49-'])
 
 
-# In[32]:
+# In[30]:
 
 method_indices = [
 54,
@@ -504,7 +504,7 @@ method_indices = [
 ]
 
 
-# In[33]:
+# In[31]:
 
 conci_distracted = [
 55,
@@ -537,70 +537,70 @@ CONCI = bff[conci]
 CONCI['BF-F74+'] = pd.Series(100-CONCI['BF-F74+'])
 
 
-# In[33]:
+# In[ ]:
 
 
 
 
-# In[34]:
+# In[32]:
 
 masterls = [Neurotic_indices,Agreeable_indices,Open_indices,Extra_indices,conci_distracted]
 
 
-# In[35]:
+# In[33]:
 
 masterls
 
 
-# In[36]:
+# In[34]:
 
 method_indices
 
 
-# In[37]:
+# In[35]:
 
 mls =[item for sublist in masterls for item in sublist]
 
 
-# In[38]:
+# In[36]:
 
 len(mls)
 
 
-# In[39]:
+# In[37]:
 
 sorted(mls)
 
 
-# In[40]:
+# In[38]:
 
 neo = []
 for i in sorted(mls):
     neo.append(correct_order_bff[i+1])
 
 
-# In[41]:
+# In[39]:
 
 a = ['age','engagement'] + neo
 
 
-# In[42]:
+# In[40]:
 
 #a
 
 
-# In[43]:
+# In[41]:
 
 clnbff = bff[a]
 #c
 
 
-# In[44]:
+# In[42]:
 
 #Reverse the Reversals for the overall correlation
 
 
-# In[45]:
+# In[43]:
 
 clnbff['BF-F65+'] =  pd.Series(100 - clnbff['BF-F65+'])
 clnbff['BF-F46-'] = pd.Series( 100 - clnbff['BF-F46-'])
@@ -610,12 +610,12 @@ clnbff['BF-F49-'] =  pd.Series(100 - clnbff['BF-F49-'])
 clnbff['BF-F74+'] =  pd.Series(100 - clnbff['BF-F74+'])
 
 
-# In[46]:
+# In[44]:
 
 clnbff.columns.values
 
 
-# In[47]:
+# In[45]:
 
 ###################################
 #Need to exlude age from the ffpe calculation.
@@ -628,45 +628,96 @@ opg1['mean']=opg1.mean(axis=1,numeric_only=True)
 opg2['mean']=opg2.mean(axis=1,numeric_only=True)
 
 
-# In[48]:
+# In[46]:
 
 clnbff['age'] = clnbff['age'].astype(float)
 opg1['age'] = opg1['age'].astype(float)
 opg2['age'] = opg2['age'].astype(float)
 
 
-# In[49]:
+# In[47]:
 
 ccbff =clnbff.drop(['age','engagement'],axis=1)
 copg1 = opg1.drop(['age','engagement'],axis=1)
 copg2 = opg2.drop(['age','engagement'],axis=1)
 
 
-# In[50]:
+# In[48]:
+
+##############################DESCRIPTIVE STATISTICS
+bffstds = clnbff.std(axis=0)
+bffmeans = clnbff.mean(axis=0)
+hopgstds = copg1.std(axis=0)
+hopgmeans = copg1.mean(axis=0)
+
+
+
+
+# In[53]:
+
+bffstds.to_csv("studyII_bffstds.csv")
+bffmeans.to_csv("studyII_bffmeans.csv")
+hopgstds.to_csv("studyII_final_hopgstds.csv")
+hopgmeans.to_csv("studyII_final_hopgmeans.csv")
+
+
+# In[70]:
 
 fig = plt.figure(figsize=(7.5, 5.5))
 plt.scatter(opg1['mean'],ccbff['gfp'],alpha=.5,s=30)
 #scored as written
-plt.xlabel('H-OPG')
-plt.ylabel('BFF FFPE Estimate Study II')
-plt.xlim((25,100))
-plt.ylim((25,100))
-plt.savefig('BFF_HOPG_II.eps',format='eps', dpi=450
+#plt.plot([30, 90], [30, 90], color='k', linestyle='-', linewidth=1)
+plt.plot(opg1['mean'], np.poly1d(np.polyfit(opg1['mean'],ccbff['gfp'], 1))(opg1['mean']), color = 'k', linewidth=1,alpha=.95)
+plt.xlabel('H/OPG')
+plt.ylabel('BFF GFP Estimate Study II')
+plt.xlim((20,100))
+plt.ylim((20,100))
+plt.savefig('SCIENCE_BFF_HOPG_II_LINE.png',format='png', dpi=300
             )
 plt.show()
 
 
-# In[51]:
+# In[62]:
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(opg1['mean'],ccbff['gfp'],alpha=.5,s=30)
+#scored as written
+#plt.plot([30, 90], [30, 90], color='k', linestyle='-', linewidth=1)
+#plt.plot(opg1['mean'], np.poly1d(np.polyfit(opg1['mean'],ccbff['gfp'], 1))(opg1['mean']), color = 'k', linewidth=,alpha=.8)
+plt.xlabel('H/OPG')
+plt.ylabel('BFF GFP Estimate Study II')
+plt.xlim((20,100))
+plt.ylim((20,100))
+#plt.savefig('SCIENCE_BFF_HOPG_II.png',format='png', dpi=300
+#            )
+plt.show()
+
+
+# In[50]:
+
+fig = plt.figure(figsize=(7.5, 5.5))
+plt.scatter(copg1['mean'],ccbff['gfp'],alpha=.5,s=30)
+#scored as written
+plt.xlabel('H/OPG')
+plt.ylabel('BFF FFPE Estimate Study II')
+plt.xlim((20,100))
+plt.ylim((20,100))
+#plt.savefig('SCIENCE_BFF_HOPG_II.png',format='png', dpi=300
+#            )
+plt.show()
+
+
+# In[49]:
 
 sss.pearsonr(ccbff['gfp'],copg1['mean'])
 
 
-# In[52]:
+# In[50]:
 
 len(copg1)
 
 
-# In[53]:
+# In[51]:
 
 sss.pearsonr(ccbff['gfp'],copg2['mean'])
 
@@ -719,7 +770,7 @@ plt.scatter(mopg1['mean'],mbff['gfp'])
 plt.scatter(fopg1['mean'],fbff['gfp'])
 
 
-# In[66]:
+# In[52]:
 
 print 'total, scored as written:'
 print sss.pearsonr(clnbff['gfp'],opg2['mean'])
@@ -729,6 +780,16 @@ print 'female:'
 print sss.pearsonr(fbff['gfp'],fopg2['mean'])
 
 #Not significant. Not large enough sample size anyways.
+
+
+# In[53]:
+
+print 'total, scored as written:'
+print sss.pearsonr(clnbff['gfp'],opg1['mean'])
+print 'male:'
+print sss.pearsonr(mbff['gfp'],mopg1['mean'])
+print 'female:'
+print sss.pearsonr(fbff['gfp'],fopg1['mean'])
 
 
 # In[67]:
@@ -761,19 +822,62 @@ def age_stuff(start,stop,step):
     return A
 
 
-# In[69]:
+# In[60]:
 
-age_stuff(28,75,10)
+print sss.pearsonr(clnbff[(clnbff['age']<29) 
+                    & (clnbff['age']>(17))]['gfp'],opg2[(opg2['age']<29) & (opg2['age']>(17))]['mean'])
+print len(
+    
+    clnbff[(clnbff['age']<28) 
+                    & (clnbff['age']>(17))]['gfp'])
 
 
-# In[89]:
-
-age_stuff(33,75,15)
 
 
-# In[91]:
+# In[61]:
 
-age_stuff(38,75,20)
+print sss.pearsonr(clnbff[(clnbff['age']<39) 
+                    & (clnbff['age']>(27))]['gfp'],opg2[(opg2['age']<39) & (opg2['age']>(27))]['mean'])
+print len(
+    
+    clnbff[(clnbff['age']<39) 
+                    & (clnbff['age']>(27))]['gfp'])
+
+
+# In[62]:
+
+print sss.pearsonr(clnbff[(clnbff['age']<49) 
+                    & (clnbff['age']>(37))]['gfp'],opg2[(opg2['age']<49) & (opg2['age']>(37))]['mean'])
+print len(
+    
+    clnbff[(clnbff['age']<49) 
+                    & (clnbff['age']>(37))]['gfp'])
+
+
+# In[63]:
+
+print sss.pearsonr(clnbff[(clnbff['age']<59) 
+                    & (clnbff['age']>(47))]['gfp'],opg2[(opg2['age']<59) & (opg2['age']>(47))]['mean'])
+print len(
+    
+    clnbff[(clnbff['age']<59) 
+                    & (clnbff['age']>(47))]['gfp'])
+
+
+# In[71]:
+
+print sss.pearsonr(clnbff[(clnbff['age']>58)]['gfp'],opg2[(opg2['age']>58)]['mean'])
+print len(
+  clnbff[clnbff['age']>58])
+                   
+#Given these small samples, sizes, let's combine with above
+
+
+# In[72]:
+
+print sss.pearsonr(clnbff[(clnbff['age']>(47))]['gfp'],opg2[(opg2['age']>47)]['mean'])
+print len(
+    clnbff[(clnbff['age']>(47))]['gfp'])
 
 
 # In[53]:
