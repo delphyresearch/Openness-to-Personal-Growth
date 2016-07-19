@@ -1,7 +1,7 @@
 Openness-to-Personal-Growth
 ===========================
 
-As reported in "Humility and Introspection -- Evidence for the General Factor of Personality" (currently under peer review at Psychological Science)  this repository houses all code used in the collection, processing and analysis of the data.
+As reported in *Openness to Personal Growth Explains Variation in Big-Five Personality Traits*, this repository houses all code used in the collection, processing and analysis of the data.
 
 
 
