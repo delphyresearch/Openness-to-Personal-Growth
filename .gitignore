@@ -7,3 +7,4 @@
 *.csv
 *.xlsx
 *.frm
+CSV_ZIPPED_OPENSHIFT_PERSONALITY/*
