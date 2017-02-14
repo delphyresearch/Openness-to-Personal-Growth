@@ -13,7 +13,7 @@ browser_exclude_rule = MSIE, mobile, tablet
 
 [Database Parameters]
 database_url = sqlite:///participants.db
-table_name = sampleBFAS
+table_name = sampleBFFII
 
 [Server Parameters]
 host = 127.0.0.1
