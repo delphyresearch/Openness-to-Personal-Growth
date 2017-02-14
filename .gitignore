@@ -4,3 +4,4 @@
 !/.gitignore
 *.db
 *.log
+*.csv
