@@ -11,6 +11,6 @@ Specifically, click the first link above to read the preregistration of intentio
 
 licensing note: 
 
-All novel personality items containted herein are copyrighted as well as the express property of their author, Evan Warfel. The personality items are not to be used for commercial use or for research in commercial settings without my explicit permission or agreement. They can, however, be used for academic research purposes only.
+All novel personality items containted herein are copyrighted as well as the express property of Delphy Research and their author, Evan Warfel. The personality items are not to be used for commercial use or for research in commercial settings without my explicit permission or agreement. They can, however, be used for academic research purposes.
 
-please contact hello [at] delphyresearch [dot] com with any questions
+Feel free to contact hello [at] delphyresearch [dot] com with any questions.
