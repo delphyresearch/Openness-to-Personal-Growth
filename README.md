@@ -2,7 +2,7 @@ Openness-to-Personal-Growth
 ===========================
 
 
-As reported in *Openness to Personal Growth Explains Variation in Big-Five Personality Traits*, this repository houses all code used in the collection, processing and analysis of the data.
+As reported in *Beyond the Growth Mindset: Support for Openness to Personal Growth as the General Factor of Personality*, this repository houses all code used in the collection, processing and analysis of the data.
 
 To see the data analysis scripts; use the button above to switch away from the master branch. 
 UPDATE: The data analysis branch was merged into master.
